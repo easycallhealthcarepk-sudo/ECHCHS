@@ -1,2602 +1,306 @@
-Worked for 9s
-
-<!DOCTYPE html>
+Enter<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0B3B36">
-<meta name="description" content="Easy Call Health Care Home Service - Professional nursing, patient care, clinical procedures and home sample collection in Bahawalpur.">
-<title>Easy Call Health Care Home Service | Bahawalpur</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Call Healthcare Home Services</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-<style>
-:root{
-  --teal-900:#0B3B36;
-  --teal-700:#0F5C51;
-  --teal-600:#14705F;
-  --teal-100:#E1EEE9;
-  --teal-50:#F1F7F5;
-  --amber-500:#E7A23A;
-  --amber-600:#D18F26;
-  --white:#fff;
-  --dark:#17302c;
-  --muted:#65736f;
-  --border:#dbe8e4;
-  --shadow:0 15px 40px rgba(11,59,54,.10);
-  --radius:18px;
-}
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+        }
 
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
-  font-family:Arial,Helvetica,sans-serif;
-  color:var(--dark);
-  background:#fff;
-  line-height:1.6;
-}
-a{text-decoration:none;color:inherit}
-button,input,select,textarea{font:inherit}
-button{cursor:pointer}
-img{max-width:100%;display:block}
+        /* Navigation Bar */
+        nav {
+            background-color: #005f73;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
 
-.container{
-  width:min(1160px,92%);
-  margin:auto;
-}
+        nav .logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
 
-/* HEADER */
-header{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:rgba(255,255,255,.96);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--border);
-}
-.nav{
-  min-height:76px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
-}
-.brand{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  min-width:0;
-}
-.logo{
-  width:52px;
-  height:52px;
-  border-radius:50%;
-  object-fit:cover;
-  border:2px solid var(--teal-600);
-  background:var(--teal-50);
-}
-.brand-text strong{
-  display:block;
-  color:var(--teal-900);
-  font-size:17px;
-  line-height:1.1;
-}
-.brand-text span{
-  font-size:11px;
-  color:var(--muted);
-}
-.nav-links{
-  display:flex;
-  align-items:center;
-  gap:22px;
-}
-.nav-links a{
-  font-size:14px;
-  font-weight:700;
-  color:#40514d;
-}
-.nav-links a:hover{color:var(--teal-600)}
-.menu-btn{
-  display:none;
-  border:0;
-  background:var(--teal-900);
-  color:#fff;
-  width:42px;
-  height:42px;
-  border-radius:12px;
-}
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
 
-/* BUTTONS */
-.btn{
-  border:0;
-  border-radius:12px;
-  padding:13px 19px;
-  font-weight:800;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  transition:.2s ease;
-}
-.btn:hover{transform:translateY(-2px)}
-.btn-primary{background:var(--teal-700);color:#fff}
-.btn-primary:hover{background:var(--teal-900)}
-.btn-wa{background:#198754;color:#fff}
-.btn-call{background:var(--amber-500);color:#17221f}
-.btn-outline{
-  background:#fff;
-  color:var(--teal-700);
-  border:1px solid var(--teal-600);
-}
-.btn-small{padding:9px 13px;font-size:13px}
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            cursor: pointer;
+        }
 
-/* HERO */
-.hero{
-  background:
-    radial-gradient(circle at 90% 10%,rgba(231,162,58,.18),transparent 28%),
-    linear-gradient(135deg,var(--teal-50),#fff);
-  padding:75px 0 65px;
-  overflow:hidden;
-}
-.hero-grid{
-  display:grid;
-  grid-template-columns:1.08fr .92fr;
-  gap:55px;
-  align-items:center;
-}
-.eyebrow{
-  display:inline-flex;
-  background:var(--teal-100);
-  color:var(--teal-700);
-  padding:7px 12px;
-  border-radius:999px;
-  font-size:12px;
-  font-weight:800;
-  margin-bottom:16px;
-}
-.hero h1{
-  font-size:clamp(36px,5vw,62px);
-  line-height:1.05;
-  color:var(--teal-900);
-  margin-bottom:18px;
-}
-.hero h1 span{color:var(--teal-600)}
-.hero .urdu{
-  font-size:22px;
-  font-weight:800;
-  color:var(--amber-600);
-  margin-bottom:15px;
-  direction:rtl;
-}
-.hero p{
-  color:var(--muted);
-  max-width:650px;
-  font-size:17px;
-}
-.hero-actions{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  margin-top:25px;
-}
-.stats{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
-  margin-top:30px;
-}
-.stat{
-  background:#fff;
-  padding:15px;
-  border:1px solid var(--border);
-  border-radius:15px;
-  box-shadow:0 8px 25px rgba(11,59,54,.05);
-}
-.stat strong{
-  display:block;
-  font-size:23px;
-  color:var(--teal-700);
-}
-.stat span{
-  color:var(--muted);
-  font-size:12px;
-}
-.hero-card{
-  position:relative;
-  min-height:430px;
-  border-radius:30px;
-  background:linear-gradient(145deg,var(--teal-900),var(--teal-600));
-  box-shadow:var(--shadow);
-  padding:28px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.profile-circle{
-  width:270px;
-  height:270px;
-  border-radius:50%;
-  background:#fff;
-  padding:12px;
-  box-shadow:0 20px 50px rgba(0,0,0,.18);
-}
-.profile-circle img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  border-radius:50%;
-}
-.float-card{
-  position:absolute;
-  background:#fff;
-  border-radius:15px;
-  padding:14px 16px;
-  box-shadow:0 12px 30px rgba(0,0,0,.16);
-  font-weight:800;
-  font-size:13px;
-}
-.float-card small{
-  display:block;
-  color:var(--muted);
-  font-weight:500;
-  margin-top:3px;
-}
-.float-one{left:-22px;top:55px}
-.float-two{right:-22px;bottom:55px}
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
 
-/* SECTIONS */
-section{padding:75px 0}
-.section-head{
-  text-align:center;
-  max-width:750px;
-  margin:0 auto 38px;
-}
-.section-head .label{
-  color:var(--amber-600);
-  font-size:13px;
-  font-weight:900;
-  text-transform:uppercase;
-  letter-spacing:1px;
-}
-.section-head h2{
-  color:var(--teal-900);
-  font-size:clamp(28px,4vw,42px);
-  margin:7px 0 10px;
-}
-.section-head p{color:var(--muted)}
+        /* Container Pages */
+        .page {
+            display: none;
+            padding: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
 
-/* SERVICES */
-.services{
-  background:var(--teal-50);
-}
-.service-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
-}
-.service-card{
-  background:#fff;
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:23px;
-  box-shadow:0 8px 24px rgba(11,59,54,.05);
-  transition:.2s;
-}
-.service-card:hover{
-  transform:translateY(-5px);
-  box-shadow:var(--shadow);
-}
-.service-icon{
-  width:48px;
-  height:48px;
-  display:grid;
-  place-items:center;
-  border-radius:14px;
-  background:var(--teal-100);
-  color:var(--teal-700);
-  font-size:22px;
-  margin-bottom:15px;
-}
-.service-card h3{
-  color:var(--teal-900);
-  font-size:19px;
-  margin-bottom:10px;
-}
-.service-card ul{
-  list-style:none;
-  color:var(--muted);
-  font-size:14px;
-}
-.service-card li{
-  padding:5px 0;
-  border-bottom:1px dashed #e4ece9;
-}
-.service-card li:last-child{border-bottom:0}
-.service-card li::before{
-  content:"✓";
-  color:var(--teal-600);
-  font-weight:900;
-  margin-right:7px;
-}
+        .active-page {
+            display: block;
+        }
 
-/* ABOUT */
-.about-grid{
-  display:grid;
-  grid-template-columns:.9fr 1.1fr;
-  gap:45px;
-  align-items:center;
-}
-.about-box{
-  background:linear-gradient(145deg,var(--teal-900),var(--teal-700));
-  color:#fff;
-  border-radius:28px;
-  padding:38px;
-  box-shadow:var(--shadow);
-}
-.about-box .big{
-  font-size:55px;
-  font-weight:900;
-  color:var(--amber-500);
-}
-.about-content h2{
-  font-size:40px;
-  color:var(--teal-900);
-  margin-bottom:15px;
-}
-.about-content p{color:var(--muted);margin-bottom:15px}
-.qualifications{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px;
-  margin-top:22px;
-}
-.qualification{
-  padding:15px;
-  border:1px solid var(--border);
-  border-radius:14px;
-  background:#fff;
-}
-.qualification strong{
-  color:var(--teal-700);
-  display:block;
-}
+        h2 {
+            color: #005f73;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #005f73;
+            padding-bottom: 8px;
+        }
 
-/* TEAM */
-.team-section{background:#fff}
-.team-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-}
-.team-card{
-  border:1px solid var(--border);
-  border-radius:20px;
-  padding:24px;
-  text-align:center;
-  background:#fff;
-}
-.avatar{
-  width:90px;
-  height:90px;
-  margin:0 auto 15px;
-  border-radius:50%;
-  background:var(--teal-100);
-  color:var(--teal-700);
-  display:grid;
-  place-items:center;
-  font-size:27px;
-  font-weight:900;
-}
-.team-card h3{color:var(--teal-900)}
-.team-card .role{
-  color:var(--amber-600);
-  font-size:13px;
-  font-weight:800;
-}
-.team-card p{
-  color:var(--muted);
-  font-size:13px;
-  margin-top:9px;
-}
+        /* Buttons */
+        .btn {
+            background-color: #0a9396;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 10px;
+        }
 
-/* PROCESS */
-.process{
-  background:var(--teal-50);
-}
-.process-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:16px;
-}
-.process-card{
-  background:#fff;
-  border-radius:18px;
-  padding:24px;
-  border:1px solid var(--border);
-}
-.process-no{
-  width:38px;
-  height:38px;
-  border-radius:50%;
-  background:var(--amber-500);
-  display:grid;
-  place-items:center;
-  font-weight:900;
-  margin-bottom:13px;
-}
-.process-card h3{color:var(--teal-900)}
-.process-card p{font-size:13px;color:var(--muted)}
+        .btn:hover {
+            background-color: #005f73;
+        }
 
-/* REQUEST */
-.request-section{
-  background:linear-gradient(135deg,var(--teal-900),var(--teal-700));
-}
-.request-wrap{
-  display:grid;
-  grid-template-columns:.8fr 1.2fr;
-  gap:35px;
-  align-items:start;
-}
-.request-info{color:#fff;padding-top:20px}
-.request-info h2{
-  font-size:40px;
-  line-height:1.1;
-  margin-bottom:15px;
-}
-.request-info p{color:#d7e7e3}
-.contact-mini{
-  margin-top:25px;
-  display:grid;
-  gap:10px;
-}
-.contact-mini a{
-  background:rgba(255,255,255,.1);
-  padding:12px 15px;
-  border-radius:12px;
-}
-.form-card{
-  background:#fff;
-  border-radius:22px;
-  padding:25px;
-  box-shadow:var(--shadow);
-}
-.form-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:14px;
-}
-.field{
-  display:flex;
-  flex-direction:column;
-  gap:6px;
-}
-.field.full{grid-column:1/-1}
-.field label{
-  font-size:12px;
-  font-weight:800;
-  color:#445551;
-}
-.field input,.field select,.field textarea{
-  width:100%;
-  border:1px solid var(--border);
-  border-radius:11px;
-  padding:11px 12px;
-  outline:none;
-  background:#fff;
-}
-.field input:focus,.field select:focus,.field textarea:focus{
-  border-color:var(--teal-600);
-  box-shadow:0 0 0 3px rgba(20,112,95,.08);
-}
-.field textarea{min-height:100px;resize:vertical}
-.form-note{
-  font-size:11px;
-  color:var(--muted);
-  margin:10px 0;
-}
-.required{color:#c0392b}
-.service-checks{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:8px;
-}
-.check{
-  border:1px solid var(--border);
-  border-radius:10px;
-  padding:8px;
-  font-size:12px;
-  color:#4a5955;
-  display:flex;
-  gap:7px;
-  align-items:flex-start;
-}
-.check input{margin-top:3px}
+        /* Page 1 - Home */
+        .services-list {
+            list-style: none;
+            margin-bottom: 20px;
+        }
 
-/* REPORTS */
-.reports{
-  background:#fff;
-}
-.report-box{
-  max-width:650px;
-  margin:auto;
-  padding:30px;
-  border:1px solid var(--border);
-  border-radius:22px;
-  box-shadow:var(--shadow);
-  text-align:center;
-}
-.report-box h3{
-  color:var(--teal-900);
-  margin-bottom:8px;
-}
-.report-box p{
-  color:var(--muted);
-  font-size:14px;
-  margin-bottom:20px;
-}
-.report-form{
-  display:grid;
-  grid-template-columns:1fr 1fr auto;
-  gap:10px;
-}
-.report-form input{
-  border:1px solid var(--border);
-  padding:12px;
-  border-radius:10px;
-  outline:none;
-}
-.report-result{
-  margin-top:18px;
-  padding:15px;
-  border-radius:12px;
-  display:none;
-  text-align:left;
-}
-.report-success{
-  display:block;
-  background:var(--teal-50);
-  border:1px solid var(--teal-100);
-}
-.report-error{
-  display:block;
-  background:#fff2f2;
-  border:1px solid #ffd0d0;
-  color:#9c2d2d;
-}
+        .services-list li {
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
 
-/* REVIEWS */
-.reviews{background:var(--teal-50)}
-.review-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-}
-.review-card{
-  background:#fff;
-  border:1px solid var(--border);
-  border-radius:18px;
-  padding:23px;
-}
-.stars{
-  color:var(--amber-500);
-  letter-spacing:2px;
-  margin-bottom:8px;
-}
-.review-card p{
-  color:var(--muted);
-  font-size:14px;
-}
-.review-card strong{
-  display:block;
-  margin-top:13px;
-  color:var(--teal-900);
-}
+        .services-list li::before {
+            content: "✓";
+            color: #0a9396;
+            font-weight: bold;
+            margin-right: 10px;
+        }
 
-/* CONTACT */
-.contact-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:25px;
-}
-.contact-card{
-  padding:25px;
-  border:1px solid var(--border);
-  border-radius:20px;
-  background:#fff;
-}
-.contact-list{
-  display:grid;
-  gap:12px;
-  margin-top:15px;
-}
-.contact-item{
-  display:flex;
-  gap:12px;
-  padding:13px;
-  background:var(--teal-50);
-  border-radius:12px;
-}
-.contact-item .icon{
-  width:38px;
-  height:38px;
-  border-radius:10px;
-  background:var(--teal-100);
-  display:grid;
-  place-items:center;
-  color:var(--teal-700);
-  flex:none;
-}
-.contact-item strong{display:block;color:var(--teal-900)}
-.contact-item span{font-size:13px;color:var(--muted)}
-.socials{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-top:18px;
-}
-.socials a{
-  padding:9px 13px;
-  border-radius:10px;
-  background:var(--teal-700);
-  color:#fff;
-  font-size:12px;
-  font-weight:800;
-}
-.map-box{
-  min-height:100%;
-  border-radius:20px;
-  overflow:hidden;
-  border:1px solid var(--border);
-  background:var(--teal-50);
-}
-.map-box iframe{
-  width:100%;
-  height:100%;
-  min-height:350px;
-  border:0;
-}
+        /* Page 2 - Booking Form */
+        .form-group {
+            margin-bottom: 15px;
+        }
 
-/* FOOTER */
-footer{
-  background:#072a26;
-  color:#d8e7e4;
-  padding:40px 0 25px;
-}
-.footer-grid{
-  display:grid;
-  grid-template-columns:1.3fr .7fr .9fr;
-  gap:35px;
-}
-footer h3{color:#fff;margin-bottom:12px}
-footer p,footer li{
-  color:#adc1bd;
-  font-size:13px;
-}
-footer ul{list-style:none;display:grid;gap:7px}
-footer a:hover{color:#fff}
-.footer-bottom{
-  border-top:1px solid rgba(255,255,255,.12);
-  margin-top:30px;
-  padding-top:18px;
-  text-align:center;
-  font-size:12px;
-  color:#91aaa5;
-}
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
 
-/* MOBILE BAR */
-.mobile-bar{
-  display:none;
-  position:fixed;
-  left:0;
-  right:0;
-  bottom:0;
-  z-index:1200;
-  background:#fff;
-  border-top:1px solid var(--border);
-  padding:8px;
-  grid-template-columns:1fr 1fr 1fr;
-  gap:7px;
-  box-shadow:0 -8px 25px rgba(0,0,0,.1);
-}
-.mobile-bar a{
-  padding:10px 5px;
-  border-radius:10px;
-  text-align:center;
-  font-size:11px;
-  font-weight:800;
-}
-.mobile-bar a:first-child{background:var(--teal-700);color:#fff}
-.mobile-bar a:nth-child(2){background:#198754;color:#fff}
-.mobile-bar a:last-child{background:var(--amber-500)}
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 15px;
+        }
 
-/* ADMIN */
-.modal{
-  display:none;
-  position:fixed;
-  inset:0;
-  z-index:2000;
-  background:rgba(0,0,0,.62);
-  padding:20px;
-  overflow:auto;
-}
-.modal.show{display:flex;align-items:center;justify-content:center}
-.modal-box{
-  width:min(1050px,100%);
-  max-height:92vh;
-  overflow:auto;
-  background:#fff;
-  border-radius:20px;
-  padding:25px;
-  position:relative;
-}
-.modal-close{
-  position:absolute;
-  right:15px;
-  top:12px;
-  width:35px;
-  height:35px;
-  border:0;
-  border-radius:50%;
-  background:#eef3f1;
-  color:var(--teal-900);
-  font-size:20px;
-}
-.login-box{width:min(430px,100%)}
-.login-box h2{
-  color:var(--teal-900);
-  margin-bottom:17px;
-}
-.admin-tabs{
-  display:flex;
-  flex-wrap:wrap;
-  gap:7px;
-  margin:18px 0;
-}
-.admin-tabs button{
-  border:1px solid var(--border);
-  background:#fff;
-  color:var(--teal-700);
-  padding:9px 12px;
-  border-radius:9px;
-  font-weight:800;
-  font-size:12px;
-}
-.admin-tabs button.active{
-  background:var(--teal-700);
-  color:#fff;
-}
-.admin-tab{display:none}
-.admin-tab.active{display:block}
-.admin-table-wrap{
-  overflow:auto;
-  border:1px solid var(--border);
-  border-radius:12px;
-}
-.admin-table{
-  width:100%;
-  border-collapse:collapse;
-  min-width:750px;
-}
-.admin-table th,.admin-table td{
-  padding:10px;
-  border-bottom:1px solid var(--border);
-  text-align:left;
-  font-size:12px;
-}
-.admin-table th{
-  background:var(--teal-50);
-  color:var(--teal-900);
-}
-.admin-form{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:10px;
-  margin-bottom:18px;
-}
-.admin-form .full{grid-column:1/-1}
-.danger{
-  background:#c0392b;
-  color:#fff;
-  border:0;
-  border-radius:8px;
-  padding:6px 9px;
-  font-size:11px;
-}
-.status-select{
-  padding:6px;
-  border:1px solid var(--border);
-  border-radius:7px;
-}
-.admin-note{
-  padding:12px;
-  background:#fff8e9;
-  border:1px solid #f4dfad;
-  border-radius:10px;
-  color:#75591f;
-  font-size:12px;
-  margin-bottom:15px;
-}
+        /* Page 3 - Track & Reports */
+        .section-box {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 25px;
+            border: 1px solid #e0e0e0;
+        }
 
-/* RESPONSIVE */
-@media(max-width:1000px){
-  .service-grid{grid-template-columns:repeat(2,1fr)}
-  .process-grid{grid-template-columns:repeat(2,1fr)}
-  .hero-grid,.about-grid,.request-wrap{grid-template-columns:1fr}
-  .hero-card{max-width:650px;margin:auto}
-  .footer-grid{grid-template-columns:1fr 1fr}
-}
-@media(max-width:760px){
-  body{padding-bottom:65px}
-  .nav-links{
-    display:none;
-    position:absolute;
-    top:76px;
-    left:0;
-    right:0;
-    background:#fff;
-    border-bottom:1px solid var(--border);
-    padding:15px;
-    flex-direction:column;
-    align-items:stretch;
-  }
-  .nav-links.show{display:flex}
-  .nav-links a{
-    padding:10px;
-    border-bottom:1px solid #eef3f1;
-  }
-  .menu-btn{display:block}
-  .brand-text strong{font-size:14px}
-  .brand-text span{font-size:9px}
-  .logo{width:45px;height:45px}
-  .hero{padding:50px 0}
-  .hero h1{font-size:40px}
-  .stats{grid-template-columns:1fr}
-  .service-grid,.team-grid,.review-grid,.contact-grid{grid-template-columns:1fr}
-  .qualifications{grid-template-columns:1fr}
-  .form-grid{grid-template-columns:1fr}
-  .field.full{grid-column:auto}
-  .service-checks{grid-template-columns:1fr}
-  .report-form{grid-template-columns:1fr}
-  .footer-grid{grid-template-columns:1fr}
-  .mobile-bar{display:grid}
-  .float-one{left:5px}
-  .float-two{right:5px}
-  .profile-circle{width:220px;height:220px}
-  section{padding:55px 0}
-}
-</style>
+        .star-rating {
+            display: flex;
+            direction: row-reverse;
+            justify-content: flex-end;
+            gap: 5px;
+            font-size: 25px;
+            margin-top: 5px;
+        }
+
+        .star-rating input {
+            display: none;
+        }
+
+        .star-rating label {
+            color: #ccc;
+            cursor: pointer;
+        }
+
+        .star-rating input:checked ~ label,
+        .star-rating label:hover,
+        .star-rating label:hover ~ label {
+            color: #ffb703;
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
-  <div class="container nav">
-    <a href="#home" class="brand">
-      <!-- Put your original profile/logo image in the same folder with this name -->
-      <img src="profile-pic.png" class="logo" id="siteLogo" alt="Easy Call Health Care Home Service">
-      <div class="brand-text">
-        <strong>Easy Call Health Care</strong>
-        <span>Home Service · Bahawalpur</span>
-      </div>
-    </a>
-
-    <button class="menu-btn" onclick="toggleMenu()">☰</button>
-
-    <nav class="nav-links" id="navLinks">
-      <a href="#home" onclick="closeMenu()">Home</a>
-      <a href="#about" onclick="closeMenu()">About</a>
-      <a href="#services" onclick="closeMenu()">Services</a>
-      <a href="#team" onclick="closeMenu()">Our Team</a>
-      <a href="#reports" onclick="closeMenu()">Reports</a>
-      <a href="#reviews" onclick="closeMenu()">Reviews</a>
-      <a href="#contact" onclick="closeMenu()">Contact</a>
-      <a href="#request" class="btn btn-primary btn-small" onclick="closeMenu()">Request Service</a>
+    <!-- Header / Navigation -->
+    <nav>
+        <div class="logo">EASY CALL HEALTHCARE</div>
+        <ul>
+            <li><a onclick="showPage('page1')">Home</a></li>
+            <li><a onclick="showPage('page2')">Booking</a></li>
+            <li><a onclick="showPage('page3')">Track & Reports</a></li>
+        </ul>
     </nav>
-  </div>
-</header>
 
-<main>
-
-<!-- HERO -->
-<section class="hero" id="home">
-  <div class="container hero-grid">
-    <div>
-      <div class="eyebrow">● Open Daily · 8:00 AM – 10:00 PM</div>
-
-      <h1>
-        Trusted nursing & patient care,
-        <span>delivered to your home.</span>
-      </h1>
-
-      <div class="urdu">آپ کی صحت، آپ کے گھر پر — بس ایک کال کی دور!</div>
-
-      <p>
-        Professional male & female nursing staff, patient care, clinical procedures,
-        vital monitoring and home sample collection services in Bahawalpur.
-      </p>
-
-      <div class="hero-actions">
-        <a href="#request" class="btn btn-primary">📋 Request a Service</a>
-
-        <a href="#" class="btn btn-wa" id="heroWhatsApp"
-           onclick="return openWhatsApp('Hello Easy Call Health Care Home Service, I want to inquire about your home healthcare services.')">
-          💬 WhatsApp Us
-        </a>
-
-        <a href="#" class="btn btn-call" id="heroCall">📞 Call Now</a>
-      </div>
-
-      <div class="stats">
-        <div class="stat">
-          <strong>23+</strong>
-          <span>Home Care Services</span>
-        </div>
-        <div class="stat">
-          <strong>8AM–10PM</strong>
-          <span>Daily Availability</span>
-        </div>
-        <div class="stat">
-          <strong>BWP</strong>
-          <span>Bahawalpur Service Area</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="hero-card">
-      <div class="profile-circle">
-        <img src="profile-pic.png" alt="Easy Call Health Care Home Service Logo"
-             onerror="this.src='Al-Shifa Home Healthcare Billboard.png'">
-      </div>
-
-      <div class="float-card float-one">
-        ✓ Home visit confirmed
-        <small>Professional home care</small>
-      </div>
-
-      <div class="float-card float-two">
-        ♥ BP · Sugar · O2 checked
-        <small>Care at your doorstep</small>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="container about-grid">
-    <div class="about-box">
-      <div class="big">CARE</div>
-      <h3>Professional Healthcare at Home</h3>
-      <p>
-        Easy Call Health Care Home Service provides convenient home-based
-        nursing and clinical care for patients, elderly people and families.
-      </p>
-      <br>
-      <strong>Founder & Owner</strong>
-      <p>M. Ismail · Bahawalpur</p>
-    </div>
-
-    <div class="about-content">
-      <div class="section-head" style="text-align:left;margin:0 0 15px">
-        <div class="label">About Us</div>
-        <h2>Care you can trust, at home.</h2>
-      </div>
-
-      <p>
-        We provide home healthcare support including nursing care, patient care,
-        clinical procedures, post-operative care, elderly care, vital monitoring
-        and home sample collection.
-      </p>
-
-      <p>
-        Our aim is to make professional healthcare services easier to access
-        without unnecessary travel to a clinic or hospital.
-      </p>
-
-      <div class="qualifications">
-        <div class="qualification">
-          <strong>Clinical Assistant (CA)</strong>
-          PVTC Certificate
-        </div>
-        <div class="qualification">
-          <strong>Pharmacy Diploma</strong>
-          B Category
-        </div>
-        <div class="qualification">
-          <strong>Experienced Provider</strong>
-          Home healthcare experience
-        </div>
-        <div class="qualification">
-          <strong>Service Area</strong>
-          Bahawalpur, Punjab
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section class="services" id="services">
-  <div class="container">
-    <div class="section-head">
-      <div class="label">Our Services</div>
-      <h2>Complete Home Healthcare Services</h2>
-      <p>
-        Professional support for routine care, clinical procedures,
-        elderly care and home sample collection.
-      </p>
-    </div>
-
-    <div class="service-grid">
-
-      <div class="service-card">
-        <div class="service-icon">🩺</div>
-        <h3>Nursing & Patient Care</h3>
-        <ul>
-          <li>Home Nursing & Patient Care</li>
-          <li>Male Care Taker</li>
-          <li>Female Care Taker</li>
-          <li>Patient Bathing & Feeding</li>
-          <li>Elderly Care</li>
-          <li>Bedridden Patient Care</li>
-          <li>Post-Operative Care</li>
+    <!-- PAGE 1: HOME -->
+    <div id="page1" class="page active-page">
+        <h2>Our Home Care Services</h2>
+        <ul class="services-list">
+            <li>BP & SUGAR MONITORING</li>
+            <li>DRESSING & WOUND CARE</li>
+            <li>INJECTIONS & IV DRIP</li>
+            <li>NEBULIZE & TEMPERATURE MONITORING</li>
+            <li>NG TUBE & FOLEY'S CARE</li>
+            <li>STITCH CARE & STITCH OUT</li>
+            <li>BLOOD & URINE SAMPLE COLLECTION</li>
+            <li>URINE BAG CARE</li>
+            <li>Elderly Care (Geriatric Care)</li>
+            <li>Post-Operative Care</li>
+            <li>Stroke & Bedridden Patient Care</li>
+            <li>Diabetic Foot Care & Dressing</li>
+            <li>Bed Sore Care & Management</li>
+            <li>First Aid & Emergency Care</li>
+            <li>Home Medication Management</li>
         </ul>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">❤️</div>
-        <h3>Vitals & Monitoring</h3>
-        <ul>
-          <li>BP Monitoring</li>
-          <li>Blood Sugar Check</li>
-          <li>Pulse Monitoring</li>
-          <li>Oxygen / SpO2</li>
-          <li>Temperature</li>
-        </ul>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">💉</div>
-        <h3>Clinical Procedures</h3>
-        <ul>
-          <li>Injection</li>
-          <li>IV Drip</li>
-          <li>Cannula</li>
-          <li>Dressing</li>
-          <li>Wound Cleaning / Wash</li>
-          <li>Nebulization</li>
-          <li>NG Tube</li>
-          <li>Foley's Catheter</li>
-          <li>Urine Bag</li>
-          <li>Stitch / Suturing</li>
-          <li>Stitch Out</li>
-        </ul>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">🧪</div>
-        <h3>Home Lab Sample Collection</h3>
-        <ul>
-          <li>Blood Sample Collection</li>
-          <li>Urine Sample Collection</li>
-          <li>Home Laboratory Collection</li>
-          <li>Sample Handling</li>
-          <li>Lab Coordination</li>
-          <li>Report Delivery</li>
-          <li>Report Access via Website / WhatsApp</li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- PROCESS -->
-<section class="process">
-  <div class="container">
-    <div class="section-head">
-      <div class="label">How It Works</div>
-      <h2>Simple Home Care Process</h2>
+        <button class="btn" onclick="showPage('page2')">Book Now</button>
     </div>
 
-    <div class="process-grid">
-      <div class="process-card">
-        <div class="process-no">1</div>
-        <h3>Send Request</h3>
-        <p>Fill out the service request form or contact us directly on WhatsApp.</p>
-      </div>
-      <div class="process-card">
-        <div class="process-no">2</div>
-        <h3>Confirm Details</h3>
-        <p>We confirm the patient details, required service, location and timing.</p>
-      </div>
-      <div class="process-card">
-        <div class="process-no">3</div>
-        <h3>Home Visit</h3>
-        <p>Our available staff member visits the patient at the agreed time.</p>
-      </div>
-      <div class="process-card">
-        <div class="process-no">4</div>
-        <h3>Care Provided</h3>
-        <p>Required home healthcare service is provided professionally and respectfully.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- REQUEST -->
-<section class="request-section" id="request">
-  <div class="container request-wrap">
-    <div class="request-info">
-      <div class="eyebrow">Quick Service Request</div>
-      <h2>Request Home Healthcare Service</h2>
-      <p>
-        Complete the form and send your request directly to our WhatsApp.
-        We will contact you for confirmation.
-      </p>
-
-      <div class="contact-mini">
-        <a href="#" id="requestWhatsApp"
-           onclick="return openWhatsApp('Hello Easy Call Health Care Home Service, I want to request a home healthcare service.')">
-          💬 WhatsApp: <strong>0306-1912314</strong>
-        </a>
-        <a href="#" id="requestCall">📞 Call: <strong>0306-1912314</strong></a>
-      </div>
-    </div>
-
-    <div class="form-card">
-      <form id="serviceForm" onsubmit="submitRequest(event)">
-
-        <div class="form-grid">
-
-          <div class="field">
-            <label>Patient Name <span class="required">*</span></label>
-            <input type="text" id="patientName" required>
-          </div>
-
-          <div class="field">
-            <label>Patient Age <span class="required">*</span></label>
-            <input type="number" id="patientAge" min="0" max="120" required>
-          </div>
-
-          <div class="field">
-            <label>Gender <span class="required">*</span></label>
-            <select id="gender" required>
-              <option value="">Select Gender</option>
-              <option>Male</option>
-              <option>Female</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label>Mobile Number <span class="required">*</span></label>
-            <input type="tel" id="mobile" placeholder="03XXXXXXXXX" required>
-          </div>
-
-          <div class="field">
-            <label>WhatsApp Number</label>
-            <input type="tel" id="whatsapp" placeholder="03XXXXXXXXX">
-          </div>
-
-          <div class="field">
-            <label>Preferred Date <span class="required">*</span></label>
-            <input type="date" id="preferredDate" required>
-          </div>
-
-          <div class="field">
-            <label>Preferred Time <span class="required">*</span></label>
-            <input type="time" id="preferredTime" min="08:00" max="22:00" required>
-          </div>
-
-          <div class="field">
-            <label>Area / Address <span class="required">*</span></label>
-            <input type="text" id="address" required>
-          </div>
-
-          <div class="field full">
-            <label>
-              Patient's Disease / Medical Condition
-              <span class="required">*</span>
-            </label>
-            <input type="text" id="disease"
-                   placeholder="Please mention patient's disease / medical condition"
-                   required>
-          </div>
-
-          <div class="field full">
-            <label>Required Home Care Services <span class="required">*</span></label>
-
-            <div class="service-checks">
-
-              <label class="check"><input type="checkbox" value="Home Nursing & Patient Care"> Home Nursing & Patient Care</label>
-              <label class="check"><input type="checkbox" value="Male Care Taker"> Male Care Taker</label>
-              <label class="check"><input type="checkbox" value="Female Care Taker"> Female Care Taker</label>
-              <label class="check"><input type="checkbox" value="Elderly Care"> Elderly Care</label>
-
-              <label class="check"><input type="checkbox" value="BP Monitoring"> BP Monitoring</label>
-              <label class="check"><input type="checkbox" value="Blood Sugar Check"> Blood Sugar Check</label>
-              <label class="check"><input type="checkbox" value="Temperature Monitoring"> Temperature Monitoring</label>
-              <label class="check"><input type="checkbox" value="Injection"> Injection</label>
-
-              <label class="check"><input type="checkbox" value="IV Drip"> IV Drip</label>
-              <label class="check"><input type="checkbox" value="Dressing"> Dressing</label>
-              <label class="check"><input type="checkbox" value="Wound Wash"> Wound Wash</label>
-              <label class="check"><input type="checkbox" value="Nebulization"> Nebulization</label>
-
-              <label class="check"><input type="checkbox" value="NG Tube"> NG Tube</label>
-              <label class="check"><input type="checkbox" value="Foley's Catheter"> Foley's Catheter</label>
-              <label class="check"><input type="checkbox" value="Urine Bag Care"> Urine Bag Care</label>
-              <label class="check"><input type="checkbox" value="Stitch / Suturing"> Stitch / Suturing</label>
-
-              <label class="check"><input type="checkbox" value="Stitch Out"> Stitch Out</label>
-              <label class="check"><input type="checkbox" value="Blood Sample Collection"> Blood Sample Collection</label>
-              <label class="check"><input type="checkbox" value="Urine Sample Collection"> Urine Sample Collection</label>
-              <label class="check"><input type="checkbox" value="Other"> Other</label>
-
+    <!-- PAGE 2: BOOKING -->
+    <div id="page2" class="page">
+        <h2>Book a Healthcare Service</h2>
+        <form onsubmit="alert('Booking Request Submitted Successfully!'); return false;">
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" placeholder="Enter your full name" required>
             </div>
-          </div>
-
-          <div class="field full">
-            <label>Additional Details / Message</label>
-            <textarea id="message"
-              placeholder="Any additional information about the patient or required service..."></textarea>
-          </div>
-
-        </div>
-
-        <div class="form-note">
-          By submitting this request, your details will be prepared in a WhatsApp message for Easy Call Health Care Home Service.
-        </div>
-
-        <button type="submit" class="btn btn-wa" style="width:100%">
-          💬 Submit Request on WhatsApp
-        </button>
-
-      </form>
-    </div>
-  </div>
-</section>
-
-<!-- REPORTS -->
-<section class="reports" id="reports">
-  <div class="container">
-    <div class="section-head">
-      <div class="label">Test Reports</div>
-      <h2>Check Your Test Report</h2>
-      <p>
-        Enter the report access code and the last 4 digits of the registered
-        phone number to access your available report.
-      </p>
-    </div>
-
-    <div class="report-box">
-      <h3>🔬 Report Access</h3>
-      <p>Use the details provided to you after sample collection.</p>
-
-      <form class="report-form" onsubmit="lookupReport(event)">
-        <input type="text" id="repCode" placeholder="Report Code e.g. ECH-1234" required>
-        <input type="text" id="repPhone" maxlength="4" inputmode="numeric"
-               placeholder="Last 4 digits" required>
-        <button type="submit" class="btn btn-primary">View Report</button>
-      </form>
-
-      <div id="reportResult" class="report-result"></div>
-    </div>
-  </div>
-</section>
-
-<!-- TEAM -->
-<section class="team-section" id="team">
-  <div class="container">
-    <div class="section-head">
-      <div class="label">Our Team</div>
-      <h2>Professional Care Team</h2>
-      <p>Our team can be updated from the Admin Panel.</p>
-    </div>
-
-    <div class="team-grid" id="teamGrid"></div>
-  </div>
-</section>
-
-<!-- REVIEWS -->
-<section class="reviews" id="reviews">
-  <div class="container">
-    <div class="section-head">
-      <div class="label">Customer Reviews</div>
-      <h2>What Families Say</h2>
-      <p>Real customer reviews can be added from the Admin Panel.</p>
-    </div>
-
-    <div class="review-grid" id="reviewGrid"></div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="container">
-    <div class="section-head">
-      <div class="label">Contact Us</div>
-      <h2>Easy Call Health Care Home Service</h2>
-      <p>For appointments, home visits and service information.</p>
-    </div>
-
-    <div class="contact-grid">
-
-      <div class="contact-card">
-        <h3>Get in Touch</h3>
-
-        <div class="contact-list">
-
-          <a class="contact-item" href="#" id="contactPhone">
-            <div class="icon">📞</div>
-            <div>
-              <strong>Call Us</strong>
-              <span id="phoneText">0306-1912314</span>
+            <div class="form-group">
+                <label>Mobile Number</label>
+                <input type="tel" placeholder="03XX-XXXXXXX" required>
             </div>
-          </a>
-
-          <a class="contact-item" href="#" id="contactWhatsApp"
-             onclick="return openWhatsApp('Hello Easy Call Health Care Home Service, I need information about your services.')">
-            <div class="icon">💬</div>
-            <div>
-              <strong>WhatsApp</strong>
-              <span id="whatsappText">0306-1912314</span>
+            <div class="form-group">
+                <label>Select Service</label>
+                <select required>
+                    <option value="">-- Choose a Service --</option>
+                    <option>BP & SUGAR MONITORING</option>
+                    <option>DRESSING & WOUND CARE</option>
+                    <option>INJECTIONS & IV DRIP</option>
+                    <option>NEBULIZE & TEMPERATURE MONITORING</option>
+                    <option>NG TUBE & FOLEY'S CARE</option>
+                    <option>STITCH CARE & STITCH OUT</option>
+                    <option>BLOOD & URINE SAMPLE COLLECTION</option>
+                    <option>URINE BAG CARE</option>
+                    <option>Elderly Care (Geriatric Care)</option>
+                    <option>Post-Operative Care</option>
+                    <option>Stroke & Bedridden Patient Care</option>
+                    <option>Diabetic Foot Care & Dressing</option>
+                    <option>Bed Sore Care & Management</option>
+                    <option>First Aid & Emergency Care</option>
+                    <option>Home Medication Management</option>
+                </select>
             </div>
-          </a>
-
-          <a class="contact-item" href="#" id="contactEmail">
-            <div class="icon">✉️</div>
-            <div>
-              <strong>Email</strong>
-              <span id="emailText">info@easycallhealthcare.pk</span>
+            <div class="form-group">
+                <label>Preferred Date & Time</label>
+                <input type="datetime-local" required>
             </div>
-          </a>
-
-          <div class="contact-item">
-            <div class="icon">📍</div>
-            <div>
-              <strong>Office / Service Area</strong>
-              <span id="addressText">Bahawalpur (BWP), Punjab, Pakistan</span>
+            <div class="form-group">
+                <label>Complete Address</label>
+                <textarea rows="3" placeholder="Enter full address for home visit" required></textarea>
             </div>
-          </div>
-
-          <div class="contact-item">
-            <div class="icon">🕐</div>
-            <div>
-              <strong>Opening Hours</strong>
-              <span id="hoursText">8:00 AM – 10:00 PM Daily</span>
+            <div class="form-group">
+                <label>Payment Method</label>
+                <select required>
+                    <option>Cash on Service (COD)</option>
+                    <option>JazzCash / EasyPaisa</option>
+                    <option>Bank Transfer</option>
+                </select>
             </div>
-          </div>
-
-        </div>
-
-        <div class="socials" id="socialLinks"></div>
-      </div>
-
-      <div class="map-box">
-        <iframe id="mapFrame"
-          src="https://www.google.com/maps?q=Bahawalpur%20Punjab%20Pakistan&output=embed"
-          loading="lazy"
-          allowfullscreen>
-        </iframe>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-</main>
-
-<footer>
-  <div class="container footer-grid">
-
-    <div>
-      <h3>Easy Call Health Care</h3>
-      <p>
-        Professional nursing, patient care, clinical procedures,
-        elderly care and home sample collection services.
-      </p>
-      <p style="margin-top:10px">
-        آپ کی صحت، آپ کے گھر پر — بس ایک کال کی دور!
-      </p>
+            <button type="submit" class="btn">Book Appointment</button>
+        </form>
     </div>
 
-    <div>
-      <h3>Quick Links</h3>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#request">Request Service</a></li>
-        <li><a href="#reports">Test Reports</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+    <!-- PAGE 3: TRACK & REPORTS -->
+    <div id="page3" class="page">
+        <h2>Track & Medical Reports</h2>
+
+        <!-- Section 1: Track Request -->
+        <div class="section-box">
+            <h3>1. Track Request</h3>
+            <p style="font-size: 14px; margin-bottom: 10px; color: #666;">Enter your booking ID to track your service status.</p>
+            <div class="form-group">
+                <input type="text" placeholder="Enter Search / Booking ID">
+            </div>
+            <button class="btn" onclick="alert('Searching request status...')">Track Request</button>
+        </div>
+
+        <!-- Section 2: My Reports -->
+        <div class="section-box">
+            <h3>2. My Reports</h3>
+            <p style="font-size: 14px; margin-bottom: 10px; color: #666;">Access your medical reports securely.</p>
+            <div class="form-group">
+                <input type="text" placeholder="Enter Report Code">
+            </div>
+            <div class="form-group">
+                <input type="password" maxlength="4" placeholder="Enter Last 4 Digits of Mobile No.">
+            </div>
+            <button class="btn" onclick="alert('Fetching report details...')">Secure Access View Reports</button>
+        </div>
+
+        <!-- Section 3: Feedback -->
+        <div class="section-box">
+            <h3>3. Rate Our Service</h3>
+            <div class="star-rating">
+                <input type="radio" id="star5" name="rating" value="5"><label for="star5">★</label>
+                <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
+                <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
+                <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
+                <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
+            </div>
+            <button class="btn" style="margin-top: 15px;" onclick="alert('Thank you for your feedback!')">Submit Rating</button>
+        </div>
     </div>
 
-    <div>
-      <h3>Contact</h3>
-      <ul>
-        <li><a href="#" id="footerCall">📞 0306-1912314</a></li>
-        <li><a href="#" id="footerWhatsApp"
-               onclick="return openWhatsApp('Hello Easy Call Health Care Home Service.')">💬 WhatsApp</a></li>
-        <li>📍 Bahawalpur, Punjab</li>
-        <li>🕐 8 AM – 10 PM</li>
-        <li><button class="btn btn-outline btn-small" onclick="openAdminLogin()">Admin Panel</button></li>
-      </ul>
-    </div>
-
-  </div>
-
-  <div class="container footer-bottom">
-    © <span id="year"></span> Easy Call Health Care Home Service. All Rights Reserved.
-  </div>
-</footer>
-
-<!-- MOBILE BAR -->
-<div class="mobile-bar">
-  <a href="#request">📋 Request</a>
-  <a href="#" onclick="return openWhatsApp('Hello Easy Call Health Care Home Service, I need information about your services.')">💬 WhatsApp</a>
-  <a href="#" id="mobileCall">📞 Call</a>
-</div>
-
-<!-- LOGIN MODAL -->
-<div class="modal" id="loginModal">
-  <div class="modal-box login-box">
-    <button class="modal-close" onclick="closeModal('loginModal')">×</button>
-
-    <h2>Admin Login</h2>
-
-    <div class="field">
-      <label>Username</label>
-      <input type="text" id="adminUser">
-    </div>
-
-    <div class="field" style="margin-top:12px">
-      <label>Password</label>
-      <input type="password" id="adminPass">
-    </div>
-
-    <p id="loginError" style="color:#c0392b;font-size:12px;margin:10px 0;display:none">
-      Invalid username or password.
-    </p>
-
-    <button class="btn btn-primary" style="width:100%;margin-top:15px"
-            onclick="tryAdminLogin()">
-      Login
-    </button>
-
-    <p style="font-size:11px;color:#777;margin-top:12px">
-      Demo login: admin / admin123
-    </p>
-  </div>
-</div>
-
-<!-- ADMIN MODAL -->
-<div class="modal" id="adminModal">
-  <div class="modal-box">
-
-    <button class="modal-close" onclick="closeAdmin()">×</button>
-
-    <h2 style="color:var(--teal-900)">Easy Call Admin Panel</h2>
-
-    <div class="admin-tabs">
-      <button class="active" onclick="showAdminTab('requests',this)">Service Requests</button>
-      <button onclick="showAdminTab('teamAdmin',this)">Team</button>
-      <button onclick="showAdminTab('reviewsAdmin',this)">Reviews</button>
-      <button onclick="showAdminTab('reportsAdmin',this)">Test Reports</button>
-      <button onclick="showAdminTab('settingsAdmin',this)">Settings</button>
-    </div>
-
-    <!-- REQUESTS -->
-    <div class="admin-tab active" id="requests">
-      <div class="admin-note">
-        Service requests are stored in this browser using localStorage.
-        Do not use browser localStorage as a secure database for sensitive patient information.
-      </div>
-
-      <div class="admin-table-wrap">
-        <table class="admin-table">
-          <thead>
-            <tr>
-              <th>Date/Time</th>
-              <th>Patient</th>
-              <th>Age/Gender</th>
-              <th>Disease</th>
-              <th>Service</th>
-              <th>Address</th>
-              <th>Status</th>
-              <th>Delete</th>
-            </tr>
-          </thead>
-          <tbody id="reqTable"></tbody>
-        </table>
-      </div>
-    </div>
-
-    <!-- TEAM -->
-    <div class="admin-tab" id="teamAdmin">
-
-      <div class="admin-form">
-        <div class="field">
-          <label>Name</label>
-          <input id="teamName">
-        </div>
-        <div class="field">
-          <label>Role</label>
-          <input id="teamRole">
-        </div>
-        <div class="field">
-          <label>Qualification</label>
-          <input id="teamQual">
-        </div>
-        <div class="field">
-          <label>Experience</label>
-          <input id="teamExp">
-        </div>
-        <div class="field full">
-          <label>Specialization</label>
-          <input id="teamSpec">
-        </div>
-      </div>
-
-      <button class="btn btn-primary" onclick="addTeamMember()">+ Add Team Member</button>
-
-      <div class="admin-table-wrap" style="margin-top:18px">
-        <table class="admin-table">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Role</th>
-              <th>Qualification</th>
-              <th>Experience</th>
-              <th>Specialization</th>
-              <th>Delete</th>
-            </tr>
-          </thead>
-          <tbody id="teamTable"></tbody>
-        </table>
-      </div>
-    </div>
-
-    <!-- REVIEWS -->
-    <div class="admin-tab" id="reviewsAdmin">
-
-      <div class="admin-form">
-        <div class="field">
-          <label>Customer Name</label>
-          <input id="reviewName">
-        </div>
-        <div class="field">
-          <label>Rating</label>
-          <select id="reviewRating">
-            <option value="5">5 Stars</option>
-            <option value="4">4 Stars</option>
-            <option value="3">3 Stars</option>
-            <option value="2">2 Stars</option>
-            <option value="1">1 Star</option>
-          </select>
-        </div>
-        <div class="field full">
-          <label>Review</label>
-          <textarea id="reviewText"></textarea>
-        </div>
-      </div>
-
-      <button class="btn btn-primary" onclick="addReview()">+ Add Review</button>
-
-      <div class="admin-table-wrap" style="margin-top:18px">
-        <table class="admin-table">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Rating</th>
-              <th>Review</th>
-              <th>Delete</th>
-            </tr>
-          </thead>
-          <tbody id="reviewTable"></tbody>
-        </table>
-      </div>
-    </div>
-
-    <!-- REPORTS -->
-    <div class="admin-tab" id="reportsAdmin">
-
-      <div class="admin-note">
-        Add a patient's report using a unique access code and the last 4 digits
-        of the patient's registered phone number.
-      </div>
-
-      <div class="admin-form">
-        <div class="field">
-          <label>Patient Name</label>
-          <input id="reportPatient">
-        </div>
-        <div class="field">
-          <label>Last 4 Phone Digits</label>
-          <input id="reportPhone4" maxlength="4" inputmode="numeric">
-        </div>
-        <div class="field">
-          <label>Report Code</label>
-          <input id="reportCode" placeholder="ECH-1234">
-        </div>
-        <div class="field">
-          <label>Report Link / Information</label>
-          <input id="reportLink" placeholder="https://... or report information">
-        </div>
-      </div>
-
-      <button class="btn btn-primary" onclick="addReport()">+ Add Test Report</button>
-
-      <div class="admin-table-wrap" style="margin-top:18px">
-        <table class="admin-table">
-          <thead>
-            <tr>
-              <th>Code</th>
-              <th>Patient</th>
-              <th>Last 4</th>
-              <th>Report</th>
-              <th>Delete</th>
-            </tr>
-          </thead>
-          <tbody id="reportTable"></tbody>
-        </table>
-      </div>
-    </div>
-
-    <!-- SETTINGS -->
-    <div class="admin-tab" id="settingsAdmin">
-
-      <div class="admin-note">
-        Update the business contact information here. Changes are saved in this browser.
-      </div>
-
-      <div class="admin-form">
-
-        <div class="field">
-          <label>WhatsApp Number</label>
-          <input id="stWhatsapp">
-        </div>
-
-        <div class="field">
-          <label>Phone Number</label>
-          <input id="stPhone">
-        </div>
-
-        <div class="field">
-          <label>Email</label>
-          <input id="stEmail">
-        </div>
-
-        <div class="field">
-          <label>Opening Hours</label>
-          <input id="stHours">
-        </div>
-
-        <div class="field full">
-          <label>Address</label>
-          <input id="stAddress">
-        </div>
-
-        <div class="field">
-          <label>Facebook URL</label>
-          <input id="stFb">
-        </div>
-
-        <div class="field">
-          <label>Instagram URL</label>
-          <input id="stIg">
-        </div>
-
-        <div class="field">
-          <label>TikTok URL</label>
-          <input id="stTt">
-        </div>
-
-        <div class="field">
-          <label>YouTube URL</label>
-          <input id="stYt">
-        </div>
-
-        <div class="field">
-          <label>Twitter / X URL</label>
-          <input id="stTw">
-        </div>
-
-        <div class="field full">
-          <label>Google Maps Embed URL</label>
-          <input id="stMap">
-        </div>
-
-      </div>
-
-      <button class="btn btn-primary" onclick="saveSettings()">
-        💾 Save Settings
-      </button>
-
-    </div>
-
-  </div>
-</div>
-
-<script>
-/* =========================================================
-   EASY CALL HEALTH CARE HOME SERVICE
-   WORKING WHATSAPP + CALL + TEST REPORT SYSTEM
-   ========================================================= */
-
-const SETTINGS_KEY = 'ecs:settings';
-const TEAM_KEY = 'ecs:team';
-const REVIEWS_KEY = 'ecs:reviews';
-const REQUESTS_KEY = 'ecs:requests';
-const REPORTS_KEY = 'ecs:reports';
-
-const DEFAULT_SETTINGS = {
-  whatsapp:'923061912314',
-  phone:'03061912314',
-  email:'info@easycallhealthcare.pk',
-  address:'Bahawalpur (BWP), Punjab, Pakistan',
-  hours:'8:00 AM – 10:00 PM Daily',
-  fb:'',
-  ig:'',
-  tt:'',
-  yt:'',
-  tw:'',
-  map:'https://www.google.com/maps?q=Bahawalpur%20Punjab%20Pakistan&output=embed'
-};
-
-const DEFAULT_TEAM = [
-  {
-    name:'M. Bilal',
-    role:'Clinical Assistant',
-    qual:'CA Certificate (PVTC)',
-    exp:'6 years',
-    spec:'IV Drip, Wound Care, Injections'
-  },
-  {
-    name:'Sana Riaz',
-    role:'Female Nurse',
-    qual:'Nursing Diploma',
-    exp:'4 years',
-    spec:'Patient Care, Elderly Care, Vitals'
-  }
-];
-
-const DEFAULT_REVIEWS = [
-  {
-    name:'Placeholder Review',
-    rating:5,
-    text:'Add your real customer reviews here from the Admin Panel — placeholder shown until then.'
-  }
-];
-
-function safeGet(key, fallback){
-  try{
-    const value = localStorage.getItem(key);
-    return value ? JSON.parse(value) : fallback;
-  }catch(e){
-    return fallback;
-  }
-}
-
-function safeSet(key,value){
-  try{
-    localStorage.setItem(key,JSON.stringify(value));
-  }catch(e){}
-}
-
-function getSettings(){
-  return {...DEFAULT_SETTINGS,...safeGet(SETTINGS_KEY,{})};
-}
-
-function getTeam(){
-  return safeGet(TEAM_KEY,DEFAULT_TEAM);
-}
-
-function getReviews(){
-  return safeGet(REVIEWS_KEY,DEFAULT_REVIEWS);
-}
-
-function getRequests(){
-  return safeGet(REQUESTS_KEY,[]);
-}
-
-function getReports(){
-  return safeGet(REPORTS_KEY,[]);
-}
-
-/* =========================
-   WHATSAPP FIX
-   ========================= */
-
-function cleanPhoneNumber(number){
-  let n = String(number || '').replace(/\D/g,'');
-
-  if(n.startsWith('00')) n = n.substring(2);
-
-  if(n.startsWith('0')){
-    n = '92' + n.substring(1);
-  }
-
-  if(n.startsWith('923') && n.length >= 12){
-    return n;
-  }
-
-  return n;
-}
-
-function makeWhatsAppURL(message){
-  const settings = getSettings();
-  const phone = cleanPhoneNumber(settings.whatsapp || '03061912314');
-
-  return 'https://wa.me/' + phone + '?text=' + encodeURIComponent(message || '');
-}
-
-function openWhatsApp(message){
-  const url = makeWhatsAppURL(message);
-
-  /*
-    Use window.location.href instead of relying only on a popup.
-    This works much more reliably on mobile browsers and WebView.
-  */
-  window.location.href = url;
-  return false;
-}
-
-function setupWhatsAppButtons(){
-  const settings = getSettings();
-
-  const generalMessage =
-    'Hello Easy Call Health Care Home Service, I want information about your home healthcare services.';
-
-  const buttons = [
-    'heroWhatsApp',
-    'requestWhatsApp',
-    'contactWhatsApp',
-    'footerWhatsApp'
-  ];
-
-  buttons.forEach(id=>{
-    const el=document.getElementById(id);
-    if(el){
-      el.href=makeWhatsAppURL(generalMessage);
-      el.target='_blank';
-      el.rel='noopener';
-      el.onclick=null;
-    }
-  });
-}
-
-/* =========================
-   CALL BUTTONS FIX
-   ========================= */
-
-function setupCallButtons(){
-  const settings=getSettings();
-  const phone=cleanPhoneNumber(settings.phone || settings.whatsapp);
-
-  const ids=[
-    'heroCall',
-    'requestCall',
-    'contactPhone',
-    'footerCall',
-    'mobileCall'
-  ];
-
-  ids.forEach(id=>{
-    const el=document.getElementById(id);
-    if(el){
-      el.href='tel:+'+phone;
-    }
-  });
-
-  const phoneText=document.getElementById('phoneText');
-  if(phoneText) phoneText.textContent=formatPhone(settings.phone);
-
-  const whatsappText=document.getElementById('whatsappText');
-  if(whatsappText) whatsappText.textContent=formatPhone(settings.whatsapp);
-}
-
-function formatPhone(number){
-  const n=String(number || '03061912314').replace(/\D/g,'');
-
-  if(n.startsWith('92') && n.length>=12){
-    const local='0'+n.substring(2);
-    return local.substring(0,4)+'-'+local.substring(4);
-  }
-
-  if(n.length===11 && n.startsWith('03')){
-    return n.substring(0,4)+'-'+n.substring(4);
-  }
-
-  return number;
-}
-
-/* =========================
-   CONTACT
-   ========================= */
-
-function renderContact(){
-  const settings=getSettings();
-
-  document.getElementById('emailText').textContent=settings.email;
-  document.getElementById('addressText').textContent=settings.address;
-  document.getElementById('hoursText').textContent=settings.hours;
-
-  const email=document.getElementById('contactEmail');
-  email.href='mailto:'+settings.email;
-
-  const map=document.getElementById('mapFrame');
-  if(settings.map){
-    map.src=settings.map;
-  }
-}
-
-function validURL(value){
-  try{
-    const u=new URL(value);
-    return u.protocol==='http:' || u.protocol==='https:';
-  }catch(e){
-    return false;
-  }
-}
-
-function renderSocial(){
-  const settings=getSettings();
-  const box=document.getElementById('socialLinks');
-  box.innerHTML='';
-
-  const socials=[
-    ['Facebook',settings.fb],
-    ['Instagram',settings.ig],
-    ['TikTok',settings.tt],
-    ['YouTube',settings.yt],
-    ['X / Twitter',settings.tw]
-  ];
-
-  socials.forEach(([name,url])=>{
-    if(validURL(url)){
-      const a=document.createElement('a');
-      a.href=url;
-      a.target='_blank';
-      a.rel='noopener noreferrer';
-      a.textContent=name;
-      box.appendChild(a);
-    }
-  });
-}
-
-/* =========================
-   REQUEST FORM
-   ========================= */
-
-function submitRequest(event){
-  event.preventDefault();
-
-  const selected=[
-    ...document.querySelectorAll('.service-checks input[type="checkbox"]:checked')
-  ].map(x=>x.value);
-
-  if(selected.length===0){
-    alert('Please select at least one required home care service.');
-    return;
-  }
-
-  const data={
-    id:'REQ-'+Date.now(),
-    createdAt:new Date().toLocaleString(),
-    patientName:document.getElementById('patientName').value.trim(),
-    age:document.getElementById('patientAge').value.trim(),
-    gender:document.getElementById('gender').value,
-    mobile:document.getElementById('mobile').value.trim(),
-    whatsapp:document.getElementById('whatsapp').value.trim(),
-    date:document.getElementById('preferredDate').value,
-    time:document.getElementById('preferredTime').value,
-    address:document.getElementById('address').value.trim(),
-    disease:document.getElementById('disease').value.trim(),
-    services:selected,
-    message:document.getElementById('message').value.trim(),
-    status:'New'
-  };
-
-  const requests=getRequests();
-  requests.unshift(data);
-  safeSet(REQUESTS_KEY,requests);
-
-  const msg =
-`🏥 EASY CALL HEALTH CARE HOME SERVICE
-📋 HOME SERVICE REQUEST
-
-👤 Patient Name: ${data.patientName}
-🎂 Age: ${data.age}
-⚥ Gender: ${data.gender}
-🩺 Disease / Medical Condition: ${data.disease}
-
-📱 Mobile: ${data.mobile}
-💬 WhatsApp: ${data.whatsapp || 'Not provided'}
-
-📅 Preferred Date: ${data.date}
-⏰ Preferred Time: ${data.time}
-
-📍 Address:
-${data.address}
-
-🏥 Required Services:
-${data.services.map((s,i)=>(i+1)+'. '+s).join('\n')}
-
-📝 Additional Details:
-${data.message || 'None'}
-
-🆔 Request ID: ${data.id}
-
-Please confirm this home healthcare request.`;
-
-  const url=makeWhatsAppURL(msg);
-
-  /*
-    Direct WhatsApp navigation.
-    This is the important fix for "Submit Request on WhatsApp".
-  */
-  window.location.href=url;
-}
-
-/* =========================
-   TEST REPORT FIX
-   ========================= */
-
-function lookupReport(event){
-  event.preventDefault();
-
-  const code=document.getElementById('repCode').value.trim().toUpperCase();
-  const last4=document.getElementById('repPhone').value.trim();
-  const result=document.getElementById('reportResult');
-
-  result.className='report-result';
-  result.style.display='block';
-
-  if(!/^\d{4}$/.test(last4)){
-    result.classList.add('report-error');
-    result.innerHTML='❌ Please enter exactly the last 4 digits of the registered phone number.';
-    return;
-  }
-
-  const reports=getReports();
-
-  const report=reports.find(r =>
-    String(r.code).trim().toUpperCase()===code &&
-    String(r.phone4).trim()===last4
-  );
-
-  if(!report){
-    result.classList.add('report-error');
-    result.innerHTML=
-      '<strong>❌ Report Not Found</strong><br>' +
-      'Please check your Report Code and last 4 phone digits.';
-    return;
-  }
-
-  result.classList.add('report-success');
-
-  let html=
-    '<strong>✅ Report Found</strong><br><br>' +
-    '<b>Patient:</b> '+escapeHtml(report.patient)+'<br>' +
-    '<b>Report Code:</b> '+escapeHtml(report.code)+'<br><br>';
-
-  if(validURL(report.link)){
-    html +=
-      '<a class="btn btn-primary btn-small" target="_blank" rel="noopener" href="' +
-      escapeAttribute(report.link) +
-      '">📄 Open / Download Test Report</a>';
-  }else{
-    html +=
-      '<div style="white-space:pre-wrap;background:#fff;padding:12px;border-radius:10px">' +
-      escapeHtml(report.link || 'Report information is not available.') +
-      '</div>';
-  }
-
-  result.innerHTML=html;
-}
-
-/* =========================
-   TEAM
-   ========================= */
-
-function initials(name){
-  return String(name || 'EC')
-    .split(/\s+/)
-    .filter(Boolean)
-    .slice(0,2)
-    .map(x=>x[0].toUpperCase())
-    .join('');
-}
-
-function renderTeam(){
-  const team=getTeam();
-  const grid=document.getElementById('teamGrid');
-
-  grid.innerHTML=team.map(member=>`
-    <div class="team-card">
-      <div class="avatar">${escapeHtml(initials(member.name))}</div>
-      <h3>${escapeHtml(member.name)}</h3>
-      <div class="role">${escapeHtml(member.role)}</div>
-      <p><strong>${escapeHtml(member.qual)}</strong></p>
-      <p>${escapeHtml(member.exp)} experience</p>
-      <p>${escapeHtml(member.spec)}</p>
-    </div>
-  `).join('');
-}
-
-/* =========================
-   REVIEWS
-   ========================= */
-
-function renderReviews(){
-  const reviews=getReviews();
-  const grid=document.getElementById('reviewGrid');
-
-  grid.innerHTML=reviews.map(r=>{
-    const stars='★'.repeat(Math.max(1,Math.min(5,Number(r.rating)||5)));
-
-    return `
-      <div class="review-card">
-        <div class="stars">${stars}</div>
-        <p>“${escapeHtml(r.text)}”</p>
-        <strong>${escapeHtml(r.name)}</strong>
-      </div>
-    `;
-  }).join('');
-}
-
-/* =========================
-   ADMIN LOGIN
-   ========================= */
-
-function openAdminLogin(){
-  document.getElementById('loginModal').classList.add('show');
-  document.getElementById('adminUser').focus();
-}
-
-function tryAdminLogin(){
-  const user=document.getElementById('adminUser').value.trim();
-  const pass=document.getElementById('adminPass').value;
-
-  if(user==='admin' && pass==='admin123'){
-    closeModal('loginModal');
-    document.getElementById('adminModal').classList.add('show');
-    renderAdmin();
-  }else{
-    document.getElementById('loginError').style.display='block';
-  }
-}
-
-function closeAdmin(){
-  document.getElementById('adminModal').classList.remove('show');
-}
-
-function closeModal(id){
-  document.getElementById(id).classList.remove('show');
-}
-
-function showAdminTab(id,button){
-  document.querySelectorAll('.admin-tab').forEach(x=>x.classList.remove('active'));
-  document.querySelectorAll('.admin-tabs button').forEach(x=>x.classList.remove('active'));
-
-  document.getElementById(id).classList.add('active');
-
-  if(button) button.classList.add('active');
-
-  renderAdmin();
-}
-
-/* =========================
-   ADMIN REQUESTS
-   ========================= */
-
-function renderReqTable(){
-  const tbody=document.getElementById('reqTable');
-  const requests=getRequests();
-
-  if(!requests.length){
-    tbody.innerHTML='<tr><td colspan="8">No service requests yet.</td></tr>';
-    return;
-  }
-
-  tbody.innerHTML=requests.map((r,index)=>`
-    <tr>
-      <td>${escapeHtml(r.createdAt)}</td>
-      <td>
-        <strong>${escapeHtml(r.patientName)}</strong><br>
-        ${escapeHtml(r.mobile)}
-      </td>
-      <td>${escapeHtml(r.age)} / ${escapeHtml(r.gender)}</td>
-      <td>${escapeHtml(r.disease)}</td>
-      <td>${escapeHtml((r.services||[]).join(', '))}</td>
-      <td>${escapeHtml(r.address)}</td>
-      <td>
-        <select class="status-select" onchange="updateStatus(${index},this.value)">
-          ${['New','Contacted','Confirmed','Completed','Cancelled']
-            .map(s=>`<option ${r.status===s?'selected':''}>${s}</option>`).join('')}
-        </select>
-      </td>
-      <td>
-        <button class="danger" onclick="deleteRequest(${index})">Delete</button>
-      </td>
-    </tr>
-  `).join('');
-}
-
-function updateStatus(index,status){
-  const requests=getRequests();
-  if(requests[index]){
-    requests[index].status=status;
-    safeSet(REQUESTS_KEY,requests);
-    renderReqTable();
-  }
-}
-
-function deleteRequest(index){
-  if(!confirm('Delete this service request?')) return;
-
-  const requests=getRequests();
-  requests.splice(index,1);
-  safeSet(REQUESTS_KEY,requests);
-  renderReqTable();
-}
-
-/* =========================
-   ADMIN TEAM
-   ========================= */
-
-function renderTeamTable(){
-  const tbody=document.getElementById('teamTable');
-  const team=getTeam();
-
-  tbody.innerHTML=team.map((m,i)=>`
-    <tr>
-      <td>${escapeHtml(m.name)}</td>
-      <td>${escapeHtml(m.role)}</td>
-      <td>${escapeHtml(m.qual)}</td>
-      <td>${escapeHtml(m.exp)}</td>
-      <td>${escapeHtml(m.spec)}</td>
-      <td><button class="danger" onclick="deleteTeam(${i})">Delete</button></td>
-    </tr>
-  `).join('');
-}
-
-function addTeamMember(){
-  const member={
-    name:document.getElementById('teamName').value.trim(),
-    role:document.getElementById('teamRole').value.trim(),
-    qual:document.getElementById('teamQual').value.trim(),
-    exp:document.getElementById('teamExp').value.trim(),
-    spec:document.getElementById('teamSpec').value.trim()
-  };
-
-  if(!member.name || !member.role){
-    alert('Please enter name and role.');
-    return;
-  }
-
-  const team=getTeam();
-  team.push(member);
-  safeSet(TEAM_KEY,team);
-
-  ['teamName','teamRole','teamQual','teamExp','teamSpec']
-    .forEach(id=>document.getElementById(id).value='');
-
-  renderTeam();
-  renderTeamTable();
-}
-
-function deleteTeam(index){
-  if(!confirm('Delete this team member?')) return;
-
-  const team=getTeam();
-  team.splice(index,1);
-  safeSet(TEAM_KEY,team);
-
-  renderTeam();
-  renderTeamTable();
-}
-
-/* =========================
-   ADMIN REVIEWS
-   ========================= */
-
-function renderReviewTable(){
-  const tbody=document.getElementById('reviewTable');
-  const reviews=getReviews();
-
-  tbody.innerHTML=reviews.map((r,i)=>`
-    <tr>
-      <td>${escapeHtml(r.name)}</td>
-      <td>${'★'.repeat(Number(r.rating)||5)}</td>
-      <td>${escapeHtml(r.text)}</td>
-      <td><button class="danger" onclick="deleteReview(${i})">Delete</button></td>
-    </tr>
-  `).join('');
-}
-
-function addReview(){
-  const review={
-    name:document.getElementById('reviewName').value.trim(),
-    rating:Number(document.getElementById('reviewRating').value),
-    text:document.getElementById('reviewText').value.trim()
-  };
-
-  if(!review.name || !review.text){
-    alert('Please enter customer name and review.');
-    return;
-  }
-
-  const reviews=getReviews();
-
-  /*
-    Remove placeholder automatically when first real review is added.
-  */
-  const filtered=reviews.filter(r=>r.name!=='Placeholder Review');
-  filtered.push(review);
-
-  safeSet(REVIEWS_KEY,filtered);
-
-  document.getElementById('reviewName').value='';
-  document.getElementById('reviewText').value='';
-
-  renderReviews();
-  renderReviewTable();
-}
-
-function deleteReview(index){
-  if(!confirm('Delete this review?')) return;
-
-  const reviews=getReviews();
-  reviews.splice(index,1);
-
-  if(!reviews.length){
-    reviews.push(DEFAULT_REVIEWS[0]);
-  }
-
-  safeSet(REVIEWS_KEY,reviews);
-
-  renderReviews();
-  renderReviewTable();
-}
-
-/* =========================
-   ADMIN REPORTS
-   ========================= */
-
-function genCode(){
-  return 'ECH-' + Math.floor(1000 + Math.random()*9000);
-}
-
-function addReport(){
-  const patient=document.getElementById('reportPatient').value.trim();
-  const phone4=document.getElementById('reportPhone4').value.trim();
-  let code=document.getElementById('reportCode').value.trim().toUpperCase();
-  const link=document.getElementById('reportLink').value.trim();
-
-  if(!patient || !/^\d{4}$/.test(phone4) || !link){
-    alert('Please enter patient name, exactly 4 phone digits and report link/information.');
-    return;
-  }
-
-  if(!code) code=genCode();
-
-  const reports=getReports();
-
-  if(reports.some(r=>String(r.code).toUpperCase()===code)){
-    alert('This report code already exists. Please use another code.');
-    return;
-  }
-
-  reports.push({
-    patient,
-    phone4,
-    code,
-    link
-  });
-
-  safeSet(REPORTS_KEY,reports);
-
-  document.getElementById('reportPatient').value='';
-  document.getElementById('reportPhone4').value='';
-  document.getElementById('reportCode').value='';
-  document.getElementById('reportLink').value='';
-
-  renderReportTable();
-
-  alert('Report added successfully.\nReport Code: '+code);
-}
-
-function renderReportTable(){
-  const tbody=document.getElementById('reportTable');
-  const reports=getReports();
-
-  if(!reports.length){
-    tbody.innerHTML='<tr><td colspan="5">No test reports added yet.</td></tr>';
-    return;
-  }
-
-  tbody.innerHTML=reports.map((r,i)=>`
-    <tr>
-      <td><strong>${escapeHtml(r.code)}</strong></td>
-      <td>${escapeHtml(r.patient)}</td>
-      <td>${escapeHtml(r.phone4)}</td>
-      <td>${validURL(r.link)
-        ? '<a href="'+escapeAttribute(r.link)+'" target="_blank">Open</a>'
-        : escapeHtml(r.link)}</td>
-      <td><button class="danger" onclick="deleteReport(${i})">Delete</button></td>
-    </tr>
-  `).join('');
-}
-
-function deleteReport(index){
-  if(!confirm('Delete this test report?')) return;
-
-  const reports=getReports();
-  reports.splice(index,1);
-  safeSet(REPORTS_KEY,reports);
-  renderReportTable();
-}
-
-/* =========================
-   SETTINGS
-   ========================= */
-
-function fillSettingsForm(){
-  const s=getSettings();
-
-  document.getElementById('stWhatsapp').value=s.whatsapp;
-  document.getElementById('stPhone').value=s.phone;
-  document.getElementById('stEmail').value=s.email;
-  document.getElementById('stAddress').value=s.address;
-  document.getElementById('stHours').value=s.hours;
-  document.getElementById('stFb').value=s.fb;
-  document.getElementById('stIg').value=s.ig;
-  document.getElementById('stTt').value=s.tt;
-  document.getElementById('stYt').value=s.yt;
-  document.getElementById('stTw').value=s.tw;
-  document.getElementById('stMap').value=s.map;
-}
-
-function saveSettings(){
-  const settings={
-    whatsapp:document.getElementById('stWhatsapp').value.trim(),
-    phone:document.getElementById('stPhone').value.trim(),
-    email:document.getElementById('stEmail').value.trim(),
-    address:document.getElementById('stAddress').value.trim(),
-    hours:document.getElementById('stHours').value.trim(),
-    fb:document.getElementById('stFb').value.trim(),
-    ig:document.getElementById('stIg').value.trim(),
-    tt:document.getElementById('stTt').value.trim(),
-    yt:document.getElementById('stYt').value.trim(),
-    tw:document.getElementById('stTw').value.trim(),
-    map:document.getElementById('stMap').value.trim()
-  };
-
-  safeSet(SETTINGS_KEY,settings);
-
-  setupWhatsAppButtons();
-  setupCallButtons();
-  renderContact();
-  renderSocial();
-
-  alert('Settings saved successfully.');
-}
-
-/* =========================
-   ADMIN RENDER
-   ========================= */
-
-function renderAdmin(){
-  renderReqTable();
-  renderTeamTable();
-  renderReviewTable();
-  renderReportTable();
-  fillSettingsForm();
-}
-
-/* =========================
-   SECURITY / HTML ESCAPING
-   ========================= */
-
-function escapeHtml(value){
-  return String(value ?? '')
-    .replace(/&/g,'&amp;')
-    .replace(/</g,'&lt;')
-    .replace(/>/g,'&gt;')
-    .replace(/"/g,'&quot;')
-    .replace(/'/g,'&#039;');
-}
-
-function escapeAttribute(value){
-  return escapeHtml(value);
-}
-
-/* =========================
-   MOBILE MENU
-   ========================= */
-
-function toggleMenu(){
-  document.getElementById('navLinks').classList.toggle('show');
-}
-
-function closeMenu(){
-  document.getElementById('navLinks').classList.remove('show');
-}
-
-/* =========================
-   INITIALIZE
-   ========================= */
-
-function loadAll(){
-
-  if(!localStorage.getItem(TEAM_KEY)){
-    safeSet(TEAM_KEY,DEFAULT_TEAM);
-  }
-
-  if(!localStorage.getItem(REVIEWS_KEY)){
-    safeSet(REVIEWS_KEY,DEFAULT_REVIEWS);
-  }
-
-  if(!localStorage.getItem(SETTINGS_KEY)){
-    safeSet(SETTINGS_KEY,DEFAULT_SETTINGS);
-  }
-
-  if(!localStorage.getItem(REQUESTS_KEY)){
-    safeSet(REQUESTS_KEY,[]);
-  }
-
-  if(!localStorage.getItem(REPORTS_KEY)){
-    safeSet(REPORTS_KEY,[]);
-  }
-
-  setupWhatsAppButtons();
-  setupCallButtons();
-  renderContact();
-  renderSocial();
-  renderTeam();
-  renderReviews();
-
-  const dateInput=document.getElementById('preferredDate');
-
-  const now=new Date();
-  const localDate=
-    now.getFullYear()+'-'+
-    String(now.getMonth()+1).padStart(2,'0')+'-'+
-    String(now.getDate()).padStart(2,'0');
-
-  dateInput.min=localDate;
-
-  document.getElementById('year').textContent=now.getFullYear();
-}
-
-/* =========================
-   MODAL CONTROLS
-   ========================= */
-
-document.querySelectorAll('.modal').forEach(modal=>{
-  modal.addEventListener('click',function(e){
-    if(e.target===modal){
-      modal.classList.remove('show');
-    }
-  });
-});
-
-document.addEventListener('keydown',function(e){
-  if(e.key==='Escape'){
-    document.querySelectorAll('.modal.show')
-      .forEach(m=>m.classList.remove('show'));
-  }
-});
-
-/* =========================
-   START
-   ========================= */
-
-loadAll();
-
-</script>
-
+    <!-- JavaScript for Page Switching -->
+    <script>
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active-page'));
+
+            // Show selected page
+            document.getElementById(pageId).classList.add('active-page');
+        }
+    </script>
 </body>
 </html>
