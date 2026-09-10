@@ -3,2004 +3,2930 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Easy Call Health Care Home Service</title>
 
 <style>
-:root{
-  --bg:#06110f;
-  --bg2:#0a1c18;
-  --card:#0d2420;
-  --gold:#d8b15a;
-  --gold2:#f5d98b;
-  --white:#f8f5ed;
-  --muted:#b9c4bf;
-  --green:#0e3029;
-  --border:rgba(216,177,90,.28);
-  --shadow:0 20px 60px rgba(0,0,0,.45);
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-*{box-sizing:border-box;margin:0;padding:0}
-
 html{
-  scroll-behavior:smooth;
+    scroll-behavior:smooth;
 }
 
 body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:
-    radial-gradient(circle at top right,rgba(216,177,90,.10),transparent 30%),
-    radial-gradient(circle at bottom left,rgba(15,90,70,.18),transparent 35%),
-    var(--bg);
-  color:var(--white);
-  min-height:100vh;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#020b08;
+    color:#fff;
+    overflow-x:hidden;
 }
 
-button,input,select,textarea{
-  font:inherit;
+:root{
+    --gold:#e5bd55;
+    --gold-light:#ffe99b;
+    --gold-dark:#9d7625;
+    --green:#06251b;
+    --green2:#0b3528;
+    --black:#020b08;
+    --white:#fff;
+    --muted:#d1d5d1;
 }
 
-a{
-  text-decoration:none;
-  color:inherit;
+/* ================= NAVBAR ================= */
+
+.topbar{
+    height:42px;
+    background:#020b08;
+    border-bottom:1px solid #87651f;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 4%;
+    color:#fff;
+    font-size:13px;
 }
 
-.container{
-  width:min(1180px,92%);
-  margin:auto;
+.topbar-left{
+    color:var(--gold-light);
 }
 
-/* NAVBAR */
+.topbar-right{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.facebook-top{
+    width:24px;
+    height:24px;
+    border-radius:50%;
+    background:#1877f2;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+}
+
 .navbar{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:rgba(4,15,13,.94);
-  backdrop-filter:blur(15px);
-  border-bottom:1px solid var(--border);
+    height:82px;
+    background:rgba(1,13,9,.97);
+    border-bottom:1px solid rgba(229,189,85,.35);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 3%;
+    position:sticky;
+    top:0;
+    z-index:999;
+    box-shadow:0 5px 30px rgba(0,0,0,.5);
 }
 
-.nav-inner{
-  min-height:76px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
+.logo-area{
+    display:flex;
+    align-items:center;
+    gap:12px;
 }
 
-.brand{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  cursor:pointer;
+.logo-circle{
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    border:2px solid var(--gold);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--gold-light);
+    font-size:38px;
+    position:relative;
+    box-shadow:0 0 18px rgba(229,189,85,.25);
 }
 
-.brand-logo{
-  width:48px;
-  height:48px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:linear-gradient(145deg,#f6dc91,#a77a2a);
-  color:#092019;
-  font-size:25px;
-  box-shadow:0 0 20px rgba(216,177,90,.25);
+.logo-circle:before{
+    content:"✚";
+    font-size:40px;
 }
 
-.brand-text strong{
-  display:block;
-  color:var(--gold2);
-  font-size:16px;
-  letter-spacing:.5px;
+.logo-text h1{
+    font-family:Georgia,serif;
+    color:var(--gold-light);
+    font-size:25px;
+    line-height:.95;
 }
 
-.brand-text span{
-  color:var(--muted);
-  font-size:11px;
+.logo-text p{
+    color:#fff;
+    font-size:12px;
+    margin-top:5px;
 }
 
 .nav-links{
-  display:flex;
-  gap:7px;
-  flex-wrap:wrap;
-  justify-content:flex-end;
+    display:flex;
+    align-items:center;
+    gap:7px;
 }
 
-.nav-links button{
-  background:transparent;
-  color:#dce5df;
-  border:1px solid transparent;
-  padding:10px 15px;
-  border-radius:25px;
-  cursor:pointer;
-  transition:.25s;
+.nav-links a{
+    color:#fff;
+    text-decoration:none;
+    padding:12px 17px;
+    border-radius:25px;
+    font-size:14px;
+    transition:.3s;
 }
 
-.nav-links button:hover,
-.nav-links button.active{
-  border-color:var(--border);
-  color:var(--gold2);
-  background:rgba(216,177,90,.08);
+.nav-links a:hover,
+.nav-links a.active{
+    background:linear-gradient(135deg,#f6d979,#a87b26);
+    color:#050c08;
+    font-weight:bold;
 }
 
-/* PAGES */
-.page{
-  display:none;
-  animation:fade .35s ease;
-}
+/* ================= HERO ================= */
 
-.page.active{
-  display:block;
-}
-
-@keyframes fade{
-  from{opacity:0;transform:translateY(8px)}
-  to{opacity:1;transform:translateY(0)}
-}
-
-/* HERO */
 .hero{
-  min-height:650px;
-  display:flex;
-  align-items:center;
-  padding:70px 0;
+    min-height:570px;
+    position:relative;
+    background:
+        radial-gradient(circle at 70% 45%,rgba(197,157,53,.20),transparent 28%),
+        linear-gradient(90deg,#020a07 5%,#062219 42%,#082d21 100%);
+    overflow:hidden;
 }
 
-.hero-grid{
-  display:grid;
-  grid-template-columns:1.2fr .8fr;
-  gap:45px;
-  align-items:center;
+.hero:after{
+    content:"";
+    position:absolute;
+    right:-150px;
+    top:-100px;
+    width:650px;
+    height:650px;
+    border-radius:50%;
+    background:radial-gradient(circle,rgba(218,176,70,.13),transparent 65%);
 }
 
-.badge{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding:9px 16px;
-  border:1px solid var(--border);
-  border-radius:30px;
-  color:var(--gold2);
-  background:rgba(216,177,90,.07);
-  margin-bottom:20px;
-  font-size:13px;
+.hero-inner{
+    width:94%;
+    max-width:1500px;
+    min-height:570px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:50% 50%;
+    align-items:center;
+    position:relative;
+    z-index:2;
 }
 
-.hero h1{
-  font-size:clamp(38px,6vw,70px);
-  line-height:1.02;
-  margin-bottom:22px;
+.hero-content{
+    padding:45px 15px 45px 20px;
 }
 
-.gold{
-  color:var(--gold2);
+.hero-small{
+    font-size:14px;
+    letter-spacing:3px;
+    color:#e9e9e9;
+    margin-bottom:15px;
 }
 
-.hero p{
-  color:var(--muted);
-  line-height:1.8;
-  max-width:680px;
-  font-size:17px;
+.hero h2{
+    font-family:Georgia,serif;
+    font-size:58px;
+    line-height:.98;
+    color:var(--gold-light);
+    text-transform:uppercase;
+    text-shadow:0 3px 15px rgba(0,0,0,.5);
+}
+
+.hero h2 span{
+    color:#fff;
+}
+
+.hero-description{
+    margin-top:20px;
+    color:#e5e7e5;
+    font-size:16px;
+    line-height:1.6;
+    max-width:620px;
 }
 
 .hero-buttons{
-  display:flex;
-  gap:13px;
-  flex-wrap:wrap;
-  margin-top:30px;
+    display:flex;
+    gap:15px;
+    margin-top:28px;
+    flex-wrap:wrap;
 }
 
-.btn{
-  border:0;
-  border-radius:12px;
-  padding:14px 22px;
-  cursor:pointer;
-  font-weight:bold;
-  transition:.25s;
+.gold-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    min-width:215px;
+    padding:15px 25px;
+    border-radius:35px;
+    text-decoration:none;
+    font-weight:bold;
+    color:#07130e;
+    background:linear-gradient(135deg,#ffe99b,#b47f22);
+    box-shadow:0 8px 25px rgba(0,0,0,.3);
+    border:none;
+    cursor:pointer;
+    transition:.3s;
 }
 
-.btn-gold{
-  background:linear-gradient(135deg,#f2d47d,#ad7d2b);
-  color:#071510;
-  box-shadow:0 10px 30px rgba(216,177,90,.18);
+.gold-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 30px rgba(229,189,85,.3);
 }
 
-.btn-gold:hover{
-  transform:translateY(-2px);
-  box-shadow:0 15px 35px rgba(216,177,90,.25);
+.whatsapp-btn{
+    background:linear-gradient(135deg,#19d66a,#0b943f);
+    color:#fff;
 }
 
-.btn-outline{
-  border:1px solid var(--border);
-  background:rgba(255,255,255,.02);
-  color:var(--gold2);
+.hero-points{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    margin-top:28px;
 }
 
-.btn-outline:hover{
-  background:rgba(216,177,90,.08);
+.hero-point{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    color:#fff;
+    font-size:12px;
 }
 
-.hero-card{
-  background:
-    linear-gradient(145deg,rgba(216,177,90,.12),rgba(255,255,255,.02)),
-    var(--card);
-  border:1px solid var(--border);
-  border-radius:30px;
-  padding:40px;
-  box-shadow:var(--shadow);
-  text-align:center;
+.hero-point-icon{
+    color:var(--gold-light);
+    font-size:23px;
 }
 
-.medical-logo{
-  width:150px;
-  height:150px;
-  margin:0 auto 25px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:80px;
-  background:radial-gradient(circle,#193d34,#081915);
-  border:2px solid var(--gold);
-  box-shadow:0 0 45px rgba(216,177,90,.17);
+.hero-visual{
+    min-height:570px;
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+    position:relative;
 }
 
-.hero-card h3{
-  color:var(--gold2);
-  margin-bottom:12px;
+.hero-photo{
+    width:100%;
+    height:570px;
+    background:
+        linear-gradient(90deg,rgba(3,15,10,.1),rgba(3,15,10,0)),
+        url("https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=90");
+    background-size:cover;
+    background-position:center;
+    border-left:1px solid rgba(229,189,85,.3);
+    position:relative;
 }
 
-.hero-card p{
-  font-size:14px;
+.hero-photo:after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(90deg,#062219 0%,transparent 30%);
 }
 
-/* SECTIONS */
+.hero-message{
+    position:absolute;
+    left:7%;
+    top:75px;
+    z-index:3;
+    font-family:cursive;
+    color:var(--gold-light);
+    font-size:42px;
+    line-height:1;
+    text-shadow:0 3px 12px #000;
+}
+
+/* ================= SERVICES STRIP ================= */
+
+.service-strip{
+    background:#04150f;
+    border-top:1px solid var(--gold-dark);
+    border-bottom:1px solid var(--gold-dark);
+    padding:10px 2%;
+}
+
+.service-strip-inner{
+    max-width:1500px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(8,1fr);
+}
+
+.service-mini{
+    text-align:center;
+    padding:9px 5px;
+    border-right:1px solid rgba(229,189,85,.15);
+}
+
+.service-mini:last-child{
+    border-right:0;
+}
+
+.service-mini-icon{
+    width:48px;
+    height:48px;
+    margin:auto;
+    border:1px solid var(--gold);
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--gold-light);
+    font-size:24px;
+    background:#03120d;
+}
+
+.service-mini p{
+    margin-top:7px;
+    font-size:11px;
+    color:#fff;
+}
+
+/* ================= SECTIONS ================= */
+
+.container{
+    width:94%;
+    max-width:1450px;
+    margin:auto;
+}
+
 .section{
-  padding:75px 0;
+    padding:45px 0;
 }
 
 .section-title{
-  text-align:center;
-  margin-bottom:45px;
+    text-align:center;
+    margin-bottom:28px;
 }
 
 .section-title small{
-  color:var(--gold);
-  letter-spacing:2px;
-  text-transform:uppercase;
+    color:var(--gold);
+    letter-spacing:3px;
+    text-transform:uppercase;
 }
 
 .section-title h2{
-  font-size:38px;
-  margin:10px 0;
+    font-family:Georgia,serif;
+    color:var(--gold-light);
+    font-size:36px;
+    margin-top:8px;
 }
 
 .section-title p{
-  color:var(--muted);
+    color:#c5ccc7;
+    margin-top:8px;
 }
 
-/* CARDS */
-.cards{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
+/* ================= WHY CHOOSE ================= */
+
+.why{
+    background:
+        radial-gradient(circle at 50% 50%,rgba(212,171,63,.08),transparent 35%),
+        #041811;
 }
 
-.card{
-  background:linear-gradient(145deg,rgba(255,255,255,.035),rgba(216,177,90,.025));
-  border:1px solid var(--border);
-  border-radius:20px;
-  padding:25px;
-  transition:.3s;
+.why-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:25px;
+    align-items:center;
 }
 
-.card:hover{
-  transform:translateY(-5px);
-  border-color:rgba(216,177,90,.55);
-  box-shadow:0 18px 45px rgba(0,0,0,.25);
+.why-box{
+    background:rgba(0,0,0,.20);
+    border:1px solid rgba(229,189,85,.35);
+    border-radius:20px;
+    padding:25px;
 }
 
-.card-icon{
-  font-size:35px;
-  margin-bottom:15px;
+.why-box h2{
+    font-family:Georgia,serif;
+    color:var(--gold-light);
+    font-size:30px;
+    margin-bottom:20px;
 }
 
-.card h3{
-  color:var(--gold2);
-  margin-bottom:10px;
+.why-list{
+    list-style:none;
 }
 
-.card p{
-  color:var(--muted);
-  line-height:1.65;
-  font-size:14px;
+.why-list li{
+    margin:13px 0;
+    color:#e8ece9;
+    font-size:14px;
 }
 
-/* STATS */
+.why-list li:before{
+    content:"✓";
+    width:22px;
+    height:22px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:linear-gradient(135deg,#ffe78d,#ae7c24);
+    color:#07120d;
+    font-weight:bold;
+    margin-right:9px;
+}
+
+.center-logo{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.big-logo{
+    width:280px;
+    height:280px;
+    border-radius:50%;
+    border:2px solid var(--gold);
+    background:radial-gradient(circle,#123e2c,#020b08 70%);
+    box-shadow:0 0 60px rgba(229,189,85,.15);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    position:relative;
+}
+
+.big-logo:before{
+    content:"♕";
+    color:var(--gold-light);
+    font-size:43px;
+    position:absolute;
+    top:15px;
+}
+
+.big-logo-symbol{
+    font-size:65px;
+    color:var(--gold-light);
+}
+
+.big-logo h3{
+    font-family:Georgia,serif;
+    color:var(--gold-light);
+    font-size:25px;
+}
+
+.big-logo p{
+    font-size:12px;
+    color:#fff;
+}
+
+/* ================= OWNER ================= */
+
+.owner-card{
+    background:linear-gradient(135deg,#0a2c20,#03120d);
+    border:1px solid rgba(229,189,85,.45);
+    border-radius:20px;
+    padding:20px;
+}
+
+.owner-title{
+    font-size:26px;
+    margin-bottom:8px;
+}
+
+.owner-title span{
+    color:var(--gold-light);
+}
+
+.owner-profile{
+    display:flex;
+    gap:18px;
+    align-items:center;
+    margin-top:15px;
+}
+
+.owner-avatar{
+    width:155px;
+    height:175px;
+    border-radius:18px;
+    border:2px solid var(--gold);
+    background:linear-gradient(145deg,#183f31,#071710);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:75px;
+    flex-shrink:0;
+}
+
+.owner-name{
+    font-family:Georgia,serif;
+    color:var(--gold-light);
+    font-size:24px;
+}
+
+.owner-role{
+    display:inline-block;
+    margin-top:8px;
+    padding:7px 13px;
+    border-radius:15px;
+    background:linear-gradient(135deg,#ffe99b,#ad7b24);
+    color:#07130e;
+    font-weight:bold;
+    font-size:12px;
+}
+
+.owner-quote{
+    margin-top:14px;
+    color:#d6ddd8;
+    line-height:1.5;
+    font-size:13px;
+}
+
+/* ================= STATS ================= */
+
 .stats{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:15px;
+    background:#03120d;
+    border-top:1px solid rgba(229,189,85,.2);
+    border-bottom:1px solid rgba(229,189,85,.2);
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
 }
 
 .stat{
-  text-align:center;
-  padding:25px;
-  border:1px solid var(--border);
-  background:rgba(255,255,255,.025);
-  border-radius:18px;
+    text-align:center;
+    padding:20px;
+    border-right:1px solid rgba(229,189,85,.15);
+}
+
+.stat:last-child{
+    border-right:0;
+}
+
+.stat-icon{
+    color:var(--gold-light);
+    font-size:30px;
 }
 
 .stat strong{
-  display:block;
-  color:var(--gold2);
-  font-size:28px;
-  margin-bottom:5px;
+    display:block;
+    font-size:27px;
+    color:#fff;
+    margin:5px 0;
 }
 
 .stat span{
-  color:var(--muted);
-  font-size:13px;
+    color:#c5ccc8;
+    font-size:13px;
 }
 
-/* SERVICE */
-.service-list{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:20px;
+/* ================= BOOKING CTA ================= */
+
+.booking-cta{
+    margin-top:20px;
+    background:linear-gradient(90deg,#ffe99b,#bd8a29);
+    border-radius:17px;
+    padding:18px 25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    color:#07120d;
 }
 
-.service-box{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:22px;
-  padding:28px;
+.booking-cta h2{
+    font-size:24px;
 }
 
-.service-box h3{
-  color:var(--gold2);
-  margin-bottom:17px;
+.booking-cta p{
+    margin-top:4px;
 }
 
-.service-box ul{
-  list-style:none;
-  display:grid;
-  gap:9px;
+.dark-btn{
+    background:#07120d;
+    color:#fff;
+    padding:13px 25px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    border:1px solid rgba(255,255,255,.2);
 }
 
-.service-box li{
-  color:#d6ded9;
-  font-size:14px;
+/* ================= SERVICES CARDS ================= */
+
+.services-section{
+    background:#04160f;
 }
 
-.service-box li::before{
-  content:"✓";
-  color:var(--gold2);
-  margin-right:9px;
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:15px;
 }
 
-/* BOOKING */
-.booking-wrap{
-  display:grid;
-  grid-template-columns:.72fr 1.28fr;
-  gap:25px;
-  align-items:start;
+.service-card{
+    min-height:125px;
+    border:1px solid rgba(229,189,85,.45);
+    border-radius:12px;
+    overflow:hidden;
+    background:#0a2a20;
+    position:relative;
+}
+
+.service-card-image{
+    height:90px;
+    background-size:cover;
+    background-position:center;
+}
+
+.service-card:nth-child(1) .service-card-image{
+    background-image:url("https://images.unsplash.com/photo-1550831107-1553da8c8464?auto=format&fit=crop&w=500&q=80");
+}
+
+.service-card:nth-child(2) .service-card-image{
+    background-image:url("https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=500&q=80");
+}
+
+.service-card:nth-child(3) .service-card-image{
+    background-image:url("https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=500&q=80");
+}
+
+.service-card:nth-child(4) .service-card-image{
+    background-image:url("https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=500&q=80");
+}
+
+.service-card:nth-child(5) .service-card-image{
+    background-image:url("https://images.unsplash.com/photo-1511174511562-5f7f18b874f8?auto=format&fit=crop&w=500&q=80");
+}
+
+.service-card:nth-child(6) .service-card-image{
+    background-image:url("https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=500&q=80");
+}
+
+.service-card h3{
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    padding:8px;
+    text-align:center;
+    background:rgba(0,0,0,.75);
+    font-size:12px;
+    color:#fff;
+}
+
+/* ================= REPORT CTA ================= */
+
+.report-cta{
+    background:linear-gradient(90deg,#ffe99b,#bd8927);
+    border-radius:17px;
+    padding:20px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    color:#07130d;
+}
+
+.report-left{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.report-icon{
+    width:55px;
+    height:55px;
+    border-radius:12px;
+    background:#07130d;
+    color:var(--gold-light);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+}
+
+.report-cta h2{
+    font-size:20px;
+}
+
+.report-cta p{
+    margin-top:5px;
+    font-size:12px;
+}
+
+/* ================= BOOKING PAGE ================= */
+
+.page{
+    display:none;
+}
+
+.page.active{
+    display:block;
+}
+
+.page-header{
+    padding:55px 20px;
+    text-align:center;
+    background:
+        radial-gradient(circle at center,rgba(229,189,85,.12),transparent 40%),
+        #03130d;
+    border-bottom:1px solid rgba(229,189,85,.2);
+}
+
+.page-header h1{
+    font-family:Georgia,serif;
+    color:var(--gold-light);
+    font-size:42px;
+}
+
+.page-header p{
+    margin-top:10px;
+    color:#c5cdc8;
+}
+
+.booking-layout{
+    display:grid;
+    grid-template-columns:.75fr 1.5fr;
+    gap:25px;
+    padding:45px 0;
 }
 
 .booking-info{
-  background:linear-gradient(145deg,#0c2922,#071813);
-  border:1px solid var(--border);
-  border-radius:25px;
-  padding:30px;
-  position:sticky;
-  top:100px;
+    background:linear-gradient(145deg,#0b3124,#04150e);
+    border:1px solid rgba(229,189,85,.4);
+    border-radius:20px;
+    padding:28px;
+    height:max-content;
 }
 
-.booking-info h3{
-  color:var(--gold2);
-  font-size:25px;
-  margin-bottom:15px;
+.booking-info h2{
+    color:var(--gold-light);
+    font-family:Georgia,serif;
+    margin-bottom:15px;
 }
 
 .booking-info p{
-  color:var(--muted);
-  line-height:1.7;
-  font-size:14px;
+    color:#c8d0cb;
+    line-height:1.7;
+    font-size:14px;
 }
 
-.contact-line{
-  padding:15px 0;
-  border-bottom:1px solid rgba(216,177,90,.12);
-  color:#dce5df;
-  font-size:14px;
-}
-
-.contact-line:last-child{
-  border-bottom:0;
+.info-line{
+    padding:14px 0;
+    border-bottom:1px solid rgba(229,189,85,.15);
+    font-size:14px;
 }
 
 .booking-form{
-  background:rgba(255,255,255,.025);
-  border:1px solid var(--border);
-  border-radius:25px;
-  padding:30px;
+    background:#071c14;
+    border:1px solid rgba(229,189,85,.4);
+    border-radius:20px;
+    padding:30px;
+}
+
+.booking-form h2{
+    color:var(--gold-light);
+    font-family:Georgia,serif;
+    margin-bottom:20px;
 }
 
 .form-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:18px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:17px;
 }
 
-.field{
-  display:flex;
-  flex-direction:column;
-  gap:8px;
+.form-group{
+    display:flex;
+    flex-direction:column;
+    gap:7px;
 }
 
-.field.full{
-  grid-column:1/-1;
+.form-group.full{
+    grid-column:1/-1;
 }
 
-.field label{
-  color:#dfe7e2;
-  font-size:13px;
-  font-weight:bold;
+.form-group label{
+    color:#e7ebe8;
+    font-size:13px;
+    font-weight:bold;
 }
 
-.field input,
-.field select,
-.field textarea,
-.time-picker-btn{
-  width:100%;
-  background:#071813;
-  color:#f4f4ed;
-  border:1px solid rgba(216,177,90,.25);
-  border-radius:12px;
-  padding:13px 14px;
-  outline:none;
-  transition:.2s;
+.form-group input,
+.form-group select,
+.form-group textarea{
+    width:100%;
+    background:#03120d;
+    color:#fff;
+    border:1px solid rgba(229,189,85,.3);
+    border-radius:10px;
+    padding:13px 14px;
+    outline:none;
 }
 
-.field input:focus,
-.field select:focus,
-.field textarea:focus,
-.time-picker-btn:focus{
-  border-color:var(--gold);
-  box-shadow:0 0 0 3px rgba(216,177,90,.07);
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+    border-color:var(--gold);
+    box-shadow:0 0 0 3px rgba(229,189,85,.08);
 }
 
-.field textarea{
-  min-height:120px;
-  resize:vertical;
+.form-group textarea{
+    min-height:115px;
+    resize:vertical;
 }
 
-.field select option{
-  background:#071813;
-  color:white;
+.form-group select option{
+    background:#071c14;
+    color:#fff;
 }
 
-.time-picker-btn{
-  min-height:48px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  cursor:pointer;
-  text-align:left;
+/*
+====================================================
+PREFERRED TIME
+Native time picker.
+Clicking this field opens the phone/device clock picker.
+User can select ANY time and AM/PM according to device.
+====================================================
+*/
+
+.time-input-wrap{
+    position:relative;
 }
 
-.time-picker-btn.placeholder{
-  color:#8d9a94;
+.time-input-wrap:after{
+    content:"◷";
+    position:absolute;
+    right:14px;
+    top:50%;
+    transform:translateY(-50%);
+    color:var(--gold-light);
+    font-size:22px;
+    pointer-events:none;
 }
 
-.time-picker-btn.selected{
-  color:#f4f4ed;
+#preferredTime{
+    min-height:47px;
+    padding-right:48px;
+    cursor:pointer;
+    color:#fff;
 }
 
-.submit-row{
-  margin-top:22px;
-  display:flex;
-  justify-content:flex-end;
+#preferredTime::-webkit-calendar-picker-indicator{
+    opacity:1;
+    cursor:pointer;
+    filter:invert(78%) sepia(40%) saturate(700%) hue-rotate(5deg);
 }
 
-/* TIME PICKER */
-.time-modal{
-  position:fixed;
-  inset:0;
-  z-index:5000;
-  display:none;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
+.submit-area{
+    margin-top:22px;
+    display:flex;
+    justify-content:flex-end;
 }
 
-.time-modal.open{
-  display:flex;
+/* ================= REPORT PAGE ================= */
+
+.report-section{
+    padding:50px 0;
+    min-height:600px;
 }
 
-.time-modal-backdrop{
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,.72);
-  backdrop-filter:blur(7px);
-}
-
-.time-modal-card{
-  position:relative;
-  z-index:2;
-  width:min(570px,100%);
-  max-height:90vh;
-  overflow:hidden;
-  background:
-    linear-gradient(145deg,rgba(216,177,90,.09),rgba(255,255,255,.02)),
-    #081a16;
-  border:1px solid var(--border);
-  border-radius:25px;
-  box-shadow:0 30px 100px rgba(0,0,0,.65);
-  padding:25px;
-  animation:modalIn .22s ease;
-}
-
-@keyframes modalIn{
-  from{opacity:0;transform:translateY(20px) scale(.97)}
-  to{opacity:1;transform:translateY(0) scale(1)}
-}
-
-.time-modal-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:15px;
-  margin-bottom:20px;
-}
-
-.time-modal-header h3{
-  color:var(--gold2);
-}
-
-.time-modal-header p{
-  color:var(--muted);
-  font-size:12px;
-  margin-top:4px;
-}
-
-.close-time{
-  width:38px;
-  height:38px;
-  border-radius:50%;
-  border:1px solid var(--border);
-  background:rgba(255,255,255,.03);
-  color:white;
-  cursor:pointer;
-  font-size:20px;
-}
-
-.time-options{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:10px;
-  max-height:58vh;
-  overflow-y:auto;
-  padding:5px 3px 10px;
-}
-
-.time-option{
-  border:1px solid rgba(216,177,90,.22);
-  background:#0a211c;
-  color:#e9eee9;
-  border-radius:11px;
-  padding:12px 7px;
-  cursor:pointer;
-  transition:.2s;
-  font-size:13px;
-}
-
-.time-option:hover,
-.time-option.selected{
-  background:linear-gradient(135deg,#e5c875,#9e7228);
-  color:#071510;
-  border-color:#e9cd7a;
-  font-weight:bold;
-}
-
-.time-modal-footer{
-  border-top:1px solid rgba(216,177,90,.15);
-  margin-top:12px;
-  padding-top:15px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:10px;
-}
-
-.time-modal-footer span{
-  color:var(--muted);
-  font-size:12px;
-}
-
-/* REPORT */
 .report-box{
-  max-width:800px;
-  margin:auto;
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:25px;
-  padding:35px;
+    max-width:850px;
+    margin:auto;
+    background:#071c14;
+    border:1px solid rgba(229,189,85,.4);
+    border-radius:22px;
+    padding:35px;
 }
 
-.report-box h3{
-  color:var(--gold2);
-  margin-bottom:8px;
+.report-box h2{
+    font-family:Georgia,serif;
+    color:var(--gold-light);
 }
 
 .report-box p{
-  color:var(--muted);
-  font-size:14px;
-  line-height:1.6;
-  margin-bottom:20px;
+    color:#c5ccc7;
+    margin:10px 0 22px;
+    line-height:1.6;
 }
 
-.report-form{
-  display:grid;
-  grid-template-columns:1fr 1fr auto;
-  gap:12px;
+.report-search{
+    display:grid;
+    grid-template-columns:1fr 1fr auto;
+    gap:12px;
 }
 
-.report-form input{
-  background:#071813;
-  color:white;
-  border:1px solid var(--border);
-  padding:13px;
-  border-radius:11px;
-  outline:none;
+.report-search input{
+    background:#03120d;
+    color:#fff;
+    border:1px solid rgba(229,189,85,.3);
+    border-radius:10px;
+    padding:13px;
+    outline:none;
 }
 
-.report-result{
-  margin-top:20px;
+/* ================= CONTACT ================= */
+
+.contact-section{
+    padding:45px 0;
 }
 
-.report-card{
-  padding:20px;
-  border:1px solid var(--border);
-  border-radius:15px;
-  background:#071813;
-}
-
-.report-card strong{
-  color:var(--gold2);
-}
-
-.report-actions{
-  display:flex;
-  gap:10px;
-  margin-top:15px;
-  flex-wrap:wrap;
-}
-
-/* OWNER */
-.owner{
-  display:grid;
-  grid-template-columns:.7fr 1.3fr;
-  gap:35px;
-  align-items:center;
-  max-width:950px;
-  margin:auto;
-}
-
-.owner-photo{
-  width:250px;
-  height:250px;
-  margin:auto;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:
-    radial-gradient(circle at 50% 40%,#244b40,#081713 70%);
-  border:2px solid var(--gold);
-  box-shadow:0 0 50px rgba(216,177,90,.15);
-  font-size:125px;
-}
-
-.owner-info h2{
-  font-size:34px;
-  margin-bottom:8px;
-}
-
-.owner-info h4{
-  color:var(--gold2);
-  margin-bottom:18px;
-}
-
-.owner-info p{
-  color:var(--muted);
-  line-height:1.8;
-  margin-bottom:12px;
-}
-
-/* CONTACT */
 .contact-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
 }
 
 .contact-card{
-  text-align:center;
-  padding:28px;
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:20px;
+    background:#071c14;
+    border:1px solid rgba(229,189,85,.35);
+    border-radius:17px;
+    padding:25px;
+    text-align:center;
 }
 
-.contact-card .icon{
-  font-size:32px;
-  margin-bottom:12px;
+.contact-icon{
+    font-size:32px;
+    margin-bottom:10px;
 }
 
 .contact-card h3{
-  color:var(--gold2);
-  margin-bottom:7px;
+    color:var(--gold-light);
+    margin-bottom:8px;
 }
 
 .contact-card p{
-  color:var(--muted);
-  font-size:14px;
-  line-height:1.6;
+    color:#c8cfcb;
+    font-size:13px;
+    line-height:1.5;
 }
 
-/* FOOTER */
+.contact-card a{
+    color:#fff;
+    text-decoration:none;
+}
+
+/* ================= FOOTER ================= */
+
 footer{
-  border-top:1px solid var(--border);
-  padding:30px 0;
-  margin-top:40px;
-  background:#040e0c;
+    background:#020b08;
+    border-top:1px solid rgba(229,189,85,.45);
+    padding:35px 0 15px;
 }
 
-.footer-inner{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:15px;
-  flex-wrap:wrap;
+.footer-grid{
+    display:grid;
+    grid-template-columns:1.2fr 1fr 1fr 1fr;
+    gap:30px;
 }
 
-footer p{
-  color:var(--muted);
-  font-size:12px;
+.footer-logo{
+    color:var(--gold-light);
+    font-family:Georgia,serif;
+    font-size:25px;
 }
 
-.footer-social a{
-  color:var(--gold2);
-  font-size:14px;
+.footer-column h3{
+    color:var(--gold-light);
+    margin-bottom:14px;
 }
 
-/* FLOAT BUTTONS */
-.floating{
-  position:fixed;
-  right:18px;
-  bottom:18px;
-  z-index:1200;
-  display:flex;
-  flex-direction:column;
-  gap:10px;
+.footer-column ul{
+    list-style:none;
 }
 
-.float-btn{
-  width:54px;
-  height:54px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:24px;
-  border:1px solid rgba(255,255,255,.15);
-  box-shadow:0 10px 30px rgba(0,0,0,.4);
+.footer-column li{
+    margin:9px 0;
+    color:#c3cbc6;
+    font-size:13px;
 }
 
-.float-wa{
-  background:#159447;
+.footer-column a{
+    color:#c3cbc6;
+    text-decoration:none;
+}
+
+.footer-column a:hover{
+    color:var(--gold-light);
+}
+
+.footer-bottom{
+    border-top:1px solid rgba(229,189,85,.15);
+    margin-top:25px;
+    padding-top:15px;
+    display:flex;
+    justify-content:space-between;
+    color:#aeb8b2;
+    font-size:12px;
+}
+
+/* ================= FLOAT BUTTONS ================= */
+
+.floating-buttons{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    z-index:1500;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.float{
+    width:54px;
+    height:54px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    text-decoration:none;
+    font-size:24px;
+    box-shadow:0 8px 25px rgba(0,0,0,.4);
+}
+
+.float-whatsapp{
+    background:#18b95a;
 }
 
 .float-call{
-  background:#b08a35;
+    background:linear-gradient(135deg,#ffe99b,#ad7a23);
+    color:#06120c;
 }
 
-/* TOAST */
+/* ================= TOAST ================= */
+
 .toast{
-  position:fixed;
-  left:50%;
-  bottom:30px;
-  transform:translate(-50%,30px);
-  opacity:0;
-  pointer-events:none;
-  z-index:6000;
-  background:#102b24;
-  border:1px solid var(--gold);
-  color:white;
-  padding:13px 20px;
-  border-radius:12px;
-  box-shadow:var(--shadow);
-  transition:.3s;
-  font-size:14px;
+    position:fixed;
+    left:50%;
+    bottom:30px;
+    transform:translate(-50%,40px);
+    opacity:0;
+    pointer-events:none;
+    background:#0c2d21;
+    border:1px solid var(--gold);
+    color:#fff;
+    padding:14px 22px;
+    border-radius:12px;
+    z-index:5000;
+    transition:.3s;
 }
 
 .toast.show{
-  opacity:1;
-  transform:translate(-50%,0);
+    opacity:1;
+    transform:translate(-50%,0);
 }
 
-/* MOBILE */
-@media(max-width:900px){
-  .hero-grid,
-  .booking-wrap,
-  .owner{
-    grid-template-columns:1fr;
-  }
+/* ================= RESPONSIVE ================= */
 
-  .booking-info{
-    position:static;
-  }
+@media(max-width:1100px){
 
-  .cards{
-    grid-template-columns:repeat(2,1fr);
-  }
+    .hero h2{
+        font-size:46px;
+    }
 
-  .stats{
-    grid-template-columns:repeat(2,1fr);
-  }
+    .services-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
 
-  .service-list{
-    grid-template-columns:1fr;
-  }
+    .service-strip-inner{
+        grid-template-columns:repeat(4,1fr);
+    }
 
-  .contact-grid{
-    grid-template-columns:1fr;
-  }
+    .why-grid{
+        grid-template-columns:1fr;
+    }
 
-  .owner{
-    text-align:center;
-  }
+    .owner-profile{
+        justify-content:center;
+    }
 
-  .owner-photo{
-    width:210px;
-    height:210px;
-    font-size:105px;
-  }
+    .footer-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
 }
 
-@media(max-width:650px){
-  .nav-inner{
-    padding:10px 0;
-    align-items:flex-start;
-  }
+@media(max-width:800px){
 
-  .nav-links{
-    gap:3px;
-  }
+    .topbar{
+        font-size:10px;
+        padding:0 3%;
+    }
 
-  .nav-links button{
-    padding:8px 9px;
-    font-size:11px;
-  }
+    .topbar-right{
+        gap:9px;
+    }
 
-  .hero{
-    min-height:auto;
-    padding:55px 0;
-  }
+    .navbar{
+        height:auto;
+        padding:10px 3%;
+        flex-wrap:wrap;
+        gap:10px;
+    }
 
-  .hero-card{
-    padding:25px;
-  }
+    .nav-links{
+        width:100%;
+        justify-content:center;
+        overflow-x:auto;
+    }
 
-  .cards,
-  .stats,
-  .form-grid{
-    grid-template-columns:1fr;
-  }
+    .nav-links a{
+        padding:9px 10px;
+        font-size:11px;
+        white-space:nowrap;
+    }
 
-  .field.full{
-    grid-column:auto;
-  }
+    .hero-inner{
+        grid-template-columns:1fr;
+    }
 
-  .report-form{
-    grid-template-columns:1fr;
-  }
+    .hero-content{
+        padding:45px 10px;
+    }
 
-  .time-options{
-    grid-template-columns:repeat(3,1fr);
-  }
+    .hero h2{
+        font-size:43px;
+    }
 
-  .time-modal-card{
-    padding:20px;
-  }
+    .hero-visual{
+        min-height:380px;
+    }
 
-  .section{
-    padding:55px 0;
-  }
+    .hero-photo{
+        height:380px;
+    }
 
-  .section-title h2{
-    font-size:30px;
-  }
+    .hero-points{
+        grid-template-columns:repeat(2,1fr);
+    }
 
-  .brand-text strong{
-    font-size:13px;
-  }
+    .stats-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
 
-  .brand-logo{
-    width:42px;
-    height:42px;
-    font-size:21px;
-  }
+    .stat{
+        border-bottom:1px solid rgba(229,189,85,.15);
+    }
+
+    .booking-cta,
+    .report-cta{
+        flex-direction:column;
+        gap:18px;
+        text-align:center;
+    }
+
+    .booking-layout{
+        grid-template-columns:1fr;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .form-group.full{
+        grid-column:auto;
+    }
+
+    .report-search{
+        grid-template-columns:1fr;
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:550px){
+
+    .logo-text h1{
+        font-size:18px;
+    }
+
+    .logo-circle{
+        width:50px;
+        height:50px;
+        font-size:28px;
+    }
+
+    .logo-circle:before{
+        font-size:30px;
+    }
+
+    .hero h2{
+        font-size:37px;
+    }
+
+    .hero-message{
+        font-size:29px;
+        top:35px;
+    }
+
+    .service-strip-inner{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .services-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .big-logo{
+        width:230px;
+        height:230px;
+    }
+
+    .owner-profile{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        gap:8px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar">
-  <div class="container nav-inner">
+<!-- ================= TOP BAR ================= -->
 
-    <div class="brand" onclick="showPage('home')">
-      <div class="brand-logo">☾</div>
-      <div class="brand-text">
-        <strong>Easy Call Health Care</strong>
-        <span>Home Service • Bahawalpur</span>
-      </div>
+<div class="topbar">
+
+    <div class="topbar-left">
+        Your Health | Our Priority | At Your Home
     </div>
 
-    <div class="nav-links">
-      <button class="active" onclick="showPage('home',this)">Home</button>
-      <button onclick="showPage('services',this)">Services & Booking</button>
-      <button onclick="showPage('reports',this)">Reports & Contact</button>
+    <div class="topbar-right">
+        <span>🕐 &nbsp;8:00 AM - 10:00 PM</span>
+        <span>📍 &nbsp;Bahawalpur, Punjab</span>
+
+        <a
+            href="https://www.facebook.com/share/19Nb1SVDDf/"
+            target="_blank"
+            class="facebook-top"
+        >f</a>
     </div>
 
-  </div>
-</nav>
-
-
-<!-- ================= HOME PAGE ================= -->
-<section id="home" class="page active">
-
-  <div class="container hero">
-    <div class="hero-grid">
-
-      <div>
-        <div class="badge">✦ Premium Home Healthcare • Bahawalpur</div>
-
-        <h1>
-          Your Health.<br>
-          <span class="gold">At Your Home.</span>
-        </h1>
-
-        <p>
-          Professional home nursing, patient care, clinical procedures,
-          vital monitoring and home laboratory sample collection —
-          available at your doorstep with care, privacy and respect.
-        </p>
-
-        <div class="hero-buttons">
-          <button class="btn btn-gold" onclick="showPage('services')">
-            Book a Home Visit
-          </button>
-
-          <a class="btn btn-outline"
-             href="https://wa.me/923061912314"
-             target="_blank">
-            WhatsApp Us
-          </a>
-        </div>
-      </div>
-
-      <div class="hero-card">
-        <div class="medical-logo">👨‍⚕️</div>
-        <h3>Easy Call Health Care</h3>
-        <p>
-          آپ کی صحت، آپ کے گھر پر — بس ایک کال کی دور!
-        </p>
-      </div>
-
-    </div>
-  </div>
-
-
-  <div class="container section">
-    <div class="section-title">
-      <small>Our Promise</small>
-      <h2>Healthcare With Care</h2>
-      <p>Professional, respectful and convenient home healthcare services.</p>
-    </div>
-
-    <div class="cards">
-
-      <div class="card">
-        <div class="card-icon">👩‍⚕️</div>
-        <h3>Qualified Staff</h3>
-        <p>Experienced healthcare professionals for home-based patient care.</p>
-      </div>
-
-      <div class="card">
-        <div class="card-icon">🏠</div>
-        <h3>Home Service</h3>
-        <p>Healthcare services delivered at your home in a comfortable environment.</p>
-      </div>
-
-      <div class="card">
-        <div class="card-icon">⏱️</div>
-        <h3>Same-Day Visits</h3>
-        <p>Book your required service according to your preferred date and time.</p>
-      </div>
-
-      <div class="card">
-        <div class="card-icon">🔒</div>
-        <h3>Private & Respectful</h3>
-        <p>Your privacy, dignity and comfort are important to us.</p>
-      </div>
-
-    </div>
-  </div>
-
-
-  <div class="container section">
-    <div class="stats">
-      <div class="stat">
-        <strong>8 AM</strong>
-        <span>Service Starts</span>
-      </div>
-
-      <div class="stat">
-        <strong>10 PM</strong>
-        <span>Service Ends</span>
-      </div>
-
-      <div class="stat">
-        <strong>24/7</strong>
-        <span>WhatsApp Contact</span>
-      </div>
-
-      <div class="stat">
-        <strong>BWP</strong>
-        <span>Bahawalpur Based</span>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="container section">
-    <div class="section-title">
-      <small>About</small>
-      <h2>Founder & Owner</h2>
-    </div>
-
-    <div class="owner">
-
-      <div class="owner-photo" aria-label="Doctor">
-        👨‍⚕️
-      </div>
-
-      <div class="owner-info">
-        <h2>Muhammad Ismail</h2>
-        <h4>Founder & Owner — Easy Call Health Care Home Service</h4>
-
-        <p>
-          Clinical Assistant (CA) Certificate — PVTC
-        </p>
-
-        <p>
-          Pharmacy Diploma — B Category
-        </p>
-
-        <p>
-          Experienced home healthcare provider based in Bahawalpur,
-          providing professional patient care and clinical home services.
-        </p>
-      </div>
-
-    </div>
-  </div>
-
-</section>
-
-
-<!-- ================= SERVICES PAGE ================= -->
-<section id="services" class="page">
-
-  <div class="container section">
-
-    <div class="section-title">
-      <small>Professional Care</small>
-      <h2>Our Home Healthcare Services</h2>
-      <p>Select your required service and book a home visit.</p>
-    </div>
-
-    <div class="service-list">
-
-      <div class="service-box">
-        <h3>👩‍⚕️ Nursing & Patient Care</h3>
-        <ul>
-          <li>Home Nursing & Patient Care</li>
-          <li>Male / Female Nurse & Clinical Assistant</li>
-          <li>Patient Bathing & Feeding</li>
-          <li>Elderly Care</li>
-          <li>Post-Operative Care</li>
-        </ul>
-      </div>
-
-      <div class="service-box">
-        <h3>❤️ Vitals & Monitoring</h3>
-        <ul>
-          <li>Blood Pressure Monitoring</li>
-          <li>Blood Sugar Check</li>
-          <li>Pulse Monitoring</li>
-          <li>Oxygen / SpO2 Check</li>
-          <li>Temperature Monitoring</li>
-        </ul>
-      </div>
-
-      <div class="service-box">
-        <h3>💉 Clinical Procedures</h3>
-        <ul>
-          <li>Injection</li>
-          <li>IV Drip</li>
-          <li>Cannula</li>
-          <li>Dressing</li>
-          <li>Wound Cleaning / Wash</li>
-          <li>Nebulization</li>
-          <li>NG Tube</li>
-          <li>Foley's Catheter</li>
-          <li>Urine Bag</li>
-          <li>Stitch / Suturing</li>
-          <li>Stitch Out</li>
-        </ul>
-      </div>
-
-      <div class="service-box">
-        <h3>🧪 Home Lab Sample Collection</h3>
-        <ul>
-          <li>Blood Sample Collection</li>
-          <li>Urine Sample Collection</li>
-          <li>Home Laboratory Sample Collection</li>
-          <li>Lab Coordination</li>
-          <li>Report Delivery / Online Access</li>
-          <li>Report Sharing Through WhatsApp</li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-
-
-  <!-- BOOKING -->
-  <div class="container section">
-
-    <div class="section-title">
-      <small>Online Booking</small>
-      <h2>Book a Home Visit</h2>
-      <p>Fill in your information and send your request directly through WhatsApp.</p>
-    </div>
-
-    <div class="booking-wrap">
-
-      <div class="booking-info">
-
-        <h3>Easy Call Health Care</h3>
-
-        <p>
-          Complete the form and select your preferred date and time.
-          Your booking information will be sent directly to our WhatsApp.
-        </p>
-
-        <div class="contact-line">📍 Bahawalpur, Punjab, Pakistan</div>
-        <div class="contact-line">📞 +92 306 1912314</div>
-        <div class="contact-line">✉️ easycallhealthcare.pk@gmail.com</div>
-        <div class="contact-line">🕐 8:00 AM – 10:00 PM Daily</div>
-
-      </div>
-
-
-      <form class="booking-form" id="bookingForm" onsubmit="submitBooking(event)">
-
-        <div class="form-grid">
-
-          <div class="field">
-            <label>Patient Name *</label>
-            <input id="patientName" type="text" placeholder="Enter patient name" required>
-          </div>
-
-          <div class="field">
-            <label>Patient Age *</label>
-            <input id="patientAge" type="number" min="0" max="120" placeholder="Age" required>
-          </div>
-
-          <div class="field">
-            <label>Gender *</label>
-            <select id="gender" required>
-              <option value="">Select Gender</option>
-              <option>Male</option>
-              <option>Female</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label>Mobile Number *</label>
-            <input id="mobile" type="tel" placeholder="03XXXXXXXXX" required>
-          </div>
-
-          <div class="field">
-            <label>WhatsApp Number</label>
-            <input id="whatsapp" type="tel" placeholder="03XXXXXXXXX">
-          </div>
-
-          <div class="field">
-            <label>Service Category *</label>
-            <select id="category" onchange="updateServices()" required>
-              <option value="">Select Category</option>
-              <option value="Nursing & Patient Care">Nursing & Patient Care</option>
-              <option value="Vitals & Monitoring">Vitals & Monitoring</option>
-              <option value="Clinical Procedures">Clinical Procedures</option>
-              <option value="Home Lab Sample Collection">Home Lab Sample Collection</option>
-            </select>
-          </div>
-
-          <div class="field full">
-            <label>Required Service *</label>
-            <select id="service" required>
-              <option value="">First Select Service Category</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label>Preferred Date *</label>
-            <input id="date" type="date" required>
-          </div>
-
-          <!-- UPDATED PREFERRED TIME -->
-          <div class="field">
-
-            <label>Preferred Time *</label>
-
-            <button
-              type="button"
-              id="timePickerButton"
-              class="time-picker-btn placeholder"
-              onclick="openTimePicker()"
-              aria-haspopup="dialog"
-              aria-expanded="false"
-            >
-              <span id="timePickerValue">Select Preferred Time</span>
-              <span>◷</span>
-            </button>
-
-            <input id="time" type="hidden" required>
-
-          </div>
-
-
-          <div class="field full">
-            <label>Patient's Disease / Medical Condition *</label>
-            <input
-              id="disease"
-              type="text"
-              placeholder="Please mention patient's disease or medical condition"
-              required
-            >
-          </div>
-
-          <div class="field full">
-            <label>Area / Complete Address *</label>
-            <input
-              id="address"
-              type="text"
-              placeholder="Enter complete home address / area"
-              required
-            >
-          </div>
-
-          <div class="field full">
-            <label>Additional Details / Message</label>
-            <textarea
-              id="message"
-              placeholder="Write any additional information about the patient or required service..."
-            ></textarea>
-          </div>
-
-        </div>
-
-        <div class="submit-row">
-          <button class="btn btn-gold" type="submit">
-            📲 Submit Request on WhatsApp
-          </button>
-        </div>
-
-      </form>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ================= REPORTS PAGE ================= -->
-<section id="reports" class="page">
-
-  <div class="container section">
-
-    <div class="section-title">
-      <small>Patient Reports</small>
-      <h2>Test Report Portal</h2>
-      <p>
-        Enter your Report Code and last 4 digits of your phone number
-        to view your available report.
-      </p>
-    </div>
-
-    <div class="report-box">
-
-      <h3>🔐 Find Your Test Report</h3>
-
-      <p>
-        Your report code can be provided by Easy Call Health Care
-        after your laboratory sample collection.
-      </p>
-
-      <div class="report-form">
-
-        <input
-          id="reportCode"
-          type="text"
-          placeholder="Report Code e.g. ECH-2026-0001"
-        >
-
-        <input
-          id="reportPhone"
-          type="text"
-          maxlength="4"
-          placeholder="Last 4 digits of phone"
-        >
-
-        <button class="btn btn-gold" onclick="findReport()">
-          View Report
-        </button>
-
-      </div>
-
-      <div id="reportResult" class="report-result"></div>
-
-    </div>
-
-  </div>
-
-
-  <div class="container section">
-
-    <div class="section-title">
-      <small>Contact Us</small>
-      <h2>Easy Call Health Care</h2>
-      <p>For booking, reports and home healthcare information.</p>
-    </div>
-
-    <div class="contact-grid">
-
-      <a class="contact-card" href="tel:+923061912314">
-        <div class="icon">📞</div>
-        <h3>Call</h3>
-        <p>+92 306 1912314</p>
-      </a>
-
-      <a class="contact-card"
-         href="https://wa.me/923061912314"
-         target="_blank">
-        <div class="icon">💬</div>
-        <h3>WhatsApp</h3>
-        <p>Chat with Easy Call Health Care</p>
-      </a>
-
-      <a class="contact-card"
-         href="https://www.facebook.com/share/19Nb1SVDDf/"
-         target="_blank">
-        <div class="icon">ⓕ</div>
-        <h3>Facebook</h3>
-        <p>Visit our official Facebook page</p>
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- TIME PICKER MODAL -->
-<div
-  class="time-modal"
-  id="timeModal"
-  aria-hidden="true"
->
-
-  <div
-    class="time-modal-backdrop"
-    onclick="closeTimePicker()"
-  ></div>
-
-  <div
-    class="time-modal-card"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="timePickerTitle"
-  >
-
-    <div class="time-modal-header">
-
-      <div>
-        <h3 id="timePickerTitle">Select Preferred Time</h3>
-        <p>Available time: 8:00 AM – 10:00 PM</p>
-      </div>
-
-      <button
-        type="button"
-        class="close-time"
-        onclick="closeTimePicker()"
-        aria-label="Close"
-      >
-        ×
-      </button>
-
-    </div>
-
-    <div id="timeOptions" class="time-options"></div>
-
-    <div class="time-modal-footer">
-      <span>Select your convenient AM / PM time.</span>
-
-      <button
-        type="button"
-        class="btn btn-outline"
-        onclick="closeTimePicker()"
-      >
-        Done
-      </button>
-    </div>
-
-  </div>
 </div>
 
 
-<!-- FLOATING BUTTONS -->
-<div class="floating">
+<!-- ================= NAVBAR ================= -->
 
-  <a
-    class="float-btn float-wa"
-    href="https://wa.me/923061912314"
-    target="_blank"
-    title="WhatsApp"
-  >
-    💬
-  </a>
+<nav class="navbar">
 
-  <a
-    class="float-btn float-call"
-    href="tel:+923061912314"
-    title="Call"
-  >
-    📞
-  </a>
+    <div class="logo-area">
+
+        <div class="logo-circle"></div>
+
+        <div class="logo-text">
+            <h1>EASY CALL<br>HEALTH CARE</h1>
+            <p>Home Service — Care At Your Doorstep</p>
+        </div>
+
+    </div>
+
+    <div class="nav-links">
+
+        <a href="#home" class="active" onclick="showPage('home')">
+            Home
+        </a>
+
+        <a href="#services" onclick="showPage('services')">
+            Services
+        </a>
+
+        <a href="#booking" onclick="showPage('booking')">
+            Book Now
+        </a>
+
+        <a href="#report" onclick="showPage('report')">
+            Test Report
+        </a>
+
+        <a href="#about" onclick="showPage('home');scrollToOwner()">
+            About Us
+        </a>
+
+        <a href="#contact" onclick="showPage('report');scrollToContact()">
+            Contact
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- ========================================================= -->
+<!-- HOME PAGE -->
+<!-- ========================================================= -->
+
+<main id="home" class="page active">
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-inner">
+
+        <div class="hero-content">
+
+            <div class="hero-small">
+                PROFESSIONAL | TRUSTED | AFFORDABLE
+            </div>
+
+            <h2>
+                QUALITY<br>
+                HEALTH CARE<br>
+                <span>AT YOUR HOME</span>
+            </h2>
+
+            <p class="hero-description">
+                We bring professional healthcare services to your doorstep
+                with care, compassion and responsibility.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a
+                    href="https://wa.me/923061912314"
+                    target="_blank"
+                    class="gold-btn whatsapp-btn"
+                >
+                    💬 Chat on WhatsApp
+                    <small>+92 306 1912314</small>
+                </a>
+
+                <a
+                    href="tel:+923061912314"
+                    class="gold-btn"
+                >
+                    📞 Call Now
+                    <small>+92 306 1912314</small>
+                </a>
+
+            </div>
+
+            <div class="hero-points">
+
+                <div class="hero-point">
+                    <span class="hero-point-icon">🛡️</span>
+                    Qualified Staff
+                </div>
+
+                <div class="hero-point">
+                    <span class="hero-point-icon">👨‍⚕️</span>
+                    Male & Female Staff
+                </div>
+
+                <div class="hero-point">
+                    <span class="hero-point-icon">🏠</span>
+                    Home Visit
+                </div>
+
+                <div class="hero-point">
+                    <span class="hero-point-icon">◷</span>
+                    WhatsApp Support
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-visual">
+
+            <div class="hero-photo"></div>
+
+            <div class="hero-message">
+                Because<br>
+                Your Health<br>
+                Matters ♡
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SERVICE STRIP -->
+
+<section class="service-strip">
+
+    <div class="service-strip-inner">
+
+        <div class="service-mini">
+            <div class="service-mini-icon">👨‍⚕️</div>
+            <p>Nursing Care</p>
+        </div>
+
+        <div class="service-mini">
+            <div class="service-mini-icon">👴</div>
+            <p>Elderly Care</p>
+        </div>
+
+        <div class="service-mini">
+            <div class="service-mini-icon">💉</div>
+            <p>Injection / IV Drip</p>
+        </div>
+
+        <div class="service-mini">
+            <div class="service-mini-icon">🩹</div>
+            <p>Wound Dressing</p>
+        </div>
+
+        <div class="service-mini">
+            <div class="service-mini-icon">🧪</div>
+            <p>Lab Sample Collection</p>
+        </div>
+
+        <div class="service-mini">
+            <div class="service-mini-icon">🛏️</div>
+            <p>Patient Care</p>
+        </div>
+
+        <div class="service-mini">
+            <div class="service-mini-icon">❤️</div>
+            <p>Vital Signs Check</p>
+        </div>
+
+        <div class="service-mini">
+            <div class="service-mini-icon">▦</div>
+            <p>More Services</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- WHY CHOOSE -->
+
+<section class="section why">
+
+    <div class="container">
+
+        <div class="why-grid">
+
+            <div class="why-box">
+
+                <h2>
+                    Why Choose<br>
+                    <span style="color:#fff">EASY CALL?</span>
+                </h2>
+
+                <ul class="why-list">
+
+                    <li>Qualified & Experienced Staff</li>
+
+                    <li>Male & Female Nurses Available</li>
+
+                    <li>Home Sample Collection</li>
+
+                    <li>Affordable & Transparent Charges</li>
+
+                    <li>Trusted by Hundreds of Families</li>
+
+                    <li>Quick Response on Call & WhatsApp</li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="center-logo">
+
+                <div class="big-logo">
+
+                    <div class="big-logo-symbol">✚</div>
+
+                    <h3>EASY CALL</h3>
+                    <h3>HEALTH CARE</h3>
+
+                    <p>Home Service</p>
+
+                    <small style="color:#aaa;margin-top:8px">
+                        Care At Your Doorstep
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="owner-card" id="owner">
+
+                <div class="owner-title">
+                    Meet Our <span>Founder</span>
+                </div>
+
+                <div class="owner-profile">
+
+                    <div class="owner-avatar">
+                        👨‍⚕️
+                    </div>
+
+                    <div>
+
+                        <div class="owner-name">
+                            Muhammad Ismail
+                        </div>
+
+                        <div class="owner-role">
+                            Founder & Owner
+                        </div>
+
+                        <p class="owner-quote">
+                            “My mission is to provide professional,
+                            compassionate and affordable healthcare
+                            services at your doorstep.”
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- STATS -->
+
+<section class="stats">
+
+    <div class="container">
+
+        <div class="stats-grid">
+
+            <div class="stat">
+                <div class="stat-icon">👥</div>
+                <strong>5000+</strong>
+                <span>Happy Patients</span>
+            </div>
+
+            <div class="stat">
+                <div class="stat-icon">👨‍⚕️</div>
+                <strong>50+</strong>
+                <span>Trained Staff</span>
+            </div>
+
+            <div class="stat">
+                <div class="stat-icon">🏠</div>
+                <strong>25+</strong>
+                <span>Services at Home</span>
+            </div>
+
+            <div class="stat">
+                <div class="stat-icon">👍</div>
+                <strong>99%</strong>
+                <span>Satisfaction Rate</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- BOOK CTA -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="booking-cta">
+
+            <div>
+
+                <h2>📅 &nbsp;Book a Home Visit Now</h2>
+
+                <p>
+                    Quick • Easy • Reliable
+                </p>
+
+            </div>
+
+            <div>
+                <p style="margin-bottom:7px">
+                    Select Your Service, Choose Date & Time
+                    and Confirm on WhatsApp
+                </p>
+
+                <a
+                    href="#booking"
+                    class="dark-btn"
+                    onclick="showPage('booking')"
+                >
+                    Book Now →
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="section services-section" id="services-section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <small>Professional Care</small>
+
+            <h2>Our Services</h2>
+
+            <p>
+                Complete Health Care Solutions at Your Home
+            </p>
+
+        </div>
+
+
+        <div class="services-grid">
+
+            <div class="service-card">
+                <div class="service-card-image"></div>
+                <h3>Nursing & Patient Care</h3>
+            </div>
+
+            <div class="service-card">
+                <div class="service-card-image"></div>
+                <h3>Elderly Care</h3>
+            </div>
+
+            <div class="service-card">
+                <div class="service-card-image"></div>
+                <h3>Blood Sample Collection</h3>
+            </div>
+
+            <div class="service-card">
+                <div class="service-card-image"></div>
+                <h3>Injection / IV Drip</h3>
+            </div>
+
+            <div class="service-card">
+                <div class="service-card-image"></div>
+                <h3>Wound Dressing</h3>
+            </div>
+
+            <div class="service-card">
+                <div class="service-card-image"></div>
+                <h3>Vital Signs Check</h3>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- REPORT CTA -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="report-cta">
+
+            <div class="report-left">
+
+                <div class="report-icon">▣</div>
+
+                <div>
+
+                    <h2>Get Your Test Reports Online</h2>
+
+                    <p>
+                        Enter your report code and mobile number
+                        to view or download your report.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <a
+                href="#report"
+                class="dark-btn"
+                onclick="showPage('report')"
+            >
+                View Test Report →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<!-- ========================================================= -->
+<!-- BOOKING PAGE -->
+<!-- ========================================================= -->
+
+<section id="booking" class="page">
+
+    <div class="page-header">
+
+        <h1>Book a Home Visit</h1>
+
+        <p>
+            Fill in the form and send your booking request directly
+            to Easy Call Health Care WhatsApp.
+        </p>
+
+    </div>
+
+
+    <div class="container">
+
+        <div class="booking-layout">
+
+
+            <div class="booking-info">
+
+                <h2>Easy Call Health Care</h2>
+
+                <p>
+                    Professional healthcare services at your doorstep
+                    in Bahawalpur, Punjab.
+                </p>
+
+                <div class="info-line">
+                    📍 Bahawalpur, Punjab, Pakistan
+                </div>
+
+                <div class="info-line">
+                    📞 +92 306 1912314
+                </div>
+
+                <div class="info-line">
+                    💬 WhatsApp Available
+                </div>
+
+                <div class="info-line">
+                    ✉️ easycallhealthcare.pk@gmail.com
+                </div>
+
+                <div class="info-line">
+                    🕐 8:00 AM – 10:00 PM Daily
+                </div>
+
+                <div style="margin-top:20px">
+
+                    <a
+                        href="https://wa.me/923061912314"
+                        target="_blank"
+                        class="gold-btn whatsapp-btn"
+                        style="width:100%"
+                    >
+                        💬 WhatsApp Us
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="booking-form">
+
+                <h2>Patient Booking Form</h2>
+
+                <form id="bookingForm" onsubmit="submitBooking(event)">
+
+                    <div class="form-grid">
+
+
+                        <div class="form-group">
+                            <label>Patient Name *</label>
+
+                            <input
+                                type="text"
+                                id="patientName"
+                                placeholder="Enter patient name"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label>Patient Age *</label>
+
+                            <input
+                                type="number"
+                                id="patientAge"
+                                min="0"
+                                max="120"
+                                placeholder="Enter age"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label>Gender *</label>
+
+                            <select id="gender" required>
+
+                                <option value="">
+                                    Select Gender
+                                </option>
+
+                                <option value="Male">
+                                    Male
+                                </option>
+
+                                <option value="Female">
+                                    Female
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>Mobile Number *</label>
+
+                            <input
+                                type="tel"
+                                id="mobile"
+                                placeholder="03XXXXXXXXX"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>WhatsApp Number</label>
+
+                            <input
+                                type="tel"
+                                id="whatsapp"
+                                placeholder="03XXXXXXXXX"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>Service Category *</label>
+
+                            <select
+                                id="category"
+                                onchange="updateServices()"
+                                required
+                            >
+
+                                <option value="">
+                                    Select Category
+                                </option>
+
+                                <option value="Nursing & Patient Care">
+                                    Nursing & Patient Care
+                                </option>
+
+                                <option value="Vitals & Monitoring">
+                                    Vitals & Monitoring
+                                </option>
+
+                                <option value="Clinical Procedures">
+                                    Clinical Procedures
+                                </option>
+
+                                <option value="Home Lab Sample Collection">
+                                    Home Lab Sample Collection
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group full">
+
+                            <label>Required Service *</label>
+
+                            <select id="service" required>
+
+                                <option value="">
+                                    First Select Service Category
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>Preferred Date *</label>
+
+                            <input
+                                type="date"
+                                id="preferredDate"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- =================================================
+                             UPDATED TIME FIELD
+                             NO FIXED TIME LIST
+                             USER CAN PICK ANY TIME USING CLOCK PICKER
+                             AM / PM IS AVAILABLE THROUGH DEVICE TIME PICKER
+                             ================================================= -->
+
+                        <div class="form-group">
+
+                            <label>Preferred Time *</label>
+
+                            <div class="time-input-wrap">
+
+                                <input
+                                    type="time"
+                                    id="preferredTime"
+                                    required
+                                    step="60"
+                                    aria-label="Select preferred time"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group full">
+
+                            <label>
+                                Patient's Disease / Medical Condition *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="disease"
+                                placeholder="Please mention patient's disease or medical condition"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group full">
+
+                            <label>
+                                Area / Complete Address *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="address"
+                                placeholder="Enter complete home address / area"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group full">
+
+                            <label>
+                                Additional Details / Message
+                            </label>
+
+                            <textarea
+                                id="message"
+                                placeholder="Write any additional information..."
+                            ></textarea>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="submit-area">
+
+                        <button
+                            type="submit"
+                            class="gold-btn"
+                        >
+                            📲 Submit Request on WhatsApp
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- REPORT PAGE -->
+<!-- ========================================================= -->
+
+<section id="report" class="page">
+
+    <div class="page-header">
+
+        <h1>Test Report Portal</h1>
+
+        <p>
+            View or download your laboratory test report online.
+        </p>
+
+    </div>
+
+
+    <div class="container report-section">
+
+        <div class="report-box">
+
+            <h2>📄 Get Your Test Report</h2>
+
+            <p>
+                Enter your Report Code and the last 4 digits of
+                the registered mobile number to search for your report.
+            </p>
+
+
+            <div class="report-search">
+
+                <input
+                    type="text"
+                    id="reportCode"
+                    placeholder="Report Code e.g. ECH-2026-0001"
+                >
+
+                <input
+                    type="text"
+                    id="reportPhone"
+                    maxlength="4"
+                    placeholder="Last 4 digits of mobile"
+                >
+
+                <button
+                    class="gold-btn"
+                    onclick="findReport()"
+                >
+                    View Report
+                </button>
+
+            </div>
+
+
+            <div
+                id="reportResult"
+                style="margin-top:20px"
+            ></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- CONTACT -->
+
+    <section
+        class="contact-section"
+        id="contact"
+    >
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <small>Contact Us</small>
+
+                <h2>Easy Call Health Care</h2>
+
+                <p>
+                    For bookings, reports and home healthcare information.
+                </p>
+
+            </div>
+
+
+            <div class="contact-grid">
+
+                <div class="contact-card">
+
+                    <div class="contact-icon">📞</div>
+
+                    <h3>Call Us</h3>
+
+                    <p>
+                        <a href="tel:+923061912314">
+                            +92 306 1912314
+                        </a>
+                    </p>
+
+                </div>
+
+
+                <div class="contact-card">
+
+                    <div class="contact-icon">💬</div>
+
+                    <h3>WhatsApp</h3>
+
+                    <p>
+                        <a
+                            href="https://wa.me/923061912314"
+                            target="_blank"
+                        >
+                            +92 306 1912314
+                        </a>
+                    </p>
+
+                </div>
+
+
+                <div class="contact-card">
+
+                    <div class="contact-icon">✉️</div>
+
+                    <h3>Email</h3>
+
+                    <p>
+                        easycallhealthcare.pk@gmail.com
+                    </p>
+
+                </div>
+
+
+                <div class="contact-card">
+
+                    <div class="contact-icon">📍</div>
+
+                    <h3>Location</h3>
+
+                    <p>
+                        Bahawalpur, Punjab, Pakistan
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div class="footer-column">
+
+                <div class="footer-logo">
+                    ♕<br>
+                    EASY CALL<br>
+                    HEALTH CARE
+                </div>
+
+                <p style="color:#c4cbc7;font-size:12px;margin-top:10px">
+                    Home Service<br>
+                    Care At Your Doorstep
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Quick Links</h3>
+
+                <ul>
+
+                    <li>
+                        <a href="#home" onclick="showPage('home')">
+                            ▸ Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#services" onclick="showPage('home')">
+                            ▸ Services
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#booking" onclick="showPage('booking')">
+                            ▸ Book Now
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#report" onclick="showPage('report')">
+                            ▸ Test Report
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#contact" onclick="showPage('report')">
+                            ▸ Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Our Services</h3>
+
+                <ul>
+
+                    <li>▸ Nursing Care</li>
+                    <li>▸ Lab Sample Collection</li>
+                    <li>▸ Elderly Care</li>
+                    <li>▸ Patient Care</li>
+                    <li>▸ Injection / IV Drip</li>
+                    <li>▸ More Services</li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Contact Info</h3>
+
+                <ul>
+
+                    <li>📞 +92 306 1912314</li>
+
+                    <li>💬 +92 306 1912314</li>
+
+                    <li>✉️ easycallhealthcare.pk@gmail.com</li>
+
+                    <li>📍 Bahawalpur, Punjab</li>
+
+                    <li>
+                        <a
+                            href="https://www.facebook.com/share/19Nb1SVDDf/"
+                            target="_blank"
+                        >
+                            ● Follow Our Facebook Page
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 Easy Call Health Care. All Rights Reserved.
+            </span>
+
+            <span>
+                Designed with ❤️ for a Healthier Pakistan
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- ================= FLOATING BUTTONS ================= -->
+
+<div class="floating-buttons">
+
+    <a
+        href="https://wa.me/923061912314"
+        target="_blank"
+        class="float float-whatsapp"
+        title="WhatsApp"
+    >
+        💬
+    </a>
+
+    <a
+        href="tel:+923061912314"
+        class="float float-call"
+        title="Call"
+    >
+        📞
+    </a>
 
 </div>
 
 
 <!-- TOAST -->
+
 <div id="toast" class="toast"></div>
-
-
-<footer>
-
-  <div class="container footer-inner">
-
-    <p>
-      © 2026 Easy Call Health Care Home Service. All Rights Reserved.
-    </p>
-
-    <div class="footer-social">
-      <a
-        href="https://www.facebook.com/share/19Nb1SVDDf/"
-        target="_blank"
-      >
-        Facebook
-      </a>
-    </div>
-
-  </div>
-
-</footer>
 
 
 <script>
 
-/* ================= PAGE NAVIGATION ================= */
+/* ================= PAGE SYSTEM ================= */
 
-function showPage(pageId, clickedButton){
+function showPage(pageId){
 
-  document.querySelectorAll('.page').forEach(page=>{
-    page.classList.remove('active');
-  });
+    document.querySelectorAll(".page").forEach(function(page){
 
-  const page=document.getElementById(pageId);
+        page.classList.remove("active");
 
-  if(page){
-    page.classList.add('active');
-  }
+    });
 
-  document.querySelectorAll('.nav-links button').forEach(btn=>{
-    btn.classList.remove('active');
-  });
+    const selected=document.getElementById(pageId);
 
-  if(clickedButton){
-    clickedButton.classList.add('active');
-  }
+    if(selected){
+        selected.classList.add("active");
+    }
 
-  window.scrollTo({
-    top:0,
-    behavior:'smooth'
-  });
+    document.querySelectorAll(".nav-links a").forEach(function(link){
+
+        link.classList.remove("active");
+
+    });
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
 }
 
 
-/* ================= SERVICES ================= */
+/* ================= SERVICE DROPDOWN ================= */
 
 const services={
-  "Nursing & Patient Care":[
-    "Home Nursing & Patient Care",
-    "Male Nurse",
-    "Female Nurse",
-    "Clinical Assistant",
-    "Patient Bathing",
-    "Patient Feeding",
-    "Elderly Care",
-    "Post-Operative Care"
-  ],
 
-  "Vitals & Monitoring":[
-    "Blood Pressure (BP)",
-    "Blood Sugar Check",
-    "Pulse Monitoring",
-    "Oxygen / SpO2 Check",
-    "Temperature"
-  ],
+    "Nursing & Patient Care":[
+        "Home Nursing & Patient Care",
+        "Male Nurse",
+        "Female Nurse",
+        "Clinical Assistant",
+        "Patient Bathing",
+        "Patient Feeding",
+        "Elderly Care",
+        "Post-Operative Care"
+    ],
 
-  "Clinical Procedures":[
-    "Injection",
-    "IV Drip",
-    "Cannula",
-    "Dressing",
-    "Wound Cleaning / Wash",
-    "Nebulization",
-    "NG Tube",
-    "Foley's Catheter",
-    "Urine Bag",
-    "Stitch / Suturing",
-    "Stitch Out"
-  ],
+    "Vitals & Monitoring":[
+        "Blood Pressure (BP)",
+        "Blood Sugar Check",
+        "Pulse Monitoring",
+        "Oxygen / SpO2 Check",
+        "Temperature"
+    ],
 
-  "Home Lab Sample Collection":[
-    "Blood Sample Collection",
-    "Urine Sample Collection",
-    "Home Laboratory Sample Collection"
-  ]
+    "Clinical Procedures":[
+        "Injection",
+        "IV Drip",
+        "Cannula",
+        "Dressing",
+        "Wound Cleaning / Wash",
+        "Nebulization",
+        "NG Tube",
+        "Foley's Catheter",
+        "Urine Bag",
+        "Stitch / Suturing",
+        "Stitch Out"
+    ],
+
+    "Home Lab Sample Collection":[
+        "Blood Sample Collection",
+        "Urine Sample Collection",
+        "Home Laboratory Sample Collection",
+        "Lab Coordination & Report Delivery"
+    ]
+
 };
+
 
 function updateServices(){
 
-  const category=document.getElementById("category").value;
-  const service=document.getElementById("service");
+    const category=
+        document.getElementById("category").value;
 
-  service.innerHTML="";
+    const service=
+        document.getElementById("service");
 
-  if(!category){
+    service.innerHTML="";
 
-    const option=document.createElement("option");
-    option.value="";
-    option.textContent="First Select Service Category";
-    service.appendChild(option);
+    if(!category){
 
-    return;
-  }
+        service.innerHTML=
+            '<option value="">First Select Service Category</option>';
 
-  const first=document.createElement("option");
-  first.value="";
-  first.textContent="Select Required Service";
-  service.appendChild(first);
+        return;
 
-  services[category].forEach(item=>{
+    }
 
-    const option=document.createElement("option");
+    service.innerHTML=
+        '<option value="">Select Required Service</option>';
 
-    option.value=item;
-    option.textContent=item;
+    services[category].forEach(function(item){
 
-    service.appendChild(option);
+        const option=
+            document.createElement("option");
 
-  });
+        option.value=item;
+        option.textContent=item;
+
+        service.appendChild(option);
+
+    });
+
 }
 
 
 /* ================= DATE ================= */
 
-const dateInput=document.getElementById("date");
+const preferredDate=
+    document.getElementById("preferredDate");
 
-const today=new Date();
+const now=
+    new Date();
 
-const yyyy=today.getFullYear();
+const year=
+    now.getFullYear();
 
-const mm=String(today.getMonth()+1).padStart(2,"0");
+const month=
+    String(now.getMonth()+1).padStart(2,"0");
 
-const dd=String(today.getDate()).padStart(2,"0");
+const day=
+    String(now.getDate()).padStart(2,"0");
 
-dateInput.min=`${yyyy}-${mm}-${dd}`;
-
-
-/* ================= TIME PICKER ================= */
-
-const timeModal=document.getElementById("timeModal");
-
-const timeOptions=document.getElementById("timeOptions");
-
-const timeInput=document.getElementById("time");
-
-const timeButton=document.getElementById("timePickerButton");
-
-const timeValue=document.getElementById("timePickerValue");
+preferredDate.min=
+    year+"-"+month+"-"+day;
 
 
-function formatTime(hour,minute){
+/* ================= TIME ================= */
 
-  const ampm=hour>=12 ? "PM" : "AM";
+/*
+    IMPORTANT:
+    No fixed time list is used here.
 
-  let h=hour%12;
-
-  if(h===0){
-    h=12;
-  }
-
-  const m=String(minute).padStart(2,"0");
-
-  return `${h}:${m} ${ampm}`;
-}
-
-
-function generateTimeOptions(){
-
-  timeOptions.innerHTML="";
-
-  const selected=timeInput.value;
-
-  /*
-    Time starts from 8:00 AM
-    Time ends at 10:00 PM
-    30-minute intervals
-  */
-
-  for(let hour=8;hour<=22;hour++){
-
-    for(let minute=0;minute<60;minute+=30){
-
-      if(hour===22 && minute>0){
-        continue;
-      }
-
-      const formatted=formatTime(hour,minute);
-
-      const button=document.createElement("button");
-
-      button.type="button";
-
-      button.className="time-option";
-
-      button.textContent=formatted;
-
-      button.dataset.time=formatted;
-
-      if(selected===formatted){
-        button.classList.add("selected");
-      }
-
-      button.onclick=function(){
-        selectTime(formatted);
-      };
-
-      timeOptions.appendChild(button);
-    }
-  }
-}
-
-
-function openTimePicker(){
-
-  generateTimeOptions();
-
-  timeModal.classList.add("open");
-
-  timeModal.setAttribute("aria-hidden","false");
-
-  timeButton.setAttribute("aria-expanded","true");
-
-  document.body.style.overflow="hidden";
-}
-
-
-function closeTimePicker(){
-
-  timeModal.classList.remove("open");
-
-  timeModal.setAttribute("aria-hidden","true");
-
-  timeButton.setAttribute("aria-expanded","false");
-
-  document.body.style.overflow="";
-}
-
-
-function selectTime(value){
-
-  timeInput.value=value;
-
-  timeValue.textContent=value;
-
-  timeButton.classList.remove("placeholder");
-
-  timeButton.classList.add("selected");
-
-  document.querySelectorAll(".time-option").forEach(btn=>{
-    btn.classList.toggle(
-      "selected",
-      btn.dataset.time===value
-    );
-  });
-
-  closeTimePicker();
-}
-
-
-/* ESC TO CLOSE TIME PICKER */
-
-document.addEventListener("keydown",function(event){
-
-  if(event.key==="Escape" && timeModal.classList.contains("open")){
-    closeTimePicker();
-  }
-
-});
+    type="time" opens the device/browser's native clock picker.
+    The user can select the time of their choice.
+    AM / PM is automatically handled according to the device/browser.
+*/
 
 
 /* ================= BOOKING ================= */
 
 function submitBooking(event){
 
-  event.preventDefault();
+    event.preventDefault();
 
-  const patientName=document.getElementById("patientName").value.trim();
-  const patientAge=document.getElementById("patientAge").value.trim();
-  const gender=document.getElementById("gender").value;
-  const mobile=document.getElementById("mobile").value.trim();
-  const whatsapp=document.getElementById("whatsapp").value.trim();
-  const category=document.getElementById("category").value;
-  const service=document.getElementById("service").value;
-  const date=document.getElementById("date").value;
-  const time=document.getElementById("time").value;
-  const disease=document.getElementById("disease").value.trim();
-  const address=document.getElementById("address").value.trim();
-  const message=document.getElementById("message").value.trim();
+    const patientName=
+        document.getElementById("patientName").value.trim();
+
+    const patientAge=
+        document.getElementById("patientAge").value.trim();
+
+    const gender=
+        document.getElementById("gender").value;
+
+    const mobile=
+        document.getElementById("mobile").value.trim();
+
+    const whatsapp=
+        document.getElementById("whatsapp").value.trim();
+
+    const category=
+        document.getElementById("category").value;
+
+    const service=
+        document.getElementById("service").value;
+
+    const date=
+        document.getElementById("preferredDate").value;
+
+    const time=
+        document.getElementById("preferredTime").value;
+
+    const disease=
+        document.getElementById("disease").value.trim();
+
+    const address=
+        document.getElementById("address").value.trim();
+
+    const message=
+        document.getElementById("message").value.trim();
 
 
-  if(!time){
+    if(!time){
 
-    showToast("Please select Preferred Time.");
+        showToast("Please select Preferred Time.");
 
-    openTimePicker();
+        document.getElementById("preferredTime").focus();
 
-    return;
-  }
+        return;
 
-
-  if(!service){
-
-    showToast("Please select Required Service.");
-
-    return;
-  }
+    }
 
 
-  const formattedDate=date
-    ? new Date(date+"T00:00:00").toLocaleDateString(
-        "en-GB",
-        {
-          day:"2-digit",
-          month:"long",
-          year:"numeric"
+    if(!service){
+
+        showToast("Please select Required Service.");
+
+        return;
+
+    }
+
+
+    let formattedDate=date;
+
+    if(date){
+
+        const dateObject=
+            new Date(date+"T00:00:00");
+
+        formattedDate=
+            dateObject.toLocaleDateString(
+                "en-GB",
+                {
+                    day:"2-digit",
+                    month:"long",
+                    year:"numeric"
+                }
+            );
+
+    }
+
+
+    /*
+       Convert 24-hour time returned by input[type=time]
+       into AM / PM format for WhatsApp message.
+    */
+
+    let formattedTime=time;
+
+    if(time){
+
+        const parts=time.split(":");
+
+        let hour=parseInt(parts[0],10);
+
+        const minute=parts[1];
+
+        const ampm=hour>=12 ? "PM" : "AM";
+
+        hour=hour%12;
+
+        if(hour===0){
+            hour=12;
         }
-      )
-    : "";
+
+        formattedTime=
+            hour+":"+minute+" "+ampm;
+
+    }
 
 
-  const text=
+    const text=
 `🏥 *EASY CALL HEALTH CARE HOME SERVICE*
 
 📋 *NEW HOME VISIT REQUEST*
 
-👤 *Patient Information*
+👤 *PATIENT INFORMATION*
+
 Patient Name: ${patientName}
 Age: ${patientAge}
 Gender: ${gender}
 Mobile: ${mobile}
-WhatsApp: ${whatsapp || "Not provided"}
+WhatsApp: ${whatsapp || "Not Provided"}
 
-🩺 *Service Information*
+🩺 *SERVICE INFORMATION*
+
 Category: ${category}
 Required Service: ${service}
 
-📅 *Appointment*
-Preferred Date: ${formattedDate}
-Preferred Time: ${time}
+📅 *APPOINTMENT*
 
-🩹 *Patient's Disease / Medical Condition*
+Preferred Date: ${formattedDate}
+Preferred Time: ${formattedTime}
+
+🩹 *PATIENT'S DISEASE / MEDICAL CONDITION*
+
 ${disease}
 
-📍 *Home Address*
+📍 *HOME ADDRESS*
+
 ${address}
 
-📝 *Additional Details*
+📝 *ADDITIONAL DETAILS*
+
 ${message || "None"}
 
-━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━
+
 Easy Call Health Care Home Service
 Bahawalpur, Punjab, Pakistan
+
 📞 +92 306 1912314
 `;
 
 
-  const whatsappUrl=
-    "https://wa.me/923061912314?text="+
-    encodeURIComponent(text);
+    const url=
+        "https://wa.me/923061912314?text="+
+        encodeURIComponent(text);
 
 
-  showToast("Opening WhatsApp...");
+    showToast("Opening WhatsApp...");
 
-  setTimeout(()=>{
-    window.open(whatsappUrl,"_blank");
-  },500);
+
+    setTimeout(function(){
+
+        window.open(url,"_blank");
+
+    },500);
 
 }
 
 
-/* ================= REPORT SYSTEM DEMO ================= */
+/* ================= REPORT SYSTEM ================= */
+
+/*
+   Demo report records.
+
+   For a real online website, reports should be connected
+   to a proper secure database/backend.
+*/
 
 const reports=[];
 
+
 function findReport(){
 
-  const code=
-    document.getElementById("reportCode").value.trim().toUpperCase();
+    const code=
+        document.getElementById("reportCode")
+        .value
+        .trim()
+        .toUpperCase();
 
-  const phone=
-    document.getElementById("reportPhone").value.trim();
+    const phone=
+        document.getElementById("reportPhone")
+        .value
+        .trim();
 
-  const result=
-    document.getElementById("reportResult");
+    const result=
+        document.getElementById("reportResult");
 
 
-  if(!code || !phone){
+    if(!code || !phone){
+
+        result.innerHTML=`
+            <div style="
+                padding:18px;
+                border:1px solid #9d7625;
+                border-radius:12px;
+                background:#04150e;
+            ">
+                <strong style="color:#ffe99b">
+                    Please enter Report Code and last 4 digits of mobile number.
+                </strong>
+            </div>
+        `;
+
+        return;
+
+    }
+
+
+    const report=
+        reports.find(function(item){
+
+            return item.code===code &&
+                   item.phone===phone;
+
+        });
+
+
+    if(!report){
+
+        result.innerHTML=`
+            <div style="
+                padding:20px;
+                border:1px solid #9d7625;
+                border-radius:12px;
+                background:#04150e;
+            ">
+
+                <strong style="color:#ffe99b">
+                    No Report Found
+                </strong>
+
+                <p style="margin:8px 0 15px;color:#c5ccc7">
+                    Please check your Report Code and phone number.
+                </p>
+
+                <a
+                    href="https://wa.me/923061912314"
+                    target="_blank"
+                    class="gold-btn whatsapp-btn"
+                >
+                    💬 WhatsApp Support
+                </a>
+
+            </div>
+        `;
+
+        return;
+
+    }
+
 
     result.innerHTML=`
-      <div class="report-card">
-        <strong>Please enter Report Code and last 4 digits of phone.</strong>
-      </div>
-    `;
+        <div style="
+            padding:20px;
+            border:1px solid #9d7625;
+            border-radius:12px;
+            background:#04150e;
+        ">
 
-    return;
-  }
+            <strong style="color:#ffe99b">
+                ${report.name}
+            </strong>
 
+            <p style="margin-top:8px;color:#c5ccc7">
+                Report Code: ${report.code}<br>
+                Test: ${report.test}
+            </p>
 
-  const report=reports.find(item=>
-    item.code===code &&
-    item.phone===phone
-  );
+            <div style="
+                display:flex;
+                gap:10px;
+                flex-wrap:wrap;
+                margin-top:15px;
+            ">
 
+                <a
+                    href="${report.url}"
+                    target="_blank"
+                    class="gold-btn"
+                >
+                    View Report
+                </a>
 
-  if(!report){
+                <a
+                    href="${report.url}"
+                    download
+                    class="gold-btn"
+                >
+                    Download Report
+                </a>
 
-    result.innerHTML=`
-      <div class="report-card">
-        <strong>No Report Found</strong>
-        <p style="margin-top:8px;color:#b9c4bf">
-          Please check your Report Code and phone number.
-          If you still need help, contact us through WhatsApp.
-        </p>
+            </div>
 
-        <div class="report-actions">
-          <a
-            class="btn btn-gold"
-            href="https://wa.me/923061912314"
-            target="_blank"
-          >
-            WhatsApp Support
-          </a>
         </div>
-      </div>
     `;
-
-    return;
-  }
-
-
-  result.innerHTML=`
-    <div class="report-card">
-
-      <strong>${report.name}</strong>
-
-      <p style="margin-top:8px;color:#b9c4bf">
-        Report Code: ${report.code}<br>
-        Test: ${report.test}
-      </p>
-
-      <div class="report-actions">
-
-        <a
-          class="btn btn-gold"
-          href="${report.url}"
-          target="_blank"
-        >
-          View Report
-        </a>
-
-        <a
-          class="btn btn-outline"
-          href="${report.url}"
-          download
-        >
-          Download Report
-        </a>
-
-        <a
-          class="btn btn-outline"
-          href="https://wa.me/923061912314"
-          target="_blank"
-        >
-          WhatsApp
-        </a>
-
-      </div>
-
-    </div>
-  `;
 
 }
 
 
 /* ================= TOAST ================= */
 
-let toastTimer;
+let toastTimeout;
 
 function showToast(message){
 
-  const toast=document.getElementById("toast");
+    const toast=
+        document.getElementById("toast");
 
-  toast.textContent=message;
+    toast.textContent=message;
 
-  toast.classList.add("show");
+    toast.classList.add("show");
 
-  clearTimeout(toastTimer);
+    clearTimeout(toastTimeout);
 
-  toastTimer=setTimeout(()=>{
-    toast.classList.remove("show");
-  },2500);
+    toastTimeout=
+        setTimeout(function(){
+
+            toast.classList.remove("show");
+
+        },2500);
 
 }
 
 
-/* ================= INITIALIZE ================= */
+/* ================= OWNER NAVIGATION ================= */
 
-generateTimeOptions();
+function scrollToOwner(){
+
+    setTimeout(function(){
+
+        const owner=
+            document.getElementById("owner");
+
+        if(owner){
+
+            owner.scrollIntoView({
+                behavior:"smooth",
+                block:"center"
+            });
+
+        }
+
+    },200);
+
+}
+
+
+function scrollToContact(){
+
+    setTimeout(function(){
+
+        const contact=
+            document.getElementById("contact");
+
+        if(contact){
+
+            contact.scrollIntoView({
+                behavior:"smooth",
+                block:"center"
+            });
+
+        }
+
+    },200);
+
+}
+
+
+/* ================= NAV CLICK HANDLING ================= */
+
+document.querySelectorAll(".nav-links a").forEach(function(link){
+
+    link.addEventListener("click",function(){
+
+        document.querySelectorAll(".nav-links a")
+        .forEach(function(item){
+
+            item.classList.remove("active");
+
+        });
+
+        this.classList.add("active");
+
+    });
+
+});
 
 </script>
 
