@@ -3,1613 +3,938 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#071a16">
-<meta name="description" content="Easy Call Health Care Home Service — Premium Home Nursing, Clinical Care, Patient Care and Home Sample Collection in Bahawalpur, Pakistan.">
-<title>Easy Call Health Care Home Service | Premium Home Healthcare</title>
-
+<title>Easy Call Health Care Home Service</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap');
-
-:root{
-  --black:#050807;
-  --black2:#0a100e;
-  --green:#071f1a;
-  --green2:#0d3a30;
-  --green3:#145849;
-  --gold:#d9a441;
-  --gold2:#f1ca72;
-  --gold3:#fff0b6;
-  --white:#fffdf8;
-  --muted:#b8c1bd;
-  --line:rgba(217,164,65,.25);
-  --glass:rgba(255,255,255,.055);
-  --shadow:0 25px 80px rgba(0,0,0,.45);
-}
-
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{
-  font-family:Inter,Arial,sans-serif;
-  background:
-    radial-gradient(circle at 15% 10%,rgba(217,164,65,.09),transparent 28%),
-    radial-gradient(circle at 90% 30%,rgba(20,88,73,.22),transparent 30%),
-    var(--black);
-  color:var(--white);
-  line-height:1.6;
+font-family:Arial,Helvetica,sans-serif;
+background:#07110f;
+color:#f5f1e5;
+line-height:1.6;
 }
-a{text-decoration:none;color:inherit}
-button,input,select,textarea{font:inherit}
-img{max-width:100%;display:block}
-
-.container{width:min(1180px,92%);margin:auto}
-.gold{color:var(--gold2)}
-.serif{font-family:"Cormorant Garamond",serif}
-
-.topbar{
-  background:#030504;
-  border-bottom:1px solid var(--line);
-  padding:9px 0;
-  font-size:12px;
-  color:#d9ddd9;
+:root{
+--gold:#d6ad55;
+--gold2:#f4d98a;
+--dark:#07110f;
+--card:#0d1c18;
+--card2:#10251f;
+--muted:#b9c1ba;
+--border:rgba(214,173,85,.35);
 }
-.topbar .container{
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-  flex-wrap:wrap;
-}
-.topbar a:hover{color:var(--gold2)}
-
 header{
-  position:sticky;
-  top:0;
-  z-index:999;
-  background:rgba(5,8,7,.94);
-  backdrop-filter:blur(18px);
-  border-bottom:1px solid rgba(217,164,65,.18);
+position:sticky;top:0;z-index:999;
+background:rgba(5,14,12,.94);
+backdrop-filter:blur(18px);
+border-bottom:1px solid var(--border);
 }
 .nav{
-  min-height:82px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:25px;
+max-width:1250px;margin:auto;padding:14px 22px;
+display:flex;align-items:center;justify-content:space-between;
 }
 .logo{
-  display:flex;
-  align-items:center;
-  gap:12px;
+display:flex;align-items:center;gap:12px;
+color:var(--gold2);font-weight:800;font-size:20px;
 }
-.logo-mark{
-  width:48px;height:48px;
-  border:1px solid var(--gold);
-  border-radius:50%;
-  display:grid;
-  place-items:center;
-  color:var(--gold2);
-  font-size:24px;
-  box-shadow:0 0 25px rgba(217,164,65,.15);
-  position:relative;
+.logoMark{
+width:48px;height:48px;border-radius:50%;
+border:2px solid var(--gold);
+display:flex;align-items:center;justify-content:center;
+font-size:25px;
+box-shadow:0 0 20px rgba(214,173,85,.2);
 }
-.logo-mark:before{
-  content:"☾";
-  font-size:27px;
+nav a{
+color:#eee;text-decoration:none;margin-left:24px;font-size:14px;
+transition:.3s;
 }
-.logo-mark:after{
-  content:"+";
-  position:absolute;
-  font-size:17px;
-  font-weight:800;
-  top:12px;
-  left:22px;
-}
-.logo-text strong{
-  display:block;
-  color:var(--gold2);
-  font-family:"Cormorant Garamond",serif;
-  font-size:22px;
-  line-height:1;
-}
-.logo-text span{
-  font-size:9px;
-  letter-spacing:2px;
-  color:#c5ccc8;
-  text-transform:uppercase;
-}
-.nav-links{
-  display:flex;
-  align-items:center;
-  gap:25px;
-  font-size:13px;
-  font-weight:600;
-}
-.nav-links a{color:#e5e9e5}
-.nav-links a:hover{color:var(--gold2)}
-.nav-btn{
-  padding:12px 18px;
-  border:1px solid var(--gold);
-  border-radius:30px;
-  color:var(--gold2)!important;
-}
-.menu-btn{
-  display:none;
-  background:none;
-  border:1px solid var(--line);
-  color:var(--gold2);
-  width:44px;height:44px;
-  border-radius:12px;
-  cursor:pointer;
-}
-
-.page{display:none}
-.page.active{display:block}
-
-.hero{
-  min-height:720px;
-  display:grid;
-  grid-template-columns:1.05fr .95fr;
-  align-items:center;
-  gap:50px;
-  position:relative;
-  overflow:hidden;
-}
-.hero:before{
-  content:"";
-  position:absolute;
-  width:520px;height:520px;
-  border-radius:50%;
-  background:rgba(217,164,65,.08);
-  filter:blur(90px);
-  right:-180px;
-  top:-120px;
-}
-.eyebrow{
-  color:var(--gold2);
-  text-transform:uppercase;
-  letter-spacing:3px;
-  font-size:11px;
-  font-weight:800;
-  margin-bottom:18px;
-}
-.hero h1{
-  font-family:"Cormorant Garamond",serif;
-  font-size:clamp(48px,6vw,78px);
-  line-height:.95;
-  margin-bottom:22px;
-  font-weight:700;
-}
-.hero h1 span{color:var(--gold2)}
-.hero p{
-  max-width:650px;
-  color:#c3ccc7;
-  font-size:16px;
-}
-.urdu{
-  margin:22px 0;
-  color:var(--gold3);
-  font-size:21px;
-  font-weight:600;
-}
-.hero-actions{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-top:30px;
-}
+nav a:hover{color:var(--gold2)}
 .btn{
-  border:0;
-  cursor:pointer;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  padding:14px 22px;
-  border-radius:10px;
-  font-weight:800;
-  transition:.25s;
+display:inline-flex;align-items:center;justify-content:center;
+border:1px solid var(--gold);
+background:linear-gradient(135deg,#b78b32,#f3d47f);
+color:#07110f;padding:13px 20px;border-radius:10px;
+font-weight:800;text-decoration:none;cursor:pointer;
+box-shadow:0 8px 25px rgba(214,173,85,.15);
+transition:.3s;
 }
-.btn-gold{
-  background:linear-gradient(135deg,var(--gold),var(--gold2));
-  color:#111;
-  box-shadow:0 12px 35px rgba(217,164,65,.2);
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(214,173,85,.28)}
+.btn.dark{
+background:transparent;color:var(--gold2);
 }
-.btn-gold:hover{transform:translateY(-3px);box-shadow:0 18px 45px rgba(217,164,65,.3)}
-.btn-outline{
-  border:1px solid var(--gold);
-  color:var(--gold2);
-  background:rgba(217,164,65,.03);
+.page{display:none;min-height:100vh}
+.page.active{display:block}
+.container{max-width:1200px;margin:auto;padding:70px 22px}
+.hero{
+min-height:88vh;display:flex;align-items:center;
+background:
+radial-gradient(circle at 80% 30%,rgba(214,173,85,.12),transparent 30%),
+radial-gradient(circle at 20% 70%,rgba(25,130,105,.12),transparent 30%);
 }
-.btn-outline:hover{background:rgba(217,164,65,.1)}
-
-.hero-card{
-  position:relative;
-  min-height:560px;
-  border:1px solid var(--line);
-  border-radius:30px;
-  overflow:hidden;
-  background:
-    linear-gradient(180deg,transparent 45%,rgba(0,0,0,.85)),
-    linear-gradient(135deg,#163d34,#07100d);
-  box-shadow:var(--shadow);
+.heroGrid{
+max-width:1200px;width:100%;margin:auto;padding:70px 22px;
+display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center;
 }
-.hero-person{
-  width:100%;
-  height:100%;
-  min-height:560px;
-  object-fit:cover;
-  opacity:.86;
+.badge{
+display:inline-block;padding:7px 14px;border:1px solid var(--border);
+border-radius:30px;color:var(--gold2);font-size:12px;
+letter-spacing:1px;margin-bottom:18px;
 }
-.hero-badge{
-  position:absolute;
-  left:22px;
-  bottom:22px;
-  right:22px;
-  padding:18px;
-  border:1px solid rgba(241,202,114,.35);
-  border-radius:18px;
-  background:rgba(4,8,7,.78);
-  backdrop-filter:blur(12px);
+h1{
+font-size:clamp(42px,6vw,76px);line-height:1.03;
+font-weight:900;letter-spacing:-2px;
 }
-.hero-badge strong{color:var(--gold2);font-size:18px}
-.hero-badge p{font-size:12px;margin-top:4px;color:#c7ceca}
-
-.section{padding:95px 0}
-.section-head{
-  text-align:center;
-  max-width:750px;
-  margin:0 auto 48px;
+.gold{color:var(--gold2)}
+.hero p{color:var(--muted);font-size:18px;margin:24px 0;max-width:680px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.heroCard{
+background:linear-gradient(145deg,rgba(20,44,36,.95),rgba(7,17,15,.95));
+border:1px solid var(--border);border-radius:28px;padding:35px;
+box-shadow:0 30px 80px rgba(0,0,0,.35);
 }
-.section-head .eyebrow{margin-bottom:8px}
-.section-head h2{
-  font-family:"Cormorant Garamond",serif;
-  font-size:50px;
-  line-height:1;
-  margin-bottom:15px;
+.medicalLogo{
+width:190px;height:190px;border-radius:50%;margin:auto;
+border:2px solid var(--gold);
+display:flex;align-items:center;justify-content:center;
+font-size:90px;color:var(--gold2);
+box-shadow:0 0 60px rgba(214,173,85,.16),inset 0 0 40px rgba(214,173,85,.06);
 }
-.section-head p{color:var(--muted)}
-
+.sectionTitle{text-align:center;margin-bottom:45px}
+.sectionTitle h2{font-size:42px}
+.sectionTitle p{color:var(--muted);margin-top:8px}
 .grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
+display:grid;grid-template-columns:repeat(4,1fr);gap:18px;
 }
 .card{
-  background:linear-gradient(145deg,rgba(255,255,255,.065),rgba(255,255,255,.025));
-  border:1px solid rgba(217,164,65,.18);
-  border-radius:20px;
-  padding:27px;
-  box-shadow:0 15px 45px rgba(0,0,0,.2);
+background:linear-gradient(145deg,var(--card2),var(--card));
+border:1px solid var(--border);border-radius:18px;padding:24px;
+transition:.3s;
 }
-.card:hover{
-  border-color:rgba(217,164,65,.5);
-  transform:translateY(-4px);
-  transition:.25s;
+.card:hover{transform:translateY(-5px);border-color:var(--gold)}
+.icon{font-size:32px;margin-bottom:12px}
+.card h3{color:var(--gold2);margin-bottom:7px}
+.card p{color:var(--muted);font-size:14px}
+.serviceList{
+display:grid;grid-template-columns:repeat(2,1fr);gap:18px;
 }
-.icon{
-  width:55px;height:55px;
-  display:grid;
-  place-items:center;
-  border-radius:15px;
-  border:1px solid var(--line);
-  background:rgba(217,164,65,.08);
-  font-size:24px;
-  margin-bottom:18px;
+.serviceBox{
+background:var(--card);border:1px solid var(--border);
+border-radius:18px;padding:25px;
 }
-.card h3{font-size:18px;margin-bottom:8px}
-.card p{color:var(--muted);font-size:13px}
-.card ul{list-style:none;margin-top:14px}
-.card li{
-  color:#ccd3cf;
-  font-size:13px;
-  padding:6px 0;
-  border-bottom:1px solid rgba(255,255,255,.06);
+.serviceBox h3{color:var(--gold2);margin-bottom:15px}
+.serviceBox ul{list-style:none;color:#d6ddd8}
+.serviceBox li{padding:7px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.serviceBox li:last-child{border:0}
+.serviceBox li:before{content:"✓";color:var(--gold2);font-weight:bold;margin-right:9px}
+.formWrap{
+max-width:950px;margin:auto;
+background:linear-gradient(145deg,#10251f,#091512);
+border:1px solid var(--border);border-radius:24px;padding:30px;
+box-shadow:0 25px 70px rgba(0,0,0,.3);
 }
-.card li:before{content:"✦";color:var(--gold2);margin-right:8px}
-
-.stats{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-}
-.stat{
-  padding:30px 15px;
-  text-align:center;
-  border-right:1px solid var(--line);
-}
-.stat:last-child{border:0}
-.stat strong{
-  display:block;
-  color:var(--gold2);
-  font-family:"Cormorant Garamond",serif;
-  font-size:43px;
-}
-.stat span{font-size:12px;color:#bfc8c3}
-
-.about{
-  display:grid;
-  grid-template-columns:.8fr 1.2fr;
-  gap:60px;
-  align-items:center;
-}
-.owner-photo{
-  width:100%;
-  max-width:430px;
-  aspect-ratio:1/1;
-  object-fit:cover;
-  border-radius:25px;
-  border:2px solid var(--gold);
-  padding:5px;
-  background:#07100d;
-  box-shadow:0 25px 70px rgba(0,0,0,.5);
-  margin:auto;
-}
-.about h2{
-  font-family:"Cormorant Garamond",serif;
-  font-size:53px;
-  line-height:1;
-  margin-bottom:18px;
-}
-.about p{color:var(--muted);margin-bottom:15px}
-.signature{
-  margin-top:25px;
-  padding:18px 0;
-  border-top:1px solid var(--line);
-}
-.signature strong{
-  display:block;
-  font-family:"Cormorant Garamond",serif;
-  color:var(--gold2);
-  font-size:25px;
-}
-
-.booking-wrap{
-  display:grid;
-  grid-template-columns:1fr .75fr;
-  gap:25px;
-}
-.form-box{
-  background:linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
-  border:1px solid var(--line);
-  border-radius:25px;
-  padding:30px;
-}
-.form-box h2{
-  font-family:"Cormorant Garamond",serif;
-  font-size:38px;
-  margin-bottom:5px;
-}
-.form-box>p{color:var(--muted);font-size:13px;margin-bottom:25px}
-.form-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:15px;
-}
-.field{margin-bottom:15px}
+.formGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.field{display:flex;flex-direction:column;gap:7px}
 .field.full{grid-column:1/-1}
-.field label{
-  display:block;
-  font-size:11px;
-  font-weight:800;
-  color:#dfe4e1;
-  margin-bottom:7px;
-  text-transform:uppercase;
-  letter-spacing:.7px;
+label{font-size:13px;color:var(--gold2);font-weight:700}
+input,select,textarea{
+width:100%;padding:14px 15px;border-radius:10px;
+border:1px solid rgba(214,173,85,.3);
+background:#07120f;color:#fff;outline:none;
+font-size:15px;
 }
-.field input,.field select,.field textarea{
-  width:100%;
-  border:1px solid rgba(255,255,255,.13);
-  background:#080e0c;
-  color:#fff;
-  padding:13px 14px;
-  border-radius:10px;
-  outline:none;
+input:focus,select:focus,textarea:focus{border-color:var(--gold)}
+textarea{min-height:110px;resize:vertical}
+select option{background:#07120f;color:#fff}
+.small{font-size:12px;color:#9da9a3}
+.paymentDetails{
+display:none;margin-top:10px;padding:13px;
+border:1px dashed var(--border);border-radius:10px;
+color:#ddd;font-size:13px;
 }
-.field input:focus,.field select:focus,.field textarea:focus{
-  border-color:var(--gold);
+.reportBox{
+max-width:700px;margin:auto;text-align:center;
+background:linear-gradient(145deg,#10251f,#091512);
+padding:35px;border-radius:24px;border:1px solid var(--border);
 }
-.field textarea{min-height:110px;resize:vertical}
-.note{
-  background:rgba(217,164,65,.07);
-  border:1px solid var(--line);
-  padding:14px;
-  border-radius:12px;
-  color:#d6ddd8;
-  font-size:12px;
-  margin-bottom:15px;
+.reportResult{display:none;margin-top:25px;text-align:left}
+.reportCard{
+padding:20px;background:#07120f;border:1px solid var(--border);
+border-radius:14px;
 }
-
-.payment-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
-  margin-top:15px;
+.owner{
+display:grid;grid-template-columns:.7fr 1.3fr;gap:35px;align-items:center;
 }
-.pay{
-  border:1px solid var(--line);
-  padding:14px;
-  border-radius:12px;
-  text-align:center;
-  color:var(--gold2);
-  font-size:12px;
-  font-weight:800;
+.ownerPhoto{
+min-height:390px;border-radius:25px;border:1px solid var(--border);
+background:linear-gradient(135deg,#18372d,#07110f);
+display:flex;align-items:center;justify-content:center;
+font-size:90px;color:var(--gold2);
 }
-.side-card{
-  border-radius:25px;
-  padding:30px;
-  border:1px solid var(--line);
-  background:linear-gradient(160deg,#0e3b31,#06100d);
+.ownerInfo h2{font-size:42px;color:var(--gold2)}
+.ownerInfo p{color:var(--muted);margin:10px 0}
+.contactGrid{
+display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
 }
-.side-card h3{
-  font-family:"Cormorant Garamond",serif;
-  font-size:34px;
-  color:var(--gold2);
+.contactCard{
+padding:25px;text-align:center;background:var(--card);
+border:1px solid var(--border);border-radius:18px;
 }
-.contact-line{
-  padding:17px 0;
-  border-bottom:1px solid rgba(255,255,255,.08);
-}
-.contact-line span{
-  display:block;
-  color:#8f9c96;
-  font-size:10px;
-  text-transform:uppercase;
-  letter-spacing:1px;
-}
-.contact-line a,.contact-line strong{color:#fff}
-
-.report-box{
-  max-width:700px;
-  margin:auto;
-  text-align:center;
-}
-.report-box .form-box{text-align:left}
-.report-result{
-  display:none;
-  margin-top:18px;
-  padding:20px;
-  border:1px solid var(--gold);
-  border-radius:15px;
-  background:rgba(217,164,65,.07);
-}
-.report-result.show{display:block}
-.report-result a{color:var(--gold2);font-weight:800}
-
-.testimonial{
-  position:relative;
-}
-.stars{color:var(--gold2);letter-spacing:3px;margin-bottom:12px}
-.quote{font-family:"Cormorant Garamond",serif;font-size:22px;color:#eee}
-.client{margin-top:18px;color:var(--gold2);font-weight:800;font-size:13px}
-
-.contact-grid{
-  display:grid;
-  grid-template-columns:.8fr 1.2fr;
-  gap:25px;
-}
-.map{
-  min-height:430px;
-  border:1px solid var(--line);
-  border-radius:25px;
-  overflow:hidden;
-  background:#0b1714;
-}
-.map iframe{width:100%;height:100%;min-height:430px;border:0}
-
+.contactCard a{color:var(--gold2);text-decoration:none}
 footer{
-  background:#020403;
-  border-top:1px solid var(--line);
-  padding:60px 0 30px;
+padding:35px 20px;text-align:center;border-top:1px solid var(--border);
+color:#9da9a3;font-size:13px;
 }
-.footer-grid{
-  display:grid;
-  grid-template-columns:1.3fr .8fr .8fr;
-  gap:35px;
+.floatBook{
+position:fixed;right:20px;bottom:20px;z-index:900;
+border-radius:50px;padding:15px 20px;
 }
-footer h3{
-  color:var(--gold2);
-  font-family:"Cormorant Garamond",serif;
-  font-size:25px;
-  margin-bottom:15px;
-}
-footer p,footer a{color:#929d97;font-size:13px}
-footer a:hover{color:var(--gold2)}
-.footer-links{display:grid;gap:8px}
-.copyright{
-  margin-top:45px;
-  padding-top:20px;
-  border-top:1px solid rgba(255,255,255,.07);
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-  flex-wrap:wrap;
-  color:#66716c;
-  font-size:11px;
-}
-
-.float-wa{
-  position:fixed;
-  right:22px;
-  bottom:22px;
-  z-index:1000;
-  width:60px;height:60px;
-  display:grid;
-  place-items:center;
-  border-radius:50%;
-  background:#25D366;
-  color:white;
-  font-size:27px;
-  box-shadow:0 12px 35px rgba(37,211,102,.3);
-}
-.float-wa:hover{transform:scale(1.08)}
-
-.mobile-bar{
-  display:none;
-}
-
 .toast{
-  position:fixed;
-  left:50%;
-  bottom:25px;
-  transform:translate(-50%,120px);
-  background:#101814;
-  border:1px solid var(--gold);
-  color:white;
-  padding:14px 22px;
-  border-radius:12px;
-  z-index:3000;
-  transition:.3s;
-  box-shadow:var(--shadow);
-  font-size:13px;
+position:fixed;left:50%;bottom:25px;transform:translateX(-50%);
+background:#132c24;border:1px solid var(--gold);
+color:#fff;padding:14px 22px;border-radius:12px;
+display:none;z-index:2000;
 }
-.toast.show{transform:translate(-50%,0)}
-
+.timePicker{
+position:relative;
+}
+.timePicker input{cursor:pointer}
+.timeModal{
+display:none;position:fixed;inset:0;z-index:1500;
+background:rgba(0,0,0,.72);align-items:center;justify-content:center;
+padding:20px;
+}
+.timeModal.show{display:flex}
+.timePanel{
+width:min(430px,100%);
+background:#0b1b17;border:1px solid var(--gold);
+border-radius:24px;padding:25px;
+box-shadow:0 25px 80px rgba(0,0,0,.6);
+}
+.timePanel h3{text-align:center;color:var(--gold2);margin-bottom:18px}
+.clock{
+width:270px;height:270px;margin:15px auto;
+border-radius:50%;border:2px solid var(--border);
+position:relative;background:#07120f;
+}
+.clockCenter{
+position:absolute;width:12px;height:12px;border-radius:50%;
+background:var(--gold2);left:50%;top:50%;transform:translate(-50%,-50%);
+}
+.clockHand{
+position:absolute;width:3px;height:90px;background:var(--gold2);
+left:50%;top:50%;transform-origin:50% 100%;
+transform:translate(-50%,-100%) rotate(0deg);
+border-radius:5px;
+}
+.clockNumbers{
+position:absolute;inset:0;
+}
+.clockNumbers button{
+position:absolute;width:38px;height:38px;border-radius:50%;
+border:0;background:transparent;color:#fff;font-weight:bold;
+cursor:pointer;
+}
+.clockNumbers button:hover,.clockNumbers button.selected{
+background:var(--gold);color:#07110f;
+}
+.timeTop{
+display:flex;justify-content:center;align-items:center;gap:10px;
+font-size:27px;font-weight:bold;color:#fff;margin-bottom:5px;
+}
+.ampm button{
+padding:7px 12px;border:1px solid var(--border);
+background:transparent;color:#fff;border-radius:8px;cursor:pointer;
+}
+.ampm button.active{background:var(--gold);color:#07110f}
+.timeStep{text-align:center;color:#aaa;font-size:12px;margin-bottom:8px}
+.timeActions{display:flex;gap:10px;justify-content:flex-end}
 @media(max-width:900px){
-  .nav-links{
-    display:none;
-    position:absolute;
-    left:4%;
-    right:4%;
-    top:82px;
-    background:#07100d;
-    border:1px solid var(--line);
-    border-radius:15px;
-    padding:15px;
-    flex-direction:column;
-    align-items:stretch;
-  }
-  .nav-links.open{display:flex}
-  .menu-btn{display:block}
-  .hero{grid-template-columns:1fr;padding:60px 0}
-  .hero-card{min-height:460px}
-  .hero-person{min-height:460px}
-  .about,.booking-wrap,.contact-grid{grid-template-columns:1fr}
-  .grid{grid-template-columns:1fr 1fr}
-  .stats{grid-template-columns:1fr 1fr}
-  .stat:nth-child(2){border-right:0}
-  .footer-grid{grid-template-columns:1fr 1fr}
+.heroGrid,.owner{grid-template-columns:1fr}
+.grid{grid-template-columns:repeat(2,1fr)}
 }
-
-@media(max-width:600px){
-  .topbar .container{justify-content:center;text-align:center}
-  .logo-text strong{font-size:18px}
-  .logo-text span{font-size:7px}
-  .hero h1{font-size:52px}
-  .section{padding:70px 0}
-  .section-head h2,.about h2{font-size:43px}
-  .grid,.form-grid{grid-template-columns:1fr}
-  .field.full{grid-column:auto}
-  .stats{grid-template-columns:1fr 1fr}
-  .stat{border-bottom:1px solid var(--line)}
-  .stat:nth-child(even){border-right:0}
-  .payment-grid{grid-template-columns:1fr}
-  .footer-grid{grid-template-columns:1fr}
-  .float-wa{bottom:78px}
-  .mobile-bar{
-    display:grid;
-    position:fixed;
-    bottom:0;
-    left:0;
-    right:0;
-    z-index:998;
-    grid-template-columns:1fr 1fr;
-    background:#050807;
-    border-top:1px solid var(--line);
-  }
-  .mobile-bar a{
-    text-align:center;
-    padding:13px 5px;
-    font-size:11px;
-    font-weight:800;
-    color:var(--gold2);
-  }
-  .mobile-bar a:first-child{border-right:1px solid var(--line)}
+@media(max-width:650px){
+nav a:not(.navBook){display:none}
+.hero{min-height:auto}
+.heroGrid{padding-top:55px}
+.grid,.serviceList,.formGrid,.contactGrid{grid-template-columns:1fr}
+.formWrap{padding:20px}
+.sectionTitle h2{font-size:32px}
+.ownerPhoto{min-height:280px}
+.floatBook{right:12px;bottom:12px}
 }
 </style>
 </head>
 
 <body>
 
-<div class="topbar">
-  <div class="container">
-    <span>✦ PREMIUM HOME HEALTHCARE · BAHawalpur, PAKISTAN</span>
-    <span>
-      <a href="tel:+923061912314">☎ +92 306 1912314</a>
-      &nbsp; · &nbsp;
-      <a href="https://wa.me/923061912314" target="_blank" rel="noopener">WhatsApp</a>
-    </span>
-  </div>
-</div>
-
 <header>
-  <div class="container nav">
-
-    <a href="#" class="logo" onclick="showPage('home');return false;">
-      <div class="logo-mark"></div>
-      <div class="logo-text">
-        <strong>Easy Call Health Care</strong>
-        <span>Home Service · Bahawalpur</span>
-      </div>
-    </a>
-
-    <nav class="nav-links" id="navLinks">
-      <a href="#" onclick="showPage('home');return false;">Home</a>
-      <a href="#" onclick="showPage('services');return false;">Services & Booking</a>
-      <a href="#" onclick="showPage('reports');return false;">Reports & Contact</a>
-      <a class="nav-btn" href="#booking" onclick="showPage('services');setTimeout(()=>document.getElementById('booking').scrollIntoView(),100);return false;">Book a Home Visit</a>
-    </nav>
-
-    <button class="menu-btn" onclick="toggleMenu()">☰</button>
-  </div>
+<div class="nav">
+<div class="logo">
+<div class="logoMark">☾✚</div>
+<span>Easy Call Healthcare</span>
+</div>
+<nav>
+<a href="#" onclick="showPage('home')">Home</a>
+<a href="#" onclick="showPage('services')">Services & Booking</a>
+<a href="#" onclick="showPage('reports')">Reports & Contact</a>
+<a class="navBook btn" href="#" onclick="showPage('services');scrollToBooking()">Book Visit</a>
+</nav>
+</div>
 </header>
 
 <main>
 
-<!-- ================= HOME PAGE ================= -->
-<section class="page active" id="home">
+<!-- HOME -->
+<section id="home" class="page active">
+<div class="hero">
+<div class="heroGrid">
+<div>
+<span class="badge">PREMIUM HOME HEALTHCARE • BAHAWALPUR</span>
+<h1>Your Health.<br><span class="gold">Your Home.</span><br>One Call Away.</h1>
+<p>
+Professional home healthcare services for patients, elderly people,
+post-operative care and clinical procedures — delivered at your home
+with privacy, respect and care.
+</p>
+<div class="actions">
+<a class="btn" href="#" onclick="showPage('services');scrollToBooking()">Book a Home Visit</a>
+<a class="btn dark" href="tel:+923061912314">☎ Call Now</a>
+<a class="btn dark" href="https://wa.me/923061912314" target="_blank">WhatsApp</a>
+</div>
+</div>
 
-  <div class="container hero">
-    <div>
-      <div class="eyebrow">Open Daily · 8:00 AM — 10:00 PM</div>
+<div class="heroCard">
+<div class="medicalLogo">☾✚</div>
+<h2 style="text-align:center;color:var(--gold2);margin-top:25px">
+Easy Call Health Care
+</h2>
+<p style="text-align:center;color:var(--muted)">
+Professional • Private • Reliable
+</p>
+</div>
+</div>
+</div>
 
-      <h1>
-        Premium Care.<br>
-        <span>At Your Home.</span>
-      </h1>
+<div class="container">
+<div class="sectionTitle">
+<h2>Why Choose <span class="gold">Easy Call?</span></h2>
+<p>Healthcare support designed around your home and your needs.</p>
+</div>
+<div class="grid">
+<div class="card"><div class="icon">👨‍⚕️</div><h3>Qualified Staff</h3><p>Experienced healthcare professionals for home-based patient care.</p></div>
+<div class="card"><div class="icon">⚡</div><h3>Same-Day Visits</h3><p>Book a suitable visit according to your preferred date and time.</p></div>
+<div class="card"><div class="icon">🔒</div><h3>Private & Respectful</h3><p>Patient dignity, privacy and respectful care are our priority.</p></div>
+<div class="card"><div class="icon">💳</div><h3>Easy Payment</h3><p>Cash, JazzCash and bank transfer payment options.</p></div>
+</div>
+</div>
 
-      <p>
-        Professional home nursing, patient care, clinical procedures,
-        vital monitoring and home laboratory sample collection —
-        delivered with privacy, dignity and compassion.
-      </p>
-
-      <div class="urdu">
-        آپ کی صحت، آپ کے گھر پر — بس ایک کال کی دور!
-      </div>
-
-      <div class="hero-actions">
-        <a class="btn btn-gold" href="#" onclick="goBooking();return false;">✦ Request a Service</a>
-        <a class="btn btn-outline" href="https://wa.me/923061912314" target="_blank" rel="noopener">☘ WhatsApp Us</a>
-        <a class="btn btn-outline" href="tel:+923061912314">☎ Call Now</a>
-      </div>
-    </div>
-
-    <div class="hero-card">
-      <img
-        class="hero-person"
-        src="https://images.unsplash.com/photo-1550831107-1553da8c8464?auto=format&fit=crop&w=1000&q=90"
-        alt="Professional home healthcare nurse">
-      <div class="hero-badge">
-        <strong>Professional Home Healthcare</strong>
-        <p>Male & Female Care Staff · Clinical Procedures · Home Sample Collection</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="container section" style="padding-top:30px">
-    <div class="stats">
-      <div class="stat"><strong>23+</strong><span>Home Care Services</span></div>
-      <div class="stat"><strong>8AM–10PM</strong><span>Daily Availability</span></div>
-      <div class="stat"><strong>100%</strong><span>Home Convenience</span></div>
-      <div class="stat"><strong>1 Call</strong><span>To Request Care</span></div>
-    </div>
-  </div>
-
-  <section class="section">
-    <div class="container">
-      <div class="section-head">
-        <div class="eyebrow">Our Expertise</div>
-        <h2>Healthcare Without Leaving Home</h2>
-        <p>
-          Designed around the comfort, dignity and convenience of patients
-          and families in Bahawalpur.
-        </p>
-      </div>
-
-      <div class="grid">
-
-        <div class="card">
-          <div class="icon">♿</div>
-          <h3>Nursing & Patient Care</h3>
-          <p>Compassionate support for patients requiring assistance at home.</p>
-          <ul>
-            <li>Male & Female Nurse / Clinical Assistant</li>
-            <li>Patient Bathing & Feeding</li>
-            <li>Elderly Care</li>
-            <li>Post-Operative Care</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <div class="icon">♥</div>
-          <h3>Vitals & Monitoring</h3>
-          <p>Routine health measurements conveniently performed at home.</p>
-          <ul>
-            <li>Blood Pressure</li>
-            <li>Blood Sugar</li>
-            <li>Pulse</li>
-            <li>Oxygen Level</li>
-            <li>Temperature</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <div class="icon">✚</div>
-          <h3>Clinical Procedures</h3>
-          <p>Selected home clinical procedures by trained staff.</p>
-          <ul>
-            <li>Injection & IV Drip</li>
-            <li>Cannula</li>
-            <li>Dressing & Wound Cleaning</li>
-            <li>Nebulization</li>
-            <li>NG / Foley's / Urine Bag</li>
-            <li>Stitch & Stitch Out</li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="section" style="background:rgba(13,58,48,.12)">
-    <div class="container about">
-
-      <div>
-        <!-- OWNER PHOTO: replace owner-photo.jpg with Muhammad Ismail's high-resolution 1080px photo -->
-        <img class="owner-photo"
-             src="owner-photo.jpg"
-             alt="Muhammad Ismail — Founder & Owner"
-             onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=1080&q=95'">
-      </div>
-
-      <div>
-        <div class="eyebrow">Founder & Owner</div>
-        <h2>Care With <span class="gold">Trust & Responsibility.</span></h2>
-        <p>
-          Easy Call Health Care Home Service is focused on making essential
-          healthcare support more convenient by bringing selected home-care
-          services directly to patients.
-        </p>
-        <p>
-          Founded and managed by <strong class="gold">Muhammad Ismail</strong>,
-          with a focus on professional service, patient dignity and family
-          convenience.
-        </p>
-
-        <div class="signature">
-          <strong>Muhammad Ismail</strong>
-          Founder & Owner — Easy Call Health Care Home Service
-          <br>Bahawalpur, Punjab, Pakistan
-        </div>
-
-        <a class="btn btn-gold" href="#" onclick="goBooking();return false;" style="margin-top:20px;">
-          Book Home Care
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="section-head">
-        <div class="eyebrow">Why Choose Us</div>
-        <h2>A Premium Home-Care Experience</h2>
-      </div>
-
-      <div class="grid">
-
-        <div class="card">
-          <div class="icon">✓</div>
-          <h3>Qualified Staff</h3>
-          <p>Home-care support through trained and experienced personnel.</p>
-        </div>
-
-        <div class="card">
-          <div class="icon">◷</div>
-          <h3>Same-Day Visits</h3>
-          <p>Request a visit according to your preferred date and time.</p>
-        </div>
-
-        <div class="card">
-          <div class="icon">♙</div>
-          <h3>Private & Respectful</h3>
-          <p>Patient comfort, privacy and dignity remain central to our service.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
+<div class="container">
+<div class="owner">
+<div class="ownerPhoto">👨‍⚕️</div>
+<div class="ownerInfo">
+<span class="badge">FOUNDER & OWNER</span>
+<h2>Muhammad Ismail</h2>
+<p><b>Clinical Assistant (CA)</b> — PVTC</p>
+<p><b>Pharmacy Diploma — B Category</b></p>
+<p>
+Experienced home healthcare provider serving patients with
+professional clinical and nursing support at home.
+</p>
+<a class="btn" href="#" onclick="showPage('services');scrollToBooking()">Request Home Visit</a>
+</div>
+</div>
+</div>
 </section>
 
+<!-- SERVICES -->
+<section id="services" class="page">
+<div class="container">
+<div class="sectionTitle">
+<span class="badge">OUR PROFESSIONAL SERVICES</span>
+<h2>Healthcare at <span class="gold">Your Doorstep</span></h2>
+<p>Choose a service and submit your home visit request.</p>
+</div>
 
-<!-- ================= SERVICES + BOOKING PAGE ================= -->
-<section class="page" id="services">
+<div class="serviceList">
+<div class="serviceBox">
+<h3>👨‍⚕️ Nursing & Patient Care</h3>
+<ul>
+<li>Home Nursing & Patient Care</li>
+<li>Male/Female Nurse & Clinical Assistant</li>
+<li>Patient Bathing & Feeding</li>
+<li>Elderly Care</li>
+<li>Post-Operative Care</li>
+</ul>
+</div>
+<div class="serviceBox">
+<h3>❤️ Vitals & Monitoring</h3>
+<ul>
+<li>Blood Pressure (BP)</li>
+<li>Blood Sugar Check</li>
+<li>Pulse Monitoring</li>
+<li>Oxygen Level</li>
+<li>Temperature</li>
+</ul>
+</div>
+<div class="serviceBox">
+<h3>💉 Clinical Procedures</h3>
+<ul>
+<li>Injection</li>
+<li>IV Drip</li>
+<li>Cannula</li>
+<li>Dressing & Wound Cleaning</li>
+<li>Nebulization</li>
+<li>NG Tube</li>
+<li>Foley's Catheter & Urine Bag</li>
+<li>Stitch / Suturing & Stitch Out</li>
+</ul>
+</div>
+<div class="serviceBox">
+<h3>🧪 Home Lab Sample Collection</h3>
+<ul>
+<li>Blood Sample Collection</li>
+<li>Urine Sample Collection</li>
+<li>Other Sample Collection</li>
+<li>Home Laboratory Sample Collection</li>
+<li>Report Delivery / Online Access</li>
+<li>WhatsApp Report Sharing</li>
+</ul>
+</div>
+</div>
+</div>
 
-  <section class="section" style="padding-bottom:30px">
-    <div class="container section-head">
-      <div class="eyebrow">Services & Booking</div>
-      <h2>Choose Your Home Healthcare Service</h2>
-      <p>Select a category and service from the dropdown menus, provide patient information and submit your request directly through WhatsApp.</p>
-    </div>
-  </section>
+<div class="container" id="booking">
+<div class="sectionTitle">
+<span class="badge">ONLINE HOME VISIT REQUEST</span>
+<h2>Book Your <span class="gold">Home Visit</span></h2>
+<p>Fill in the details. Your request will be prepared for WhatsApp.</p>
+</div>
 
-  <section class="section" id="booking" style="padding-top:30px">
-    <div class="container booking-wrap">
+<div class="formWrap">
+<form id="bookingForm">
+<div class="formGrid">
 
-      <div class="form-box">
-        <h2>Book a Home Visit</h2>
-        <p>Your request will be prepared automatically and can be sent to our WhatsApp.</p>
+<div class="field">
+<label>Patient Name *</label>
+<input id="patientName" required placeholder="Enter patient name">
+</div>
 
-        <form id="bookingForm" onsubmit="submitBooking(event)">
+<div class="field">
+<label>Patient Age *</label>
+<input id="patientAge" type="number" min="0" max="120" required placeholder="Age">
+</div>
 
-          <div class="form-grid">
+<div class="field">
+<label>Gender *</label>
+<select id="gender" required>
+<option value="">Select Gender</option>
+<option>Male</option>
+<option>Female</option>
+<option>Other</option>
+</select>
+</div>
 
-            <div class="field">
-              <label>Patient Name *</label>
-              <input id="patientName" required placeholder="Enter patient name">
-            </div>
+<div class="field">
+<label>Mobile Number *</label>
+<input id="mobile" type="tel" required placeholder="03XXXXXXXXX">
+</div>
 
-            <div class="field">
-              <label>Patient Age *</label>
-              <input id="patientAge" required type="number" min="0" max="120" placeholder="Age">
-            </div>
+<div class="field">
+<label>WhatsApp Number</label>
+<input id="whatsapp" type="tel" placeholder="03XXXXXXXXX">
+</div>
 
-            <div class="field">
-              <label>Gender *</label>
-              <select id="gender" required>
-                <option value="">Select Gender</option>
-                <option>Male</option>
-                <option>Female</option>
-                <option>Other</option>
-              </select>
-            </div>
+<div class="field">
+<label>Service Category *</label>
+<select id="category" required onchange="loadServices()">
+<option value="">Select Category</option>
+<option value="Nursing & Patient Care">Nursing & Patient Care</option>
+<option value="Vitals & Monitoring">Vitals & Monitoring</option>
+<option value="Clinical Procedures">Clinical Procedures</option>
+<option value="Home Lab Sample Collection">Home Lab Sample Collection</option>
+</select>
+</div>
 
-            <div class="field">
-              <label>Mobile Number *</label>
-              <input id="mobile" required type="tel" placeholder="+92...">
-            </div>
+<div class="field">
+<label>Required Service *</label>
+<select id="service" required>
+<option value="">First select category</option>
+</select>
+</div>
 
-            <div class="field">
-              <label>WhatsApp Number *</label>
-              <input id="whatsapp" required type="tel" placeholder="+92...">
-            </div>
+<div class="field full">
+<label>Patient's Disease / Medical Condition *</label>
+<input id="disease" required placeholder="e.g. Diabetes, BP, post-operative condition, etc.">
+</div>
 
-            <div class="field">
-              <label>Service Category *</label>
-              <select id="serviceCategory" required onchange="updateServices()">
-                <option value="">Select Category</option>
-                <option>Nursing & Patient Care</option>
-                <option>Vitals & Monitoring</option>
-                <option>Clinical Procedures</option>
-                <option>Home Lab Sample Collection</option>
-              </select>
-            </div>
+<div class="field">
+<label>Preferred Date *</label>
+<input id="date" type="date" required>
+</div>
 
-            <div class="field full">
-              <label>Required Service *</label>
-              <select id="service" required>
-                <option value="">First select service category</option>
-              </select>
-            </div>
+<div class="field timePicker">
+<label>Preferred Time *</label>
+<input id="time" type="text" readonly required placeholder="Click to select time">
+</div>
 
-            <div class="field">
-              <label>Preferred Date *</label>
-              <input id="date" required type="date">
-            </div>
+<div class="field full">
+<label>Area / Complete Home Address *</label>
+<textarea id="address" required placeholder="Enter complete address / area"></textarea>
+</div>
 
-            <div class="field">
-              <label>Preferred Time *</label>
-              <select id="time" required>
-                <option value="">Select Time</option>
-                <option>8:00 AM</option>
-                <option>9:00 AM</option>
-                <option>10:00 AM</option>
-                <option>11:00 AM</option>
-                <option>12:00 PM</option>
-                <option>1:00 PM</option>
-                <option>2:00 PM</option>
-                <option>3:00 PM</option>
-                <option>4:00 PM</option>
-                <option>5:00 PM</option>
-                <option>6:00 PM</option>
-                <option>7:00 PM</option>
-                <option>8:00 PM</option>
-                <option>9:00 PM</option>
-                <option>10:00 PM</option>
-              </select>
-            </div>
+<div class="field">
+<label>Payment Method *</label>
+<select id="payment" required onchange="paymentInfo()">
+<option value="">Select Payment Method</option>
+<option>Cash</option>
+<option>JazzCash</option>
+<option>Bank Transfer</option>
+</select>
+<div id="paymentDetails" class="paymentDetails"></div>
+</div>
 
-            <div class="field full">
-              <label>Patient's Disease / Medical Condition *</label>
-              <input id="condition" required placeholder="Please describe the patient's disease or medical condition">
-            </div>
+<div class="field">
+<label>Additional Details / Message</label>
+<textarea id="message" placeholder="Any additional information about the patient..."></textarea>
+</div>
 
-            <div class="field full">
-              <label>Area / Complete Address *</label>
-              <input id="address" required placeholder="Enter home visit address / area, Bahawalpur">
-            </div>
+<div class="field full">
+<button class="btn" type="submit">📲 Submit Home Visit Request on WhatsApp</button>
+</div>
 
-            <div class="field full">
-              <label>Additional Details</label>
-              <textarea id="message" placeholder="Any additional information about the patient or required care..."></textarea>
-            </div>
-
-          </div>
-
-          <div class="note">
-            <strong class="gold">Important:</strong>
-            Please provide accurate patient information. Service availability and clinical suitability may be confirmed by the care team before the visit.
-          </div>
-
-          <button class="btn btn-gold" type="submit" style="width:100%;">
-            ☘ Submit Request on WhatsApp
-          </button>
-
-        </form>
-      </div>
-
-      <div class="side-card">
-        <div class="eyebrow">Premium Care</div>
-        <h3>Home Healthcare, Simplified.</h3>
-        <p style="color:#b9c4be;margin-top:10px;">
-          Select the service you need and send your request directly.
-        </p>
-
-        <div class="contact-line">
-          <span>WhatsApp / Call</span>
-          <a href="tel:+923061912314">+92 306 1912314</a>
-        </div>
-
-        <div class="contact-line">
-          <span>WhatsApp</span>
-          <a href="https://wa.me/923061912314" target="_blank" rel="noopener">Chat with Easy Call</a>
-        </div>
-
-        <div class="contact-line">
-          <span>Email</span>
-          <a href="mailto:easycallhealthcare.pk@gmail.com">easycallhealthcare.pk@gmail.com</a>
-        </div>
-
-        <div class="contact-line">
-          <span>Service Area</span>
-          <strong>Bahawalpur, Punjab, Pakistan</strong>
-        </div>
-
-        <div class="contact-line">
-          <span>Hours</span>
-          <strong>Daily · 8:00 AM – 10:00 PM</strong>
-        </div>
-
-        <div style="margin-top:25px;">
-          <a class="btn btn-outline" style="width:100%;" href="tel:+923061912314">☎ Call Now</a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="section-head">
-        <div class="eyebrow">Our Complete Services</div>
-        <h2>Professional Care Options</h2>
-      </div>
-
-      <div class="grid">
-
-        <div class="card">
-          <div class="icon">♿</div>
-          <h3>Nursing & Patient Care</h3>
-          <ul>
-            <li>Home Nursing & Patient Care</li>
-            <li>Male & Female Nurse</li>
-            <li>Clinical Assistant</li>
-            <li>Patient Bathing</li>
-            <li>Patient Feeding</li>
-            <li>Elderly Care</li>
-            <li>Post-Operative Care</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <div class="icon">♥</div>
-          <h3>Vitals & Monitoring</h3>
-          <ul>
-            <li>BP Check</li>
-            <li>Blood Sugar Check</li>
-            <li>Pulse Check</li>
-            <li>Oxygen Level</li>
-            <li>Temperature</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <div class="icon">✚</div>
-          <h3>Clinical Procedures</h3>
-          <ul>
-            <li>Injection</li>
-            <li>IV Drip</li>
-            <li>Cannula</li>
-            <li>Dressing</li>
-            <li>Wound Wash / Cleaning</li>
-            <li>Nebulization</li>
-            <li>NG Tube</li>
-            <li>Foley's Catheter</li>
-            <li>Urine Bag</li>
-            <li>Stitch / Suturing</li>
-            <li>Stitch Out</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <div class="icon">♧</div>
-          <h3>Home Lab Sample Collection</h3>
-          <ul>
-            <li>Blood Sample Collection</li>
-            <li>Urine Sample Collection</li>
-            <li>Home Laboratory Sample Collection</li>
-            <li>Lab Coordination</li>
-            <li>Report Delivery / Sharing</li>
-          </ul>
-        </div>
-
-      </div>
-
-      <div class="note" style="max-width:900px;margin:25px auto 0;">
-        <strong class="gold">Laboratory Note:</strong>
-        Home sample collection and coordination are provided for laboratory testing; actual testing and report generation are performed by the relevant laboratory.
-      </div>
-
-    </div>
-  </section>
-
+</div>
+</form>
+</div>
+</div>
 </section>
 
+<!-- REPORTS -->
+<section id="reports" class="page">
+<div class="container">
+<div class="sectionTitle">
+<span class="badge">DIGITAL TEST REPORT PORTAL</span>
+<h2>Check Your <span class="gold">Test Report</span></h2>
+<p>Enter your report code and phone verification details.</p>
+</div>
 
-<!-- ================= REPORTS + CONTACT PAGE ================= -->
-<section class="page" id="reports">
+<div class="reportBox">
+<div class="field" style="text-align:left;margin-bottom:15px">
+<label>Report Code</label>
+<input id="reportCode" placeholder="Example: ECH-2026-0001">
+</div>
 
-  <section class="section" style="padding-bottom:35px">
-    <div class="container section-head">
-      <div class="eyebrow">Reports & Contact</div>
-      <h2>Your Report, Conveniently Accessible</h2>
-      <p>Use your report code and the last four digits of the registered phone number to access an available report link.</p>
-    </div>
-  </section>
+<div class="field" style="text-align:left">
+<label>Last 4 Digits of Mobile Number</label>
+<input id="reportPhone" maxlength="4" inputmode="numeric" placeholder="1234">
+</div>
 
-  <section class="section" style="padding-top:30px">
-    <div class="container report-box">
+<button class="btn" style="width:100%;margin-top:18px" onclick="findReport()">
+🔎 Find My Report
+</button>
 
-      <div class="form-box">
-        <h2>Test Report Access</h2>
-        <p>Enter the information provided with your report.</p>
+<div id="reportResult" class="reportResult">
+<div class="reportCard">
+<h3 id="rPatient" style="color:var(--gold2)"></h3>
+<p id="rDetails" style="color:#aaa;margin:5px 0 15px"></p>
+<div style="display:flex;gap:10px;flex-wrap:wrap">
+<a id="viewReport" class="btn" href="#" target="_blank">View Report</a>
+<a id="downloadReport" class="btn dark" href="#" download>Download Report</a>
+<a id="shareReport" class="btn dark" href="#" target="_blank">WhatsApp</a>
+</div>
+</div>
+</div>
 
-        <div class="field">
-          <label>Report Code *</label>
-          <input id="reportCode" placeholder="Example: ECH-1234">
-        </div>
+<p class="small" style="margin-top:20px">
+Report access requires a valid report uploaded by the administrator.
+</p>
+</div>
+</div>
 
-        <div class="field">
-          <label>Last 4 Digits of Phone *</label>
-          <input id="reportPhone" maxlength="4" inputmode="numeric" placeholder="1234">
-        </div>
+<div class="container">
+<div class="sectionTitle">
+<h2>Contact <span class="gold">Easy Call</span></h2>
+<p>We are available daily from 8:00 AM to 10:00 PM.</p>
+</div>
 
-        <button class="btn btn-gold" onclick="findReport()" style="width:100%;">
-          View / Download Report
-        </button>
-
-        <div class="report-result" id="reportResult"></div>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="section" style="background:rgba(13,58,48,.12)">
-    <div class="container">
-      <div class="section-head">
-        <div class="eyebrow">Client Experience</div>
-        <h2>Trust Matters</h2>
-      </div>
-
-      <div class="grid">
-
-        <div class="card testimonial">
-          <div class="stars">★★★★★</div>
-          <div class="quote">
-            “Professional, respectful and convenient home-care support.”
-          </div>
-          <div class="client">— Easy Call Client</div>
-        </div>
-
-        <div class="card testimonial">
-          <div class="stars">★★★★★</div>
-          <div class="quote">
-            “The home visit arrangement made care much easier for our family.”
-          </div>
-          <div class="client">— Easy Call Client</div>
-        </div>
-
-        <div class="card testimonial">
-          <div class="stars">★★★★★</div>
-          <div class="quote">
-            “A simple way to request healthcare services at home.”
-          </div>
-          <div class="client">— Easy Call Client</div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container contact-grid">
-
-      <div class="form-box">
-        <div class="eyebrow">Contact Easy Call</div>
-        <h2 style="font-family:'Cormorant Garamond',serif;font-size:48px;">
-          Let's Talk About Your Care.
-        </h2>
-
-        <div class="contact-line">
-          <span>Owner</span>
-          <strong>Muhammad Ismail</strong>
-        </div>
-
-        <div class="contact-line">
-          <span>Call</span>
-          <a href="tel:+923061912314">+92 306 1912314</a>
-        </div>
-
-        <div class="contact-line">
-          <span>WhatsApp</span>
-          <a href="https://wa.me/923061912314" target="_blank" rel="noopener">
-            +92 306 1912314
-          </a>
-        </div>
-
-        <div class="contact-line">
-          <span>Gmail</span>
-          <a href="mailto:easycallhealthcare.pk@gmail.com">
-            easycallhealthcare.pk@gmail.com
-          </a>
-        </div>
-
-        <div class="contact-line">
-          <span>Address</span>
-          <strong>Bahawalpur, Punjab, Pakistan</strong>
-        </div>
-
-        <div class="contact-line">
-          <span>Opening Hours</span>
-          <strong>Daily · 8:00 AM – 10:00 PM</strong>
-        </div>
-
-        <div style="margin-top:25px;">
-          <a class="btn btn-gold"
-             href="https://www.facebook.com/share/19Nb1SVDDf/"
-             target="_blank"
-             rel="noopener">
-            f &nbsp; Facebook Page
-          </a>
-        </div>
-      </div>
-
-      <div class="map">
-        <iframe
-          src="https://www.google.com/maps?q=Bahawalpur,Pakistan&output=embed"
-          loading="lazy"
-          title="Easy Call Health Care Home Service — Bahawalpur">
-        </iframe>
-      </div>
-
-    </div>
-  </section>
-
+<div class="contactGrid">
+<div class="contactCard">
+<div class="icon">📞</div>
+<h3>Call</h3>
+<a href="tel:+923061912314">+92 306 1912314</a>
+</div>
+<div class="contactCard">
+<div class="icon">💬</div>
+<h3>WhatsApp</h3>
+<a href="https://wa.me/923061912314" target="_blank">Chat on WhatsApp</a>
+</div>
+<div class="contactCard">
+<div class="icon">ⓕ</div>
+<h3>Facebook</h3>
+<a href="https://www.facebook.com/share/19Nb1SVDDf/" target="_blank">Visit Facebook Page</a>
+</div>
+</div>
+</div>
 </section>
 
 </main>
 
+<a class="btn floatBook" href="#" onclick="showPage('services');scrollToBooking()">📅 Book Home Visit</a>
 
 <footer>
-  <div class="container footer-grid">
-
-    <div>
-      <div class="logo" style="margin-bottom:15px;">
-        <div class="logo-mark"></div>
-        <div class="logo-text">
-          <strong>Easy Call Health Care</strong>
-          <span>Home Service · Bahawalpur</span>
-        </div>
-      </div>
-      <p>
-        Premium home healthcare support focused on comfort, convenience,
-        dignity and professional service.
-      </p>
-      <p style="margin-top:15px;color:var(--gold2);">
-        آپ کی صحت، آپ کے گھر پر — بس ایک کال کی دور!
-      </p>
-    </div>
-
-    <div>
-      <h3>Quick Links</h3>
-      <div class="footer-links">
-        <a href="#" onclick="showPage('home');return false;">Home</a>
-        <a href="#" onclick="showPage('services');return false;">Services & Booking</a>
-        <a href="#" onclick="showPage('reports');return false;">Reports & Contact</a>
-        <a href="#" onclick="goBooking();return false;">Book a Home Visit</a>
-      </div>
-    </div>
-
-    <div>
-      <h3>Contact</h3>
-      <div class="footer-links">
-        <a href="tel:+923061912314">☎ +92 306 1912314</a>
-        <a href="https://wa.me/923061912314" target="_blank" rel="noopener">WhatsApp</a>
-        <a href="mailto:easycallhealthcare.pk@gmail.com">easycallhealthcare.pk@gmail.com</a>
-        <a href="https://www.facebook.com/share/19Nb1SVDDf/" target="_blank" rel="noopener">Facebook Page</a>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="container copyright">
-    <span>© <span id="year"></span> Easy Call Health Care Home Service. All Rights Reserved.</span>
-    <span>Premium Home Healthcare · Bahawalpur, Pakistan</span>
-  </div>
+Easy Call Health Care Home Service © 2026 — Bahawalpur, Punjab, Pakistan
 </footer>
 
+<div id="toast" class="toast"></div>
 
-<a class="float-wa"
-   href="https://wa.me/923061912314"
-   target="_blank"
-   rel="noopener"
-   aria-label="WhatsApp Easy Call Health Care">
-  ☘
-</a>
+<!-- PREMIUM TIME PICKER -->
+<div id="timeModal" class="timeModal">
+<div class="timePanel">
+<h3>Select Preferred Time</h3>
 
-<div class="mobile-bar">
-  <a href="tel:+923061912314">☎ CALL NOW</a>
-  <a href="https://wa.me/923061912314" target="_blank" rel="noopener">☘ WHATSAPP</a>
+<div class="timeTop">
+<span id="hourDisplay">08</span>:<span id="minuteDisplay">00</span>
 </div>
 
-<div class="toast" id="toast"></div>
+<div class="timeStep" id="timeStep">Select hour</div>
 
+<div class="ampm" style="text-align:center;margin-bottom:8px">
+<button id="amBtn" onclick="setAMPM('AM')">AM</button>
+<button id="pmBtn" onclick="setAMPM('PM')">PM</button>
+</div>
+
+<div class="clock">
+<div class="clockNumbers" id="clockNumbers"></div>
+<div id="clockHand" class="clockHand"></div>
+<div class="clockCenter"></div>
+</div>
+
+<div style="display:flex;justify-content:space-between;margin-bottom:15px;color:#aaa;font-size:12px">
+<span>Available: 08:00 AM</span>
+<span>Until: 10:00 PM</span>
+</div>
+
+<div class="timeActions">
+<button class="btn dark" onclick="closeTimePicker()">Cancel</button>
+<button class="btn" onclick="confirmTime()">Confirm Time</button>
+</div>
+</div>
+</div>
 
 <script>
-/* =========================================================
-   EASY CALL HEALTH CARE HOME SERVICE
-   PREMIUM 3-PAGE SINGLE HTML WEBSITE
-   ========================================================= */
+/* PAGE NAVIGATION */
+function showPage(id){
+document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+window.scrollTo({top:0,behavior:'smooth'});
+}
+function scrollToBooking(){
+setTimeout(()=>{
+document.getElementById('booking').scrollIntoView({behavior:'smooth'});
+},250);
+}
 
-const WHATSAPP_NUMBER = "923061912314";
-
-const services = {
-  "Nursing & Patient Care": [
-    "Home Nursing & Patient Care",
-    "Male Nurse",
-    "Female Nurse",
-    "Clinical Assistant",
-    "Patient Bathing",
-    "Patient Feeding",
-    "Elderly Care",
-    "Post-Operative Care"
-  ],
-
-  "Vitals & Monitoring": [
-    "Blood Pressure (BP)",
-    "Blood Sugar Check",
-    "Pulse Check",
-    "Oxygen Level Check",
-    "Temperature Check"
-  ],
-
-  "Clinical Procedures": [
-    "Injection",
-    "IV Drip",
-    "Cannula",
-    "Dressing",
-    "Wound Wash / Cleaning",
-    "Nebulization",
-    "NG Tube",
-    "Foley's Catheter",
-    "Urine Bag",
-    "Stitch / Suturing",
-    "Stitch Out"
-  ],
-
-  "Home Lab Sample Collection": [
-    "Blood Sample Collection",
-    "Urine Sample Collection",
-    "Home Laboratory Sample Collection",
-    "Lab Coordination",
-    "Report Delivery / Sharing"
-  ]
+/* SERVICES */
+const serviceData={
+"Nursing & Patient Care":[
+"Home Nursing & Patient Care",
+"Male/Female Nurse & Clinical Assistant",
+"Patient Bathing & Feeding",
+"Elderly Care",
+"Post-Operative Care"
+],
+"Vitals & Monitoring":[
+"Blood Pressure (BP)",
+"Blood Sugar Check",
+"Pulse Monitoring",
+"Oxygen Level",
+"Temperature"
+],
+"Clinical Procedures":[
+"Injection",
+"IV Drip",
+"Cannula",
+"Dressing",
+"Wound Cleaning / Wash",
+"Nebulization",
+"NG Tube",
+"Foley's Catheter",
+"Urine Bag",
+"Stitch / Suturing",
+"Stitch Out"
+],
+"Home Lab Sample Collection":[
+"Blood Sample Collection",
+"Urine Sample Collection",
+"Other Sample Collection",
+"Home Laboratory Sample Collection"
+]
 };
 
-
-/* PAGE NAVIGATION */
-function showPage(page){
-  document.querySelectorAll(".page").forEach(p=>{
-    p.classList.remove("active");
-  });
-
-  const target = document.getElementById(page);
-
-  if(target){
-    target.classList.add("active");
-    window.scrollTo({top:0,behavior:"smooth"});
-  }
-
-  document.getElementById("navLinks").classList.remove("open");
+function loadServices(){
+const cat=document.getElementById('category').value;
+const service=document.getElementById('service');
+service.innerHTML='<option value="">Select Service</option>';
+if(serviceData[cat]){
+serviceData[cat].forEach(s=>{
+const o=document.createElement('option');
+o.value=s;o.textContent=s;service.appendChild(o);
+});
+}
 }
 
-function toggleMenu(){
-  document.getElementById("navLinks").classList.toggle("open");
+/* DATE */
+const dateInput=document.getElementById('date');
+const today=new Date();
+const yyyy=today.getFullYear();
+const mm=String(today.getMonth()+1).padStart(2,'0');
+const dd=String(today.getDate()).padStart(2,'0');
+dateInput.min=`${yyyy}-${mm}-${dd}`;
+
+/* PAYMENT */
+function paymentInfo(){
+const p=document.getElementById('payment').value;
+const box=document.getElementById('paymentDetails');
+if(p==="JazzCash"){
+box.style.display='block';
+box.innerHTML='JazzCash payment details will be provided after booking confirmation.';
+}else if(p==="Bank Transfer"){
+box.style.display='block';
+box.innerHTML='Bank account details will be provided after booking confirmation.';
+}else{
+box.style.display='none';
+box.innerHTML='';
+}
 }
 
-function goBooking(){
-  showPage("services");
+/* TIME PICKER */
+let selectedHour=8;
+let selectedMinute=0;
+let selectedAMPM="AM";
+let timeStep="hour";
 
-  setTimeout(()=>{
-    const booking = document.getElementById("booking");
-    if(booking){
-      booking.scrollIntoView({behavior:"smooth"});
-    }
-  },150);
+const modal=document.getElementById('timeModal');
+const clockNumbers=document.getElementById('clockNumbers');
+const hand=document.getElementById('clockHand');
+
+function buildClock(){
+clockNumbers.innerHTML='';
+for(let i=1;i<=12;i++){
+const b=document.createElement('button');
+b.textContent=i;
+const angle=(i*30)-90;
+const r=105;
+const x=135+Math.cos(angle*Math.PI/180)*r-19;
+const y=135+Math.sin(angle*Math.PI/180)*r-19;
+b.style.left=x+'px';
+b.style.top=y+'px';
+b.onclick=()=>chooseHour(i);
+clockNumbers.appendChild(b);
+}
 }
 
-
-/* SERVICE DROPDOWN */
-function updateServices(){
-  const category = document.getElementById("serviceCategory").value;
-  const serviceSelect = document.getElementById("service");
-
-  serviceSelect.innerHTML = "";
-
-  if(!category){
-    serviceSelect.innerHTML =
-      '<option value="">First select service category</option>';
-    return;
-  }
-
-  const first = document.createElement("option");
-  first.value = "";
-  first.textContent = "Select Required Service";
-  serviceSelect.appendChild(first);
-
-  services[category].forEach(service=>{
-    const option = document.createElement("option");
-    option.value = service;
-    option.textContent = service;
-    serviceSelect.appendChild(option);
-  });
+function openTimePicker(){
+timeStep="hour";
+updateClock();
+modal.classList.add('show');
 }
 
+document.getElementById('time').addEventListener('click',openTimePicker);
 
-/* WHATSAPP BOOKING */
-function submitBooking(event){
-  event.preventDefault();
+function chooseHour(h){
+selectedHour=h;
+timeStep="minute";
+updateClock();
+}
 
-  const patientName = document.getElementById("patientName").value.trim();
-  const patientAge = document.getElementById("patientAge").value.trim();
-  const gender = document.getElementById("gender").value;
-  const mobile = document.getElementById("mobile").value.trim();
-  const whatsapp = document.getElementById("whatsapp").value.trim();
-  const category = document.getElementById("serviceCategory").value;
-  const service = document.getElementById("service").value;
-  const date = document.getElementById("date").value;
-  const time = document.getElementById("time").value;
-  const condition = document.getElementById("condition").value.trim();
-  const address = document.getElementById("address").value.trim();
-  const message = document.getElementById("message").value.trim();
+function chooseMinute(m){
+selectedMinute=m;
+timeStep="done";
+updateClock();
+}
 
-  if(!patientName || !patientAge || !gender || !mobile ||
-     !whatsapp || !category || !service || !date ||
-     !time || !condition || !address){
+function buildMinuteClock(){
+clockNumbers.innerHTML='';
+for(let i=0;i<60;i+=5){
+const b=document.createElement('button');
+b.textContent=String(i).padStart(2,'0');
+const angle=(i/5*30)-90;
+const r=105;
+const x=135+Math.cos(angle*Math.PI/180)*r-19;
+const y=135+Math.sin(angle*Math.PI/180)*r-19;
+b.style.left=x+'px';
+b.style.top=y+'px';
+b.onclick=()=>chooseMinute(i);
+clockNumbers.appendChild(b);
+}
+}
 
-    showToast("Please complete all required fields.");
-    return;
-  }
+function updateClock(){
+document.getElementById('hourDisplay').textContent=String(selectedHour).padStart(2,'0');
+document.getElementById('minuteDisplay').textContent=String(selectedMinute).padStart(2,'0');
 
-  const text =
-`*NEW HOME CARE SERVICE REQUEST*
-━━━━━━━━━━━━━━━━━━━━
+document.getElementById('amBtn').classList.toggle('active',selectedAMPM==="AM");
+document.getElementById('pmBtn').classList.toggle('active',selectedAMPM==="PM");
 
-*Easy Call Health Care Home Service*
+if(timeStep==="hour"){
+document.getElementById('timeStep').textContent="Select hour";
+buildClock();
+const deg=(selectedHour%12)*30;
+hand.style.transform=`translate(-50%,-100%) rotate(${deg}deg)`;
+}else{
+document.getElementById('timeStep').textContent="Select minutes";
+buildMinuteClock();
+const deg=(selectedMinute/5)*30;
+hand.style.transform=`translate(-50%,-100%) rotate(${deg}deg)`;
+}
+}
 
-*Patient Information*
-Patient Name: ${patientName}
-Age: ${patientAge}
-Gender: ${gender}
-Disease / Medical Condition: ${condition}
+function setAMPM(v){
+selectedAMPM=v;
+updateClock();
+}
 
-*Contact*
-Mobile: ${mobile}
-WhatsApp: ${whatsapp}
+function confirmTime(){
+let h=selectedHour;
+if(selectedAMPM==="PM" && h!==12)h+=12;
+if(selectedAMPM==="AM" && h===12)h=0;
 
-*Requested Service*
-Category: ${category}
-Service: ${service}
+/* Working hours 08:00 AM to 10:00 PM */
+const minutes=h*60+selectedMinute;
+if(minutes<480 || minutes>1320){
+showToast("Please select a time between 8:00 AM and 10:00 PM.");
+return;
+}
 
-*Visit Details*
-Preferred Date: ${date}
-Preferred Time: ${time}
-Address / Area: ${address}
+const display=`${String(selectedHour).padStart(2,'0')}:${String(selectedMinute).padStart(2,'0')} ${selectedAMPM}`;
+document.getElementById('time').value=display;
+closeTimePicker();
+}
 
-*Additional Details*
+function closeTimePicker(){
+modal.classList.remove('show');
+}
+
+modal.addEventListener('click',function(e){
+if(e.target===modal)closeTimePicker();
+});
+
+buildClock();
+
+/* BOOKING → WHATSAPP */
+document.getElementById('bookingForm').addEventListener('submit',function(e){
+e.preventDefault();
+
+const patient=document.getElementById('patientName').value.trim();
+const age=document.getElementById('patientAge').value;
+const gender=document.getElementById('gender').value;
+const mobile=document.getElementById('mobile').value.trim();
+const whatsapp=document.getElementById('whatsapp').value.trim() || mobile;
+const category=document.getElementById('category').value;
+const service=document.getElementById('service').value;
+const disease=document.getElementById('disease').value.trim();
+const date=document.getElementById('date').value;
+const time=document.getElementById('time').value;
+const address=document.getElementById('address').value.trim();
+const payment=document.getElementById('payment').value;
+const message=document.getElementById('message').value.trim();
+
+if(!time){
+showToast("Please select your Preferred Time.");
+return;
+}
+
+const formattedDate=new Date(date+"T00:00:00").toLocaleDateString('en-GB');
+
+const text=
+`🏥 *EASY CALL HEALTH CARE HOME SERVICE*
+
+📋 *HOME VISIT REQUEST*
+
+👤 Patient Name: ${patient}
+🎂 Age: ${age}
+⚧ Gender: ${gender}
+📞 Mobile: ${mobile}
+💬 WhatsApp: ${whatsapp}
+
+🩺 Service Category: ${category}
+🔹 Required Service: ${service}
+
+❤️ Disease / Medical Condition:
+${disease}
+
+📅 Preferred Date: ${formattedDate}
+⏰ Preferred Time: ${time}
+
+📍 Home Address:
+${address}
+
+💳 Payment Method: ${payment}
+
+📝 Additional Details:
 ${message || "None"}
 
-━━━━━━━━━━━━━━━━━━━━
-Please confirm availability and visit details.
-Thank you.`;
+Please confirm the home visit request.
+`;
 
-  const url =
-    "https://wa.me/" +
-    WHATSAPP_NUMBER +
-    "?text=" +
-    encodeURIComponent(text);
+window.open("https://wa.me/923061912314?text="+encodeURIComponent(text),"_blank");
+});
 
-  window.open(url,"_blank","noopener");
-
-  showToast("Request prepared. WhatsApp is opening...");
+/* DEMO REPORT DATA
+   For real online reports, connect this section to your backend/database.
+*/
+const reports=[
+/*
+Example:
+{
+ code:"ECH-2026-0001",
+ patient:"Muhammad Ali",
+ last4:"1234",
+ details:"Blood Test Report • 10 Sep 2026",
+ url:"reports/report-0001.pdf"
 }
-
-
-/* REPORT SYSTEM */
-const reports = [
-  /*
-  Add real reports here when required.
-
-  Example:
-  {
-    code:"ECH-1234",
-    phone:"1234",
-    patient:"Patient Name",
-    url:"https://example.com/report.pdf"
-  }
-  */
+*/
 ];
 
 function findReport(){
-  const code = document.getElementById("reportCode").value.trim().toUpperCase();
-  const phone = document.getElementById("reportPhone").value.trim();
-  const result = document.getElementById("reportResult");
+const code=document.getElementById('reportCode').value.trim().toUpperCase();
+const last4=document.getElementById('reportPhone').value.trim();
 
-  result.classList.remove("show");
-  result.innerHTML = "";
+const result=document.getElementById('reportResult');
+const found=reports.find(r=>r.code===code && r.last4===last4);
 
-  if(!code || !phone){
-    showToast("Please enter report code and last 4 digits.");
-    return;
-  }
-
-  const report = reports.find(r =>
-    String(r.code).toUpperCase() === code &&
-    String(r.phone) === phone
-  );
-
-  if(!report){
-    result.innerHTML = `
-      <strong style="color:#f1ca72;">Report Not Found</strong>
-      <p style="margin-top:7px;color:#bfc8c3;">
-        Please check your report code and phone number, or contact
-        Easy Call Health Care Home Service.
-      </p>
-      <a href="https://wa.me/923061912314?text=${encodeURIComponent("I need help accessing my test report.")}"
-         target="_blank"
-         rel="noopener"
-         style="display:inline-block;margin-top:12px;">
-         Contact via WhatsApp →
-      </a>
-    `;
-  }else{
-    result.innerHTML = `
-      <strong style="color:#f1ca72;">Report Available</strong>
-      <p style="margin-top:7px;color:#bfc8c3;">
-        Patient: ${escapeHtml(report.patient || "Patient")}
-      </p>
-      <a href="${escapeAttribute(report.url)}"
-         target="_blank"
-         rel="noopener"
-         style="display:inline-block;margin-top:12px;">
-         View / Download Report →
-      </a>
-    `;
-  }
-
-  result.classList.add("show");
+if(!found){
+result.style.display='block';
+result.innerHTML=`
+<div class="reportCard">
+<h3 style="color:#e8a6a6">Report Not Found</h3>
+<p style="color:#aaa;margin-top:8px">
+No report matched the entered Report Code and phone verification details.
+Please check your information or contact Easy Call.
+</p>
+</div>`;
+return;
 }
 
-
-/* SAFE HTML HELPERS */
-function escapeHtml(value){
-  return String(value)
-    .replace(/&/g,"&amp;")
-    .replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;")
-    .replace(/"/g,"&quot;")
-    .replace(/'/g,"&#039;");
+result.style.display='block';
+result.innerHTML=`
+<div class="reportCard">
+<h3 style="color:var(--gold2)">${found.patient}</h3>
+<p style="color:#aaa;margin:5px 0 15px">${found.details}</p>
+<div style="display:flex;gap:10px;flex-wrap:wrap">
+<a class="btn" href="${found.url}" target="_blank">View Report</a>
+<a class="btn dark" href="${found.url}" download>Download Report</a>
+<a class="btn dark" href="https://wa.me/?text=${encodeURIComponent("My Easy Call Test Report: "+found.url)}" target="_blank">WhatsApp</a>
+</div>
+</div>`;
 }
-
-function escapeAttribute(value){
-  return String(value)
-    .replace(/&/g,"&amp;")
-    .replace(/"/g,"&quot;")
-    .replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;");
-}
-
 
 /* TOAST */
-function showToast(message){
-  const toast = document.getElementById("toast");
-  toast.textContent = message;
-  toast.classList.add("show");
-
-  clearTimeout(window.toastTimer);
-
-  window.toastTimer = setTimeout(()=>{
-    toast.classList.remove("show");
-  },3500);
+function showToast(msg){
+const t=document.getElementById('toast');
+t.textContent=msg;
+t.style.display='block';
+clearTimeout(window.toastTimer);
+window.toastTimer=setTimeout(()=>t.style.display='none',3500);
 }
-
-
-/* DATE LIMIT */
-function setMinimumDate(){
-  const input = document.getElementById("date");
-
-  if(input){
-    const now = new Date();
-    const year = now.getFullYear();
-    const month = String(now.getMonth()+1).padStart(2,"0");
-    const day = String(now.getDate()).padStart(2,"0");
-
-    input.min = `${year}-${month}-${day}`;
-  }
-}
-
-
-/* YEAR */
-document.getElementById("year").textContent = new Date().getFullYear();
-
-setMinimumDate();
-
-
-/* CLOSE MOBILE MENU WHEN CLICKING OUTSIDE */
-document.addEventListener("click",function(event){
-  const nav = document.getElementById("navLinks");
-  const menu = document.querySelector(".menu-btn");
-
-  if(
-    nav.classList.contains("open") &&
-    !nav.contains(event.target) &&
-    !menu.contains(event.target)
-  ){
-    nav.classList.remove("open");
-  }
-});
 </script>
 
 </body>
